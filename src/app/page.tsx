@@ -15,9 +15,9 @@ export default function Campaign() {
     <>
       <Navbar />
       <Hero />
-      <To_Recruitment />
       <To_About />
       <To_Members />
+      <To_Recruitment />
       <Mailing_List />
       <Carasoul />
       <Footer />

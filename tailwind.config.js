@@ -6,8 +6,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        babyBlue: '#ADD8E6', // Light blue
-        ruddyBlue: '#1E90FF', // Bright blue
+        babyBlue: '#AED8F3', // Light blue
+        ruddyBlue: '#4395CB', // Bright blue
       },
     },
   },

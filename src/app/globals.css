@@ -80,3 +80,10 @@
   .pillar-item:hover {
     transform: scale(1.05); /* Slightly enlarges on hover */
   }
+
+  .custom-logo-size {
+    max-width: 375px;
+    max-height: 375px;
+    width: 100%; /* Ensures responsiveness */
+    height: auto; /* Maintains aspect ratio */
+  }

@@ -12,28 +12,41 @@ export default function RecruitmentSection() {
 
   return (
     <div className="bg-white min-h-screen flex items-center justify-center">
-      <div className="max-w-4xl mx-auto p-6 bg-babyBlue border border-gray-800 rounded-lg shadow-lg flex flex-col md:flex-row items-center">
-        <div className="w-full md:w-1/2 p-4">
-          <Image 
-            src="/image/well.jpg" 
-            alt="Recruitment" 
-            width={800} 
-            height={600} 
-            className="rounded-lg" 
+      <div className="max-w-4xl w-full px-6 py-10 text-black flex flex-col items-center text-center">
+        
+        {/* Logo big in the middle at the top */}
+        <div>
+          <Image
+            src="/image/ktp_logo.png"
+            alt="KTP Logo"
+            width={300}
+            height={300}
           />
         </div>
-        <div className="w-full md:w-1/2 p-4 text-center flex flex-col items-center justify-center">
-          <h2 className="text-black text-lg font-light">Spring 2024 Recruitment</h2>
-          <h1 className="text-black text-4xl font-bold mt-2">
-            Eta Chapter is back! Learn how to get involved with our chapter and our upcoming recruitment season!
-          </h1>
-          <button 
-            onClick={handleButtonClick} 
-            className="mt-4 px-4 py-2 bg-carolinaBlue text-uncWhite font-semibold rounded-md hover:bg-blue-600"
-          >
-            Apply Now
-          </button>
-        </div>
+        
+        {/* Heading */}
+        <h1 className="text-4xl md:text-4xl font-bold mt-8">
+          Eta Chapter is back!
+        </h1>
+        
+        {/* Horizontal divider */}
+        <hr className="my-6 w-full border-black" />
+        
+        {/* Description text */}
+        <p className="text-xl md:text-2xl font-light text-gray-600 max-w-2xl mx-auto">
+          Learn how to get involved with our chapter and upcoming recruitment season!
+        </p>
+        
+        {/* Another divider */}
+        <hr className="my-6 w-full border-black" />
+        
+        {/* Button */}
+        <button
+          onClick={handleButtonClick}
+          className="border border-black px-6 py-3 rounded-md hover:bg-gray-100 text-xl font-semibold"
+        >
+          Apply Now
+        </button>
       </div>
     </div>
   );

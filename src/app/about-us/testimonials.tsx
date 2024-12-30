@@ -9,9 +9,9 @@ const testimonials = [
     image: "/testimonials/chris.jpg",
   },
   {
-    text: "Scale and Coin was and will continue to be a community that I will identify with. This group of hard-working, ambitious students pushed me to reach beyond expectations. The intensive training process also provided important hard and soft skills that helped me find a career that I enjoy. I am thankful for Scale.",
-    author: "Jiaqi Zhang '23",
-    image: "/image/tower.jpg",
+    text: "KTP not only introduced me to some of my closest friends, but also to a group of amazing people who have been a constant source of support in so many aspects!",
+    author: "Tanvi Pulipaka '23",
+    image: "/testimonials/tanvi.jpg",
   },
 ];
 

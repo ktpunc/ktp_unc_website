@@ -9,11 +9,18 @@ import "swiper/css";
 import "swiper/css/autoplay";
 
 export default function Carousel() {
-  const [isClient, setIsClient] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    // Enable Swiper rendering only on the client
-    setIsClient(true);
+    // Check if the screen is desktop-sized
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024); // Adjust width threshold as needed
+    };
+
+    handleResize(); // Set initial value
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const carouselImages = [
@@ -24,7 +31,12 @@ export default function Carousel() {
     "/carasoul/photo5.jpg",
     "/carasoul/photo6.jpg",
     "/carasoul/photo7.jpg",
+    "/carasoul/photo8.jpg",
+    "/carasoul/photo9.jpg",
+    "/carasoul/photo10.jpg",
   ];
+
+  if (!isDesktop) return null; // Do not render the carousel on non-desktop screens
 
   return (
     <div className="relative w-screen h-[30vh] overflow-hidden bg-gray-100">
@@ -39,40 +51,38 @@ export default function Carousel() {
       </div>
 
       {/* Swiper Carousel */}
-      {isClient && (
-        <Swiper
-          modules={[Autoplay]}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
-          loop={true}
-          slidesPerView={3}
-          spaceBetween={0}
-          breakpoints={{
-            640: {
-              slidesPerView: 1,
-            },
-            768: {
-              slidesPerView: 2,
-            },
-            1024: {
-              slidesPerView: 3,
-            },
-          }}
-          className="absolute inset-0 w-full h-full z-0"
-        >
-          {carouselImages.map((image, index) => (
-            <SwiperSlide key={index}>
-              <img
-                src={image}
-                alt={`Carousel Image ${index + 1}`}
-                className="w-full h-full object-cover"
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      )}
+      <Swiper
+        modules={[Autoplay]}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        loop={true}
+        slidesPerView={3}
+        spaceBetween={5}
+        breakpoints={{
+          640: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        }}
+        className="absolute inset-0 w-full h-full z-0"
+      >
+        {carouselImages.map((image, index) => (
+          <SwiperSlide key={index}>
+            <img
+              src={image}
+              alt={`Carousel Image ${index + 1}`}
+              className="w-full h-full object-cover border-2 border-black"
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 }

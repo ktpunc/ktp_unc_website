@@ -87,3 +87,12 @@
     width: 100%; /* Ensures responsiveness */
     height: auto; /* Maintains aspect ratio */
   }
+  
+.transparent-bg {
+  background-color: rgba(255, 255, 255, 0); /* Fully transparent */
+  transition: background-color 0.3s ease-in-out;
+}
+
+.white-bg {
+  background-color: rgba(255, 255, 255, 1); /* White background */
+}

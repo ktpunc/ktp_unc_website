@@ -6,7 +6,7 @@ const AboutUs = () => {
       <div className="flex flex-col gap-4 md:mr-8">
         <div className="relative w-[700px] h-[300px]">
           <Image
-            src="/image/AboutUsImage1.jpg"
+            src="/about-us/image1.jpg"
             alt="About Us"
             layout="fill"
             objectFit="cover"
@@ -15,7 +15,7 @@ const AboutUs = () => {
         </div>
         <div className="relative w-[700px] h-[300px]">
           <Image
-            src="/image/AboutUsImage2.jpg"
+            src="/about-us/image2.jpg"
             alt="About Us"
             layout="fill"
             objectFit="cover"
@@ -24,7 +24,7 @@ const AboutUs = () => {
         </div>
         <div className="relative w-[700px] h-[300px]">
           <Image
-            src="/image/AboutUsImage3.jpg"
+            src="/about-us/image3.jpg"
             alt="About Us"
             layout="fill"
             objectFit="cover"
@@ -33,7 +33,7 @@ const AboutUs = () => {
         </div>
         <div className="relative w-[700px] h-[300px]">
           <Image
-            src="/image/AboutUsImage4.jpg"
+            src="/about-us/image4.jpg"
             alt="About Us"
             layout="fill"
             objectFit="cover"

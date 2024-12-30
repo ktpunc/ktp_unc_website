@@ -6,7 +6,7 @@ const testimonials = [
   {
     text: "I chose to join KTP because I felt it was the only computer science organization that I felt went above and beyond in terms of both professional growth and a strong sense of community. I have met some of my best friends and formed deep connections through KTP.",
     author: "Chris Zou '27",
-    image: "/image/ChrisTestimonial.jpg",
+    image: "/testimonials/chris.jpg",
   },
   {
     text: "Scale and Coin was and will continue to be a community that I will identify with. This group of hard-working, ambitious students pushed me to reach beyond expectations. The intensive training process also provided important hard and soft skills that helped me find a career that I enjoy. I am thankful for Scale.",

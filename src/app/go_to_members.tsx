@@ -1,7 +1,6 @@
 "use client";
 
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
 
 export default function MembersSection() {
   const router = useRouter();
@@ -11,29 +10,35 @@ export default function MembersSection() {
   };
 
   return (
-    <div className="bg-white min-h-screen flex items-center justify-center">
-      <div className="max-w-4xl mx-auto p-6 bg-babyBlue border border-gray-800 rounded-lg shadow-lg flex flex-col md:flex-row items-center">
-        <div className="w-full md:w-1/2 p-4">
-          <Image 
-            src="/image/well.jpg" 
-            alt="Recruitment" 
-            width={800} 
-            height={600} 
-            className="rounded-lg" 
-          />
-        </div>
-        <div className="w-full md:w-1/2 p-4 text-center flex flex-col items-center justify-center">
-          <h2 className="text-black text-lg font-light">Our Brotherhood</h2>
-          <h1 className="text-black text-4xl font-bold mt-2">
-            Our chapter is comprised of over 50 self-driven, ambitious members. Take a look at our chapter!
-          </h1>
-          <button 
-            onClick={handleButtonClick} 
-            className="mt-4 px-4 py-2 bg-carolinaBlue text-uncWhite font-semibold rounded-md hover:bg-blue-600"
-          >
-            Meet Our Members
-          </button>
-        </div>
+    <div
+      className="relative bg-cover bg-center flex items-center justify-center"
+      style={{
+        backgroundImage: "url('/about-us/group-pic.jpg')", // Ensure the path is correct
+        height: "85vh", // Adjusted height for a taller image
+      }}
+    >
+      {/* Grey overlay for better text visibility */}
+      <div className="absolute inset-0 bg-gray-900 bg-opacity-50"></div>
+
+      {/* Content Overlay */}
+      <div className="relative text-center text-white px-8 py-12 max-w-4xl">
+        {/* Heading */}
+        <h1 className="text-5xl font-bold">
+          Our Brotherhood
+        </h1>
+
+        {/* Description Text */}
+        <p className="text-xl md:text-2xl font-light text-gray-200 mt-6 leading-relaxed">
+          Our chapter is comprised of over 50 self-driven, ambitious members. Take a look at our chapter and meet the people who make Kappa Theta Pi truly special!
+        </p>
+
+        {/* Button */}
+        <button
+          onClick={handleButtonClick}
+          className="mt-20 px-6 py-3 bg-transparent text-white font-semibold rounded-full border-2 border-white hover:bg-white hover:text-black transition duration-300"
+        >
+          Meet Our Members
+        </button>
       </div>
     </div>
   );

@@ -46,52 +46,46 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="py-8 bg-babyBlue px-4 md:px-12 flex items-center justify-center relative">
-      <div className="flex flex-col items-center max-w-7xl w-full">
-        <h2 className="text-3xl font-bold mb-4 text-outline-white">
+    <div className="py-12 bg-babyBlue">
+      <div className="container mx-auto px-6">
+        <h2 className="text-4xl font-bold text-center text-white mb-8">
           What Our Current and Past Members Say
         </h2>
-        <div className="flex flex-col md:flex-row items-stretch justify-between w-full px-4 md:px-12 relative">
+        <div className="relative grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center">
           {/* Text Section */}
-          <div className="md:w-1/2 p-4 flex flex-col items-start relative">
-            <div
-              className="relative w-full h-full text-black border border-gray-800 p-6 rounded-lg bg-white shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105"
-            >
-              <div className={`transition-opacity duration-500 ${fadeProp.fade}`}>
-                <p className="text-xl lg:text-xl mb-4 transition-transform duration-300">
-                  "{testimonials[currentIndex].text}"
-                </p>
-                <p className="text-right text-lg lg:text-xl font-semibold">
-                  - {testimonials[currentIndex].author}
-                </p>
-              </div>
-            </div>
-            <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex items-center space-x-4">
-              <button
-                onClick={prevTestimonial}
-                className="bg-transparent hover:bg-ruddyBlue text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              >
-                &#8592; {/* Left arrow */}
-              </button>
-              <button
-                onClick={nextTestimonial}
-                className="bg-transparent hover:bg-ruddyBlue text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              >
-                &#8594; {/* Right arrow */}
-              </button>
+          <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-300 transform transition-transform duration-300 hover:scale-105">
+            <div className={`transition-opacity duration-500 ${fadeProp.fade}`}>
+              <p className="text-sm md:text-base lg:text-lg text-gray-700 mb-4">
+                "{testimonials[currentIndex].text}"
+              </p>
+              <p className="text-lg lg:text-xl font-semibold text-right text-black">
+                - {testimonials[currentIndex].author}
+              </p>
             </div>
           </div>
 
           {/* Image Section */}
-          <div className="md:w-1/2 p-4 flex items-center justify-center">
-            <div className="w-full h-full rounded-lg shadow-lg border border-gray-800 overflow-hidden transform transition-transform duration-300 hover:scale-105">
-              <img
-                src={testimonials[currentIndex].image}
-                alt="Testimonial"
-                className="w-full h-80 object-cover"
-              />
-            </div>
+          <div className="rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+            <img
+              src={testimonials[currentIndex].image}
+              alt="Testimonial"
+              className="w-full h-80 object-cover"
+            />
           </div>
+        </div>
+        <div className="flex justify-center mt-6">
+          <button
+            onClick={prevTestimonial}
+            className="bg-transparent hover:bg-white text-white hover:text-black font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline mx-2"
+          >
+            &#8592; {/* Left arrow */}
+          </button>
+          <button
+            onClick={nextTestimonial}
+            className="bg-transparent hover:bg-white text-white hover:text-black font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline mx-2"
+          >
+            &#8594; {/* Right arrow */}
+          </button>
         </div>
       </div>
     </div>

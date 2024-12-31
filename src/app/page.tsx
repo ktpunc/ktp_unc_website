@@ -2,7 +2,7 @@
 
 import { Navbar, Footer } from "@/components";
 import Hero from "./hero";
-import Mailing_List from "./mailing_list";
+import WelcomeSection from "./welcomeSection";
 import To_Recruitment from "./go_to_recruitment";
 import To_About from "./go_to_about";
 import To_Members from "./go_to_members";
@@ -15,10 +15,10 @@ export default function Campaign() {
     <>
       <Navbar />
       <Hero />
+      <WelcomeSection />
       <To_About />
       <To_Members />
       <To_Recruitment />
-      <Mailing_List />
       <Carasoul />
       <Footer />
     </>

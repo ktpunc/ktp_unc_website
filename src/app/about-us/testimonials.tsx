@@ -4,13 +4,13 @@ import React, { useEffect, useState } from "react";
 
 const testimonials = [
   {
-    text: "I chose to join KTP because I felt it was the only computer science organization that I felt went above and beyond in terms of both professional growth and a strong sense of community. I have met some of my best friends and formed deep connections through KTP.",
+    text: "I chose to join KTP because I felt it was the only computer science organization that I felt went above and beyond in terms of both professional growth and a strong sense of community. I have met some of my best friends and formed deep connections through this organization.",
     author: "Chris Zou '27",
     image: "/testimonials/chris.jpg",
   },
   {
     text: "KTP not only introduced me to some of my closest friends, but also to a group of amazing people who have been a constant source of support in so many aspects!",
-    author: "Tanvi Pulipaka '23",
+    author: "Tanvi Pulipaka '25",
     image: "/testimonials/tanvi.jpg",
   },
   {
@@ -81,13 +81,13 @@ const Testimonials = () => {
         <div className="flex justify-center mt-6">
           <button
             onClick={prevTestimonial}
-            className="bg-transparent hover:bg-white text-black hover:text-babyBlue font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline mx-2 border border-gray-300"
+            className="bg-transparent hover:bg-white text-black hover:text-babyBlue font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline mx-2"
           >
             &#8592; {/* Left arrow */}
           </button>
           <button
             onClick={nextTestimonial}
-            className="bg-transparent hover:bg-white text-black hover:text-babyBlue font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline mx-2 border border-gray-300"
+            className="bg-transparent hover:bg-white text-black hover:text-babyBlue font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline mx-2"
           >
             &#8594; {/* Right arrow */}
           </button>

@@ -18,7 +18,7 @@ export function Footer() {
                 className="text-lg md:text-xl text-white font-medium leading-relaxed"
               >
                 Kappa Theta Pi is UNC's premier tech-focused professional
-                fraternity, fostering innovation and leadership in technology
+                organization, fostering innovation and leadership in technology
                 and beyond.
               </Typography>
             </div>

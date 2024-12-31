@@ -67,7 +67,7 @@ const ExecutiveBoard = () => {
     return (
         <div className="w-full bg-babyBlue">
         <div className="container bg-babyBlue mx-auto px-4 py-8">
-            <h1 className="text-4xl font-bold text-outline-white text-center my-12">Class of 2027</h1>
+            <h1 className="text-4xl font-bold text-center text-white mb-8">Class of 2027</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 gap-y-16">
                 {class_2027.map((member, index) => {
                     // Calculate the correct column for each member
@@ -76,7 +76,7 @@ const ExecutiveBoard = () => {
                     if (index === 9) colStart = 'lg:col-start-3';
 
                     return (
-                        <div key={member.name} className={`text-center bg-white p-4 rounded-lg shadow-lg border border-gray-800 shadow-md ${colStart}`}>
+                        <div key={member.name} className={`text-center bg-white p-4 rounded-lg shadow-lg border shadow-md ${colStart}`}>
                             <Link href={member.linkedin} passHref legacyBehavior>
                                 <a target="_blank" rel="noopener noreferrer">
                                     <img

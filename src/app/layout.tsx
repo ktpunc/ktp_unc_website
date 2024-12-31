@@ -10,8 +10,8 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Kappa Theta Pi @ UNC",
-  description: "New Kappa Theta Pi @ UNC website. Created by Tanveer Thethi.",
+  title: "Kappa Theta Pi - Eta Chapter",
+  description: "Kappa Theta Pi - Eta Chapter. Created by Srikar Sannidhi, Tanveer Thethi.",
 };
 
 export default function RootLayout({
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="shortcut icon" href="/images/ktp_logo.png" type="image/png" />
+        <link rel="shortcut icon" href="/image/ktp_logo.ico" type="image/x-icon"/>
       </head>
       <body className={roboto.className}>
         <Layout>

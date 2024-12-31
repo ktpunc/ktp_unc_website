@@ -13,6 +13,11 @@ const testimonials = [
     author: "Tanvi Pulipaka '23",
     image: "/testimonials/tanvi.jpg",
   },
+  {
+    text: "I used to think KTP was just a CS organization but after joining I realized how many majors KTP has - It’s been super cool having members in my Business classes too!",
+    author: "Alex Gonzales '26",
+    image: "/testimonials/alex.jpg",
+  },
 ];
 
 const Testimonials = () => {
@@ -55,10 +60,10 @@ const Testimonials = () => {
           {/* Text Section */}
           <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-300 transform transition-transform duration-300 hover:scale-105">
             <div className={`transition-opacity duration-500 ${fadeProp.fade}`}>
-              <p className="text-sm md:text-base lg:text-lg text-gray-700 mb-4">
+              <p className="text-xl font-light text-gray-600 leading-relaxed mb-4">
                 "{testimonials[currentIndex].text}"
               </p>
-              <p className="text-lg lg:text-xl font-semibold text-right text-black">
+              <p className="text-lg md:text-xl font-semibold text-right text-black">
                 - {testimonials[currentIndex].author}
               </p>
             </div>
@@ -76,13 +81,13 @@ const Testimonials = () => {
         <div className="flex justify-center mt-6">
           <button
             onClick={prevTestimonial}
-            className="bg-transparent hover:bg-white text-white hover:text-black font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline mx-2"
+            className="bg-transparent hover:bg-white text-black hover:text-babyBlue font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline mx-2 border border-gray-300"
           >
             &#8592; {/* Left arrow */}
           </button>
           <button
             onClick={nextTestimonial}
-            className="bg-transparent hover:bg-white text-white hover:text-black font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline mx-2"
+            className="bg-transparent hover:bg-white text-black hover:text-babyBlue font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline mx-2 border border-gray-300"
           >
             &#8594; {/* Right arrow */}
           </button>

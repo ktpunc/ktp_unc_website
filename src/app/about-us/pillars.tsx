@@ -5,7 +5,7 @@ const Pillars = () => {
     {
       title: "Professional Development",
       description:
-        "Through events like interview training, resume building, one-on-one mentorship, private company recruiting, and more, Kappa Theta Pi Professional Development aims to prepare members for success in any technology-related career. We take pride in developing the tech leaders of the future.",
+        "Through events like interview training, resume building, mentorship, private company recruiting, and more, Kappa Theta Pi Professional Development aims to prepare members for success in any technology-related career. We take pride in developing the tech leaders of the future.",
     },
     {
       title: "Alumni Connections",
@@ -30,31 +30,39 @@ const Pillars = () => {
   ];
 
   return (
-    <div className="py-12 bg-ruddyBlue">
+    <div
+      className="py-12 bg-none md:bg-[url('/image/circle.svg')] md:bg-contain md:bg-no-repeat md:bg-center"
+    >
       <div className="container mx-auto px-6">
-        <h1 className="text-4xl font-bold text-center text-white mb-8">
-          <span className="text-gray-300">Pi</span>llars
+        {/* Title Section */}
+        <h1 className="text-4xl font-bold text-center text-black mb-4 uppercase tracking-wide">
+          <span className="border-b-4 border-babyBlue">Pillars</span>
         </h1>
-        <div className="relative grid grid-cols-3 gap-6 place-items-center">
+
+        {/* Desktop View */}
+        <div className="hidden md:grid relative grid-cols-3 gap-6 place-items-center">
           {/* First Row */}
           <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-300 transform transition-transform duration-300 hover:scale-105">
-            <h3 className="text-lg lg:text-xl font-semibold mb-4 text-black">
+            <h3 className="text-2xl font-semibold text-black mb-4">
               {pillars[0].title}
             </h3>
-            <p className="text-sm md:text-base text-gray-700">
+            <p className="text-xl font-light text-gray-600 leading-relaxed">
               {pillars[0].description}
             </p>
           </div>
           <div className="bg-transparent p-6 rounded-lg text-center">
-            <h3 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white">
-              What Makes Us Who We Are.
+            <h3 className="text-2xl md:text-3xl lg:text-6xl font-serif text-gray-800">
+              <span className="block">What</span>
+              <span className="block">makes us</span>
+              <span className="block font-extrabold text-black">who we</span>
+              <span className="block font-extrabold text-black">are.</span>
             </h3>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-300 transform transition-transform duration-300 hover:scale-105">
-            <h3 className="text-lg lg:text-xl font-semibold mb-4 text-black">
+            <h3 className="text-2xl font-semibold text-black mb-4">
               {pillars[1].title}
             </h3>
-            <p className="text-sm md:text-base text-gray-700">
+            <p className="text-xl font-light text-gray-600 leading-relaxed">
               {pillars[1].description}
             </p>
           </div>
@@ -65,10 +73,27 @@ const Pillars = () => {
               key={index}
               className="bg-white p-6 rounded-lg shadow-lg border border-gray-300 transform transition-transform duration-300 hover:scale-105"
             >
-              <h3 className="text-lg lg:text-xl font-semibold mb-4 text-black">
+              <h3 className="text-2xl font-semibold text-black mb-4">
                 {pillar.title}
               </h3>
-              <p className="text-sm md:text-base text-gray-700">
+              <p className="text-xl font-light text-gray-600 leading-relaxed">
+                {pillar.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile View */}
+        <div className="md:hidden space-y-8">
+          {pillars.map((pillar, index) => (
+            <div
+              key={index}
+              className="bg-white p-6 rounded-lg shadow-lg border border-gray-300 transform transition-transform duration-300 hover:scale-105"
+            >
+              <h3 className="text-2xl font-semibold text-black mb-4">
+                {pillar.title}
+              </h3>
+              <p className="text-xl font-light text-gray-600 leading-relaxed">
                 {pillar.description}
               </p>
             </div>

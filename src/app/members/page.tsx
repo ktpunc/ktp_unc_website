@@ -11,7 +11,7 @@ export default function Campaign() {
   return (
     <>
       <Navbar />
-      <Hero />
+      {/* <Hero /> */}
       <ExecutiveBoard />
       <Class_2025 />
       <Class_2026 />

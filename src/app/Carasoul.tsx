@@ -39,7 +39,7 @@ export default function Carousel() {
   if (!isDesktop) return null; // Do not render the carousel on non-desktop screens
 
   return (
-    <div className="relative w-screen h-[30vh] overflow-hidden bg-gray-100">
+    <div className="relative w-screen h-[30vh] overflow-hidden bg-white border-t-4">
       {/* Semi-Transparent Overlay */}
       <div className="absolute inset-0 bg-black/40 z-10" />
 
@@ -78,7 +78,7 @@ export default function Carousel() {
             <img
               src={image}
               alt={`Carousel Image ${index + 1}`}
-              className="w-full h-full object-cover border-2 border-black"
+              className="w-full h-full object-cover border-4 border-gray-100"
             />
           </SwiperSlide>
         ))}

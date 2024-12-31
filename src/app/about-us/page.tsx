@@ -9,7 +9,7 @@ export default function Campaign() {
   return (
     <>
       <Navbar />
-      <Hero />
+      {/* <Hero /> */}
       <About />
       <Pillars/>
       <Testimonials />

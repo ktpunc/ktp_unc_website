@@ -15,7 +15,10 @@ const AlumniList = () => {
         <h1 className="text-4xl font-bold text-center text-white mb-8">Alumni</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {Object.keys(alumniData).map((group) => (
-            <div key={group} className="bg-white p-4 shadow rounded-lg shadow-lg border shadow-md">
+            <div
+              key={group}
+              className="bg-white p-6 shadow-lg rounded-lg border transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
+            >
               <h2 className="text-xl font-semibold mb-4 text-center underline">{group}</h2>
               <ul>
                 {alumniData[group].map((name, index) => (

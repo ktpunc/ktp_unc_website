@@ -103,24 +103,32 @@ const executiveMembers = [
 
 const ExecutiveBoard = () => {
     return (
-        <div className="w-full bg-ruddyBlue">
-            <div className="container bg-ruddyBlue mx-auto px-4 py-8">
+        <div className="w-full bg-ruddyBlue py-12">
+            <div className="container mx-auto px-4">
                 <h1 className="text-4xl font-bold text-center text-white mb-8">Executive Board</h1>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 gap-y-16">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {executiveMembers.map((member) => (
-                        <div key={member.name} className="text-center bg-white p-4 rounded-lg shadow-lg border shadow-md">
-                            <Link href={member.linkedin} passHref legacyBehavior>
-                                <a target="_blank" rel="noopener noreferrer">
-                                    <img
-                                        src={member.image}
-                                        alt={`Photo of ${member.name}`}
-                                        className="mx-auto rounded-full w-32 h-32 mb-4 transition-transform duration-200 hover:scale-105"
-                                    />
-                                    <h2 className="text-xl font-semibold">{member.name}</h2>
-                                    <p className="text-black">{member.title}</p>
-                                </a>
-                            </Link>
-                        </div>
+                        <Link
+                            key={member.name}
+                            href={member.linkedin}
+                            passHref
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="relative text-center bg-white p-6 rounded-lg shadow-lg border border-gray-300 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
+                        >
+                            {/* Image */}
+                            <img
+                                src={member.image}
+                                alt={`Photo of ${member.name}`}
+                                className="mx-auto rounded-full w-24 h-24 sm:w-32 sm:h-32 mb-4 transition-transform duration-200 hover:scale-110"
+                            />
+                            {/* Name and Title */}
+                            <h2 className="text-xl font-semibold text-black">{member.name}</h2>
+                            <p className="text-black">{member.title}</p>
+                            {/* Hover Overlay */}
+                            <div className="absolute inset-0 bg-black bg-opacity-0 rounded-lg transition-opacity duration-300 flex items-center justify-center">
+                            </div>
+                        </Link>
                     ))}
                 </div>
             </div>
@@ -129,5 +137,3 @@ const ExecutiveBoard = () => {
 };
 
 export default ExecutiveBoard;
-
-

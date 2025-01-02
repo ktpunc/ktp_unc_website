@@ -161,34 +161,36 @@ const class_2026 = [
 
 const ExecutiveBoard = () => {
     return (
-        <div className="w-full bg-ruddyBlue"> 
-        <div className="container bg-ruddyBlue mx-auto px-4 py-8">
-            <h1 className="text-4xl font-bold text-center text-white mb-8">Class of 2026</h1>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 gap-y-16">
-                {class_2026.map((member, index) => {
-                    // Calculate the correct column for each member
-                    let colStart = 'auto';
-                    if (index === 24) colStart = 'lg:col-start-2'; 
-                    if (index === 25) colStart = 'lg:col-start-3'; 
+        <div className="w-full bg-ruddyBlue">
+            <div className="container bg-ruddyBlue mx-auto px-4 py-8">
+                <h1 className="text-4xl font-bold text-center text-white mb-8">Class of 2026</h1>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 gap-y-16">
+                    {class_2026.map((member, index) => {
+                       
+                        let colStart = 'auto';
+                        if (index === 24) colStart = 'lg:col-start-2';
+                        if (index === 25) colStart = 'lg:col-start-3';
 
-                    return (
-                        <div key={member.name} className={`text-center bg-white p-4 rounded-lg shadow-lg border shadow-md ${colStart}`}>
-                            <Link href={member.linkedin} passHref legacyBehavior>
-                                <a target="_blank" rel="noopener noreferrer">
-                                    <img
-                                        src={member.image}
-                                        alt={`Photo of ${member.name}`}
-                                        className="mx-auto rounded-full w-32 h-32 mb-4 transition-transform duration-200 hover:scale-105"
-                                    />
-                                    <h2 className="text-xl font-semibold">{member.name}</h2>
-                                    <p className="text-black">{member.class}</p>
-                                </a>
+                        return (
+                            <Link
+                                key={member.name}
+                                href={member.linkedin}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`text-center bg-white p-6 rounded-lg shadow-lg border transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl ${colStart}`}
+                            >
+                                <img
+                                    src={member.image}
+                                    alt={`Photo of ${member.name}`}
+                                    className="mx-auto rounded-full w-32 h-32 mb-4"
+                                />
+                                <h2 className="text-xl font-semibold">{member.name}</h2>
+                                <p className="text-white">{member.class}</p>
                             </Link>
-                        </div>
-                    );
-                })}
+                        );
+                    })}
+                </div>
             </div>
-        </div>
         </div>
     );
 };

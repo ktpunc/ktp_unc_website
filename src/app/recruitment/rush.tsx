@@ -1,21 +1,26 @@
 import React from "react";
 
 const Schedule = () => {
+  const eventsTBD = [ { /*
+  { event: "Information Session", date: "Jan. 14th @ 7:30 PM", location: "Sitterson 014" },
+  { event: "DEI Event", date: "Jan. 16th @ 7:00 PM", location: "Sitterson 014" },
+  { event: "Speed Dating", date: "Jan. 21st @ 7:30 PM", location: "Sitterson 014" },
+  { event: "Hot Chocolate", date: "Jan. 22th @ 7:00 PM", location: "Pit" },
+  { event: "Game Night", date: "Jan. 23rd @ 7:30 PM", location: "Sitterson 014" },
+*/},
+  ];
+
   const events = [
-    { event: "Information Session", date: "Jan. 14th @ 7:30 PM", location: "Sitterson 014" },
-    { event: "DEI Event", date: "Jan. 16th @ 7:00 PM", location: "Sitterson 014" },
-    { event: "Speed Dating", date: "Jan. 21st @ 7:30 PM", location: "Sitterson 014" },
-    { event: "Hot Chocolate", date: "Jan. 22th @ 7:00 PM", location: "Pit" },
-    { event: "Game Night", date: "Jan. 23rd @ 7:30 PM", location: "Sitterson 014" },
+  {event: "TBD", date: "TBD", location: "TBD"},
   ];
 
   return (
     <div className="bg-babyBlue min-h-screen flex flex-col items-center">
       <div className="w-full max-w-6xl p-6">
-        <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-800 shadow-md mb-12">
-          <h1 className="text-4xl font-bold text-center mb-4 underline">Spring 2025 Recruitment</h1>
+        <div className="bg-white p-6 rounded-lg shadow-lg shadow-md mb-12">
+          <h1 className="text-4xl font-bold text-center mb-4">Spring 2025 Recruitment</h1>
           <p className="text-xl text-center">
-            Any UNC undergraduate who has at least two semesters remaining, with an interest in technology, is welcome to join Kappa Theta Pi. Make sure to complete the application by [deadline date].
+            Any UNC undergraduate who has at least two semesters remaining, with an interest in technology, is welcome to join Kappa Theta Pi. {/* Make sure to complete the application by [deadline date]. */}
           </p>
         </div>
         

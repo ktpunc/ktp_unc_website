@@ -45,6 +45,7 @@ const faqData = [
     },
 ];
 
+
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -57,23 +58,36 @@ const FAQ = () => {
       className="min-h-screen bg-cover bg-repeat"
       style={{
         backgroundImage: `url('image/FAQ.svg')`,
-        backgroundAttachment: 'fixed',
+        backgroundAttachment: "fixed",
       }}
     >
+      <h1 className="text-4xl font-bold text-center text-black mb-8 pt-10">
+        Frequently Asked Questions
+      </h1>
+
       <div className="max-w-4xl mx-auto mt-10">
         {faqData.map((faq, index) => (
-          <div key={index} className="mb-6 rounded-lg shadow-lg border border-gray-800">
+          <div
+            key={index}
+            className="mb-6 rounded-lg shadow-lg"
+          >
             <button
               onClick={() => handleToggle(index)}
-              className={`w-full text-left py-4 px-6 focus:outline-none focus:ring-2 focus:ring-gray-400 ${openIndex === index ? 'bg-babyBlue' : 'bg-ruddyBlue'} hover:bg-babyBlue ${openIndex === index ? 'rounded-t-lg' : 'rounded-lg'}`}
+              className={`w-full text-left py-4 px-6 focus:outline-none ${
+                openIndex === index ? "bg-babyBlue" : "bg-ruddyBlue"
+              } hover:bg-babyBlue ${
+                openIndex === index ? "rounded-t-lg" : "rounded-lg"
+              }`}
             >
               <div className="flex justify-between items-center">
                 <span className="text-xl font-medium">{faq.question}</span>
-                <span className="text-xl">{openIndex === index ? '-' : '+'}</span>
+                <span className="text-xl">
+                  {openIndex === index ? "-" : "+"}
+                </span>
               </div>
             </button>
             {openIndex === index && (
-              <div className="py-4 px-6 bg-white rounded-b-lg border-t border-gray-800">
+              <div className="py-4 px-6 bg-white rounded-b-lg">
                 <p className="text-lg">{faq.answer}</p>
               </div>
             )}

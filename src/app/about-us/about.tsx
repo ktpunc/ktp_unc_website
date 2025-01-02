@@ -21,9 +21,11 @@ const AboutUs = () => {
               <Image
                 src={image.src}
                 alt={image.alt}
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
+                fill
+                style={{
+                  objectFit: "cover",
+                  borderRadius: "0.5rem",
+                }}
               />
             </div>
           ))}

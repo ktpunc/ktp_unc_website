@@ -28,12 +28,12 @@ export default function Carousel() {
     "/carasoul/photo2.jpg",
     "/carasoul/photo3.jpg",
     "/carasoul/photo4.jpg",
-    "/carasoul/photo5.jpg",
+    "/carasoul/photo5.JPG",
     "/carasoul/photo6.jpg",
     "/carasoul/photo7.jpg",
     "/carasoul/photo8.jpg",
-    "/carasoul/photo9.jpg",
-    "/carasoul/photo10.jpg",
+    "/carasoul/photo9.JPG",
+    "/carasoul/photo10.JPG",
   ];
 
   if (!isDesktop) return null; // Do not render the carousel on non-desktop screens

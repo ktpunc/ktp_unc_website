@@ -1,4 +1,3 @@
-import { Typography } from "@material-tailwind/react";
 import Link from "next/link";
 
 const CURRENT_YEAR = new Date().getFullYear();
@@ -6,31 +5,22 @@ const CURRENT_YEAR = new Date().getFullYear();
 export function Footer() {
   return (
     <footer className="bg-gray-900 text-white">
-      {/* White Padding for Smooth Transition */}
-
       <div className="py-4">
         <div className="container mx-auto px-4 md:px-8">
           {/* Top Section */}
           <div className="flex flex-col md:flex-row justify-between items-start gap-4">
             {/* About Section */}
             <div className="flex flex-col gap-2">
-              <Typography
-                className="text-lg md:text-xl text-white font-medium leading-relaxed"
-              >
+              <p className="text-lg md:text-xl text-white font-medium leading-relaxed">
                 Kappa Theta Pi is UNC's premier tech-focused professional
                 organization, fostering innovation and leadership in technology
                 and beyond.
-              </Typography>
+              </p>
             </div>
 
             {/* Quick Links */}
             <div>
-              <Typography
-                variant="h6"
-                className="mb-2 font-bold text-white text-md"
-              >
-                Quick Links
-              </Typography>
+              <h6 className="mb-2 font-bold text-white text-md">Quick Links</h6>
               <ul className="flex flex-col gap-1 text-sm">
                 <li>
                   <Link href="/" className="hover:text-gray-300">
@@ -62,12 +52,9 @@ export function Footer() {
 
             {/* Social Media Links */}
             <div>
-              <Typography
-                variant="h6"
-                className="mb-2 font-bold text-white text-md"
-              >
+              <h6 className="mb-2 font-bold text-white text-md">
                 Connect With Us
-              </Typography>
+              </h6>
               <div className="flex gap-3">
                 <Link
                   href="https://www.linkedin.com/company/ktp-unc/"
@@ -95,13 +82,10 @@ export function Footer() {
 
           {/* Bottom Section */}
           <div className="mt-2 text-center">
-            <Typography
-              color="blue-gray"
-              className="font-normal text-gray-400 text-xs"
-            >
+            <p className="font-normal text-gray-400 text-xs">
               &copy; {CURRENT_YEAR}, Designed by Kappa Theta Pi @ UNC. All Rights
               Reserved.
-            </Typography>
+            </p>
           </div>
         </div>
       </div>

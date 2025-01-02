@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const AboutUs = () => {
   const images = [
-    { src: "/about-us/image1.jpg", alt: "About Us Image 1" },
+    { src: "/about-us/image1.JPG", alt: "About Us Image 1" },
     { src: "/about-us/image3.jpg", alt: "About Us Image 3" },
     { src: "/about-us/image4.jpg", alt: "About Us Image 4" },
   ];

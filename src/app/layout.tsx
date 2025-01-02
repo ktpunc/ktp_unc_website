@@ -11,7 +11,6 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: "Kappa Theta Pi - Eta Chapter",
-  description: "Kappa Theta Pi - Eta Chapter. Created by Srikar Sannidhi, Tanveer Thethi.",
 };
 
 export default function RootLayout({
@@ -22,7 +21,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="shortcut icon" href="/image/ktp_logo.ico" type="image/x-icon"/>
+        {/* Favicon */}
+        <link rel="shortcut icon" href="/image/ktp_logo.ico" type="image/x-icon" />
+
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="Kappa Theta Pi - Eta Chapter" />
+        <meta property="og:image" content="/image/ktp_logo.png" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
       </head>
       <body className={roboto.className}>
         <Layout>

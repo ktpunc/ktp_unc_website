@@ -24,7 +24,10 @@ export default function RootLayout({
         {/* Favicon */}
         <link rel="shortcut icon" href="/image/ktp_logo.ico" type="image/x-icon" />
 
-        {/* Open Graph Meta Tags */}
+        {/* Google Site Verification */}
+        <meta name="google-site-verification" content="5S8lxafTUi-6Il3I6VDxCD5fvsE5s-4KWg0UOWfOj0w" />
+
+        {/* Graph Meta Tags */}
         <meta property="og:title" content="Kappa Theta Pi - Eta Chapter" />
         <meta property="og:image" content="/image/ktp_logo.png" />
         <meta property="og:image:type" content="image/png" />
@@ -32,6 +35,7 @@ export default function RootLayout({
         <meta property="og:image:height" content="630" />
         <meta property="og:type" content="website" />
       </head>
+      
       <body className={roboto.className}>
         <Layout>
           {children}

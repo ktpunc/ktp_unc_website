@@ -62,7 +62,7 @@ const Schedule = () => {
 
         <div className="mt-8 text-center">
           <a
-            href="https://bit.ly/ktpSpringRecruitment25"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSd1zvJKyXaZ8SJZklp-rXqIanTT4pdttLLdYRMxfxVxCd4VWg/viewform?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="text-2xl font-bold text-ruddyBlue hover:underline"

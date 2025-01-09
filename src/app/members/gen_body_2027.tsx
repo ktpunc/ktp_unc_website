@@ -65,11 +65,12 @@ const class_2027 = [
 
 const ExecutiveBoard = () => {
     return (
-        <div className="w-full bg-ruddyBlue">
-            <div className="container bg-ruddyBlue mx-auto px-4 py-8">
+        <div className="w-full bg-ruddyBlue py-12">
+            <div className="container mx-auto px-4">
                 <h1 className="text-4xl font-bold text-center text-white mb-8">Class of 2027</h1>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 gap-y-16">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {class_2027.map((member, index) => {
+                        // Retain specific column positioning for certain members
                         let colStart = 'auto';
                         if (index === 8) colStart = 'lg:col-start-2';
                         if (index === 9) colStart = 'lg:col-start-3';
@@ -80,14 +81,14 @@ const ExecutiveBoard = () => {
                                 href={member.linkedin}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className={`text-center bg-white p-6 rounded-lg shadow-lg border transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl ${colStart}`}
+                                className={`relative text-center bg-white p-6 rounded-lg shadow-lg border border-gray-300 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl ${colStart}`}
                             >
                                 <img
                                     src={member.image}
                                     alt={`Photo of ${member.name}`}
-                                    className="mx-auto rounded-full w-32 h-32 mb-4"
+                                    className="mx-auto rounded-full w-24 h-24 sm:w-32 sm:h-32 mb-4 transition-transform duration-200 hover:scale-110"
                                 />
-                                <h2 className="text-xl font-semibold">{member.name}</h2>
+                                <h2 className="text-xl font-semibold text-black">{member.name}</h2>
                                 <p className="text-white">{member.class}</p>
                             </Link>
                         );

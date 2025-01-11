@@ -1,17 +1,12 @@
 import React from "react";
 
 const Schedule = () => {
-  const eventsTBD = [ { /*
+  const events = [ 
   { event: "Information Session", date: "Jan. 14th @ 7:30 PM", location: "Sitterson 014" },
-  { event: "DEI Event", date: "Jan. 16th @ 7:00 PM", location: "Sitterson 014" },
+  { event: "DEI Event", date: "Jan. 16th @ 7:30 PM", location: "Sitterson 014" },
   { event: "Speed Dating", date: "Jan. 21st @ 7:30 PM", location: "Sitterson 014" },
-  { event: "Hot Chocolate", date: "Jan. 22th @ 7:00 PM", location: "Pit" },
-  { event: "Game Night", date: "Jan. 23rd @ 7:30 PM", location: "Sitterson 014" },
-*/},
-  ];
-
-  const events = [
-  {event: "TBD", date: "TBD", location: "TBD"},
+  { event: "Hot Chocolate", date: "Jan. 22th @ 11:00 AM", location: "Pit" },
+  { event: "Game Night", date: "Jan. 23rd @ 7:30 PM", location: "Woolen Gym" },
   ];
 
   return (

@@ -51,7 +51,7 @@ const executiveMembers = [
     },
     {
         name: 'Tracy Dang',
-        title: 'Director of Social',
+        title: 'Director of Social Engagement',
         linkedin: 'https://www.linkedin.com/in/tracy-dang-27116a244/',
         image: '/image/tracy.jpeg',
     },

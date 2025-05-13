@@ -20,9 +20,21 @@ const class_2026 = [
         class: 'Zeta'
     },
     {
+        name: 'Arame Thiam',
+        linkedin: 'https://www.linkedin.com/in/arame-thiam-59b84521b/',
+        image: '/image/arame.jpeg',
+        class: 'Eta'
+    },
+    {
         name: 'Benny Rakower',
         linkedin: 'https://www.linkedin.com/in/benny-rakower/',
         image: '/image/benny.jpg',
+        class: 'Zeta'
+    },
+    {
+        name: 'Carmine Anderson-Falconi',
+        linkedin: 'https://www.linkedin.com/in/carmine-anderson-falconi-561824204/',
+        image: '/image/carmine.jpg',
         class: 'Zeta'
     },
     {
@@ -48,6 +60,12 @@ const class_2026 = [
         linkedin: 'https://www.linkedin.com/in/elliekim04/',
         image: '/image/ellie.jpeg',
         class: 'Delta'
+    },
+    {
+        name: 'Francesca Fabiano-Grossi',
+        linkedin: 'https://www.linkedin.com/in/francesca-fabiano-grossi/',
+        image: '/image/francesca.jpeg',
+        class: 'Eta'
     },
     {
         name: 'Harper Cunningham',
@@ -166,11 +184,7 @@ const ExecutiveBoard = () => {
                 <h1 className="text-4xl font-bold text-center text-white mb-8">Class of 2026</h1>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {class_2026.map((member, index) => {
-                        // Retain the specific column start functionality
                         let colStart = 'auto';
-                        if (index === 24) colStart = 'lg:col-start-2';
-                        if (index === 25) colStart = 'lg:col-start-3';
-
                         return (
                             <Link
                                 key={member.name}
@@ -182,8 +196,9 @@ const ExecutiveBoard = () => {
                                 <img
                                     src={member.image}
                                     alt={`Photo of ${member.name}`}
-                                    className="mx-auto rounded-full w-24 h-24 sm:w-32 sm:h-32 mb-4 transition-transform duration-200 hover:scale-110"
+                                    className="mx-auto rounded-full w-24 h-24 sm:w-32 sm:h-32 mb-4"
                                 />
+                                {/* Name and Class */}
                                 <h2 className="text-xl font-semibold text-black">{member.name}</h2>
                                 <p className="text-white">{member.class}</p>
                             </Link>

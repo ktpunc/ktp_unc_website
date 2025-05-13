@@ -8,6 +8,18 @@ const class_2027 = [
         class: 'Zeta'
     },
     {
+        name: 'Andy Huoy',
+        linkedin: 'https://www.linkedin.com/in/andyhuoy/',
+        image: '/image/andy.jpeg',
+        class: 'Eta'
+    },
+    {
+        name: 'Anton Sun',
+        linkedin: 'https://www.linkedin.com/in/antonsun/',
+        image: '/image/anton.jpeg',
+        class: 'Eta'
+    },
+    {
         name: 'Ari Gomez',
         linkedin: 'https://www.linkedin.com/in/aracely-gomez-a68b002ab/',
         image: '/image/ari.jpeg',
@@ -38,10 +50,28 @@ const class_2027 = [
         class: 'Zeta'
     },
     {
+        name: 'Kabir Grewal',
+        linkedin: 'https://www.linkedin.com/in/kabir-grewal12/',
+        image: '/image/anton.jpeg',
+        class: 'Eta'
+    },
+    {
         name: 'Katie Brown',
         linkedin: 'https://www.linkedin.com/in/kgbrown5/',
         image: '/image/katie.png',
         class: 'Zeta'
+    },
+    {
+        name: 'Liliana Silva',
+        linkedin: 'https://www.linkedin.com/in/liliana-silva-713690286/',
+        image: '/image/liliana.jpeg',
+        class: 'Eta'
+    },
+    {
+        name: 'Maeve Lee',
+        linkedin: 'https://www.linkedin.com/in/maeve-lee-aa6a4b31b/',
+        image: '/image/maeve.jpeg',
+        class: 'Eta'
     },
     {
         name: 'Megha Thumma',
@@ -50,10 +80,28 @@ const class_2027 = [
         class: 'Zeta'
     },
     {
+        name: 'Nina Dhillon',
+        linkedin: 'https://www.linkedin.com/in/nina-dhillon-926595214/',
+        image: '/image/nina.jpeg',
+        class: 'Eta'
+    },
+    {
         name: 'Nithya Indlamuri',
         linkedin: 'https://www.linkedin.com/in/nithya-indlamuri-486bb2296/',
         image: '/image/nithya.jpeg',
         class: 'Zeta'
+    },
+    {
+        name: 'Sidney Ross',
+        linkedin: 'https://www.linkedin.com/in/sidney-ross-950aa830a/',
+        image: '/image/sidney.jpeg',
+        class: 'Eta'
+    },
+    {
+        name: 'Talia Spaulding',
+        linkedin: 'https://www.linkedin.com/in/talia-spaulding/',
+        image: '/image/talia.jpeg',
+        class: 'Eta'
     },
     {
         name: 'Tracy Dang',
@@ -70,11 +118,9 @@ const ExecutiveBoard = () => {
                 <h1 className="text-4xl font-bold text-center text-white mb-8">Class of 2027</h1>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {class_2027.map((member, index) => {
-                        // Retain specific column positioning for certain members
                         let colStart = 'auto';
-                        if (index === 8) colStart = 'lg:col-start-2';
-                        if (index === 9) colStart = 'lg:col-start-3';
-
+                        if (index === 16) colStart = 'lg:col-start-2';
+                        if (index === 17) colStart = 'lg:col-start-3';
                         return (
                             <Link
                                 key={member.name}
@@ -86,8 +132,9 @@ const ExecutiveBoard = () => {
                                 <img
                                     src={member.image}
                                     alt={`Photo of ${member.name}`}
-                                    className="mx-auto rounded-full w-24 h-24 sm:w-32 sm:h-32 mb-4 transition-transform duration-200 hover:scale-110"
+                                    className="mx-auto rounded-full w-24 h-24 sm:w-32 sm:h-32 mb-4"
                                 />
+                                {/* Name and Class */}
                                 <h2 className="text-xl font-semibold text-black">{member.name}</h2>
                                 <p className="text-white">{member.class}</p>
                             </Link>

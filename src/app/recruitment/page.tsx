@@ -8,8 +8,8 @@ export default function Campaign() {
   return (
     <>
       <Navbar />
-      {/* <Hero /> */}
-      <Rush_Info />
+      {<Hero /> }
+      <No_Rush_Info />
       <Footer />
     </>
   );

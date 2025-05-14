@@ -10,7 +10,7 @@ const class_2028 = [
     {
         name: 'Anish Voota',
         linkedin: 'https://www.linkedin.com/in/anishvoota/',
-        image: '/image/AnishV.JPEG',
+        image: '/image/anishv.jpeg',
         class: 'Eta'
       },
     {
@@ -28,7 +28,7 @@ const class_2028 = [
         {
             name: 'Duncan Moore',
             linkedin: 'https://www.linkedin.com/in/duncan-moore-425602287/',
-            image: '/image/Duncan.jpg',
+            image: '/image/duncan.jpeg',
             class: 'Eta'
         },
         {
@@ -46,13 +46,13 @@ const class_2028 = [
         {
             name: 'Rucha Padhye',
             linkedin: 'https://www.linkedin.com/in/rucha-padhye/',
-            image: '/image/Rucha.jpg',
+            image: '/image/rucha.jpeg',
             class: 'Eta'
         },
         {
             name: 'Yewon Song',
             linkedin: 'https://www.linkedin.com/in/yewonsong/',
-            image: '/image/Yewon.jpg',
+            image: '/image/anton.jpeg',
             class: 'Eta'
         },
 ];

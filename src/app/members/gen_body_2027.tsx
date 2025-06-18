@@ -26,6 +26,12 @@ const class_2027 = [
         class: 'Zeta'
     },
     {
+        name: 'Arsh Madhani',
+        linkedin: 'https://www.linkedin.com/in/arsh-m/',
+        image: '/image/arsh.jpeg',
+        class: 'Eta'
+    },
+    {
         name: 'Caroline Bryan',
         linkedin: 'https://www.linkedin.com/in/caroline-bryan/',
         image: '/image/caroline.jpg',
@@ -119,8 +125,6 @@ const ExecutiveBoard = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     {class_2027.map((member, index) => {
                         let colStart = 'auto';
-                        if (index === 16) colStart = 'lg:col-start-2';
-                        if (index === 17) colStart = 'lg:col-start-3';
                         return (
                             <Link
                                 key={member.name}

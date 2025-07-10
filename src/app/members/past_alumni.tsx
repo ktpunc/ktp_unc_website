@@ -6,7 +6,7 @@ const alumniData = {
     Beta: ["Alan Chen", "Andi Carnell", "Aryaman Agrawal", "Cole Henry", "David Lu", "Ethan Rayala", "Kyle Sorensen", "Manisha Nallakatla", "Mikaela Sherry", "Naman Kejriwal", "Neha Patel", "Raghuvara Padma", "Raheel Qamar", "Ronit Ray", "Sarika Kasuganti"],
     Gamma: ["Alison Polito", "Andrew Knotts", "Arya Rao", "Ashwin Senthil", "Davis Atwell", "Jackson Reed", "Kirsten Allen", "Lam Ngo", "Milen Patel", "Sarayu Yenumula", "Srinidhi Ekkurthi", "Tanvi Pulipaka", "Tara Ghorpadkar"],
     Delta: ["Ananya Garg","Ahmadou Bamba Diouf", "Alec Pugh", "Haley Brosnahan", "Justin Rivera", "Katherine Katsoudas", "Mark Maio", "Mateo Correa Risso", "Nikhil Abraham", "Sai Kaza", "Sana Goyal", "Tyler Roth"],
-    Eta: ["Jake Rogers", "Ryan Lutz"]
+    Epsilon: ["Jake Rogers", "Ryan Lutz"]
 };
 
 const AlumniList = () => {

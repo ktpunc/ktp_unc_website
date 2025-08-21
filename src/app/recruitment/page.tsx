@@ -9,7 +9,7 @@ export default function Campaign() {
     <>
       <Navbar />
       {<Hero /> }
-      <No_Rush_Info />
+      <Rush_Info />
       <Footer />
     </>
   );

@@ -2,11 +2,11 @@ import React from "react";
 
 const Schedule = () => {
   const events = [ 
-  { event: "Information Session", date: "Jan. 14th @ 7:30 PM", location: "Sitterson 014" },
-  { event: "DEI Event", date: "Jan. 16th @ 7:30 PM", location: "Sitterson 014" },
-  { event: "Speed Dating", date: "Jan. 21st @ 7:30 PM", location: "Sitterson 014" },
-  { event: "Hot Chocolate", date: "Jan. 22th @ 11:00 AM", location: "Pit" },
-  { event: "Game Night", date: "Jan. 23rd @ 7:30 PM", location: "Woolen Gym" },
+  { event: "Information Session", date: "August. 28th @ 7:30 PM", location: "Sitterson 014" },
+  { event: "Community Service Event", date: "September. 2nd @ 7:30 PM", location: "Sitterson 014" },
+  { event: "Speed Dating", date: "September 4th @ 7:30 PM", location: "Sitterson Lobby" },
+  { event: "Lemonade Chats", date: "September 9th @ 11:00 AM", location: "Sitterson 014" },
+  { event: "PD Event", date: "September 11th @ 7:30 PM", location: "Sitterson 014" },
   ];
 
   return (
@@ -57,7 +57,7 @@ const Schedule = () => {
 
         <div className="mt-8 text-center">
           <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSd1zvJKyXaZ8SJZklp-rXqIanTT4pdttLLdYRMxfxVxCd4VWg/viewform?usp=sharing"
+            href="https://forms.gle/8wxPv5HP22JTHwjy6"
             target="_blank"
             rel="noopener noreferrer"
             className="text-2xl font-bold text-ruddyBlue hover:underline"

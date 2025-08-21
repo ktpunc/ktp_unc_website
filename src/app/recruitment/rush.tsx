@@ -2,8 +2,8 @@ import React from "react";
 
 const Schedule = () => {
   const events = [ 
-  { event: "Information Session", date: "August. 28th @ 7:30 PM", location: "Sitterson 014" },
-  { event: "Community Service Event", date: "September. 2nd @ 7:30 PM", location: "Sitterson 014" },
+  { event: "Information Session", date: "August 28th @ 7:30 PM", location: "Sitterson 014" },
+  { event: "Community Service Event", date: "September 2nd @ 7:30 PM", location: "Sitterson 014" },
   { event: "Speed Dating", date: "September 4th @ 7:30 PM", location: "Sitterson Lobby" },
   { event: "Lemonade Chats", date: "September 9th @ 11:00 AM", location: "Sitterson 014" },
   { event: "PD Event", date: "September 11th @ 7:30 PM", location: "Sitterson 014" },

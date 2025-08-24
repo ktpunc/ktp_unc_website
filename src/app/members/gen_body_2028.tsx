@@ -52,7 +52,7 @@ const class_2028 = [
         {
             name: 'Yewon Song',
             linkedin: 'https://www.linkedin.com/in/yewonsong/',
-            image: '/image/anton.jpeg',
+            image: '/image/yewon.jpeg',
             class: 'Eta'
         },
 ];

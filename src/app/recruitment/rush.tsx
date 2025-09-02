@@ -4,16 +4,16 @@ const Schedule = () => {
   const events = [ 
   { event: "Information Session", date: "August 28th @ 7:30 PM", location: "Sitterson 014" },
   { event: "Community Service Event", date: "September 2nd @ 7:30 PM", location: "Sitterson 014" },
-  { event: "Speed Dating", date: "September 4th @ 7:30 PM", location: "Sitterson Lobby" },
-  { event: "Lemonade Chats", date: "September 9th @ 11:00 AM", location: "Sitterson 014" },
-  { event: "PD Event", date: "September 11th @ 7:30 PM", location: "Sitterson 014" },
+  { event: "Speed Dating", date: "September 4th @ 7:30 PM", location: "Sitterson 014" },
+  { event: "Lemonade Chats", date: "September 9th @ 11:00 AM", location: "Quad" },
+  { event: "PD Event", date: "September 11th @ 7:30 PM", location: "TBD" },
   ];
 
   return (
     <div className="bg-babyBlue min-h-screen flex flex-col items-center">
       <div className="w-full max-w-6xl p-6">
         <div className="bg-white p-6 rounded-lg shadow-lg shadow-md mb-12">
-          <h1 className="text-4xl font-bold text-center mb-4">Spring 2025 Recruitment</h1>
+          <h1 className="text-4xl font-bold text-center mb-4">Fall 2025 Recruitment</h1>
           <p className="text-xl text-center">
             Any UNC undergraduate who has at least two semesters remaining, with an interest in technology, is welcome to join Kappa Theta Pi. {/* Make sure to complete the application by [deadline date]. */}
           </p>

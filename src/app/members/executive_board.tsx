@@ -2,16 +2,16 @@ import Link from 'next/link';
 
 const executiveMembers = [
     {
-        name: 'Ari Gomez',
-        title: 'President',
-        linkedin: 'https://www.linkedin.com/in/aracely-gomez-a68b002ab/',
-        image: '/image/ari.jpeg',
-    },
-    {
         name: 'Sidney Ross',
-        title: 'Vice President',
+        title: 'President',
         linkedin: 'https://www.linkedin.com/in/sidney-ross-950aa830a/',
         image: '/image/sidney.jpeg',
+    },
+    {
+        name: 'Liliana Silva',
+        title: 'Vice President',
+        linkedin: 'https://www.linkedin.com/in/liliana-silva-713690286/',
+        image: '/image/liliana.jpeg',
     },
     {
         name: 'Anish Voota',
@@ -38,10 +38,10 @@ const executiveMembers = [
         image: '/image/dylanc.jpeg',
     },
     {
-        name: 'Liliana Silva',
+        name: 'Harper Cunningham',
         title: 'Director of NME',
-        linkedin: 'https://www.linkedin.com/in/liliana-silva-713690286/',
-        image: '/image/liliana.jpeg',
+        linkedin: 'https://www.linkedin.com/in/harper-cunningham-60b364281/',
+        image: '/image/harper.jpeg',
     },
     {
         name: 'Talia Spaulding',
@@ -56,10 +56,10 @@ const executiveMembers = [
         image: '/image/ross.jpg',
     },
     {
-        name: 'Harper Cunningham',
+        name: 'Arame Thiam',
         title: 'Director of DEI',
-        linkedin: 'https://www.linkedin.com/in/harper-cunningham-60b364281/',
-        image: '/image/harper.jpeg',
+        linkedin: 'https://www.linkedin.com/in/arame-thiam-59b84521b/',
+        image: '/image/arame.jpeg',
     },
     {
         name: 'Nicholas Sanaie',
@@ -68,10 +68,10 @@ const executiveMembers = [
         image: '/image/nick.jpeg',
     },
     {
-        name: 'Megha Thumma',
+        name: 'Yewon Song',
         title: 'Director of Technical Enrichment',
-        linkedin: 'https://www.linkedin.com/in/meghathumma/',
-        image: '/image/megha.jpeg',
+        linkedin: 'https://www.linkedin.com/in/yewonsong/',
+        image: '/image/yewon.jpeg',
     },
     {
         name: 'Asthav Sagar',
@@ -89,7 +89,7 @@ const executiveMembers = [
         name: 'Katie Brown',
         title: 'Director of Membership',
         linkedin: 'https://www.linkedin.com/in/kgbrown5/',
-        image: '/image/nithya.jpeg',
+        image: '/image/katie.png',
     },
     {
         name: 'Abhiraam Aremanda',

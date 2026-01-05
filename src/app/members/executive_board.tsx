@@ -29,7 +29,7 @@ const executiveMembers = [
         name: 'Kabir Grewal',
         title: 'Director of Recruitment',
         linkedin: 'https://www.linkedin.com/in/kabir-grewal12/',
-        image: '/image/harper.jpeg',
+        image: '/image/tanveer.jpeg',
     },
     {
         name: 'Dylan Cialkowski',

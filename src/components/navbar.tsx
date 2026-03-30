@@ -18,35 +18,30 @@ export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
+    const onScroll = () => setScrolled(window.scrollY > 16);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [pathname]);
+  useEffect(() => { setMenuOpen(false); }, [pathname]);
 
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "bg-slate-950/90 backdrop-blur-xl border-b border-white/8 shadow-lg shadow-black/20"
-            : "bg-transparent"
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
+          scrolled ? "bg-white shadow-nav" : "bg-white/0"
         }`}
-        style={{ borderBottomColor: scrolled ? 'rgba(255,255,255,0.06)' : 'transparent' }}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-2.5">
             <img src="/image/ktp_logo.png" alt="KTP Logo" className="h-8 w-auto" />
-            <span className="font-bold text-white text-base tracking-tight">
+            <span className={`font-bold text-[15px] tracking-tight transition-colors duration-200 ${scrolled ? "text-navy" : "text-white"}`}>
               Kappa Theta Pi
             </span>
           </Link>
 
-          {/* Desktop Nav */}
+          {/* Desktop nav */}
           <ul className="hidden lg:flex items-center gap-1">
             {links.map(({ href, label }) => {
               const active = pathname === href;
@@ -54,103 +49,80 @@ export function Navbar() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                      active
-                        ? "text-white bg-white/10"
-                        : "text-slate-300 hover:text-white hover:bg-white/8"
+                    className={`relative px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+                      scrolled
+                        ? active ? "text-blue" : "text-slate-600 hover:text-navy"
+                        : active ? "text-white" : "text-white/80 hover:text-white"
                     }`}
-                    style={{ background: active ? 'rgba(255,255,255,0.1)' : undefined }}
                   >
                     {label}
+                    {active && (
+                      <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-blue rounded-full" />
+                    )}
                   </Link>
                 </li>
               );
             })}
           </ul>
 
-          {/* Social + Apply */}
-          <div className="hidden lg:flex items-center gap-4">
+          {/* Right side */}
+          <div className="hidden lg:flex items-center gap-5">
             <Link
               href="https://www.linkedin.com/company/ktp-unc/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-400 hover:text-white transition-colors"
+              target="_blank" rel="noopener noreferrer"
+              className={`transition-colors duration-200 text-lg ${scrolled ? "text-slate-500 hover:text-navy" : "text-white/70 hover:text-white"}`}
             >
-              <i className="fa-brands fa-linkedin text-lg" />
+              <i className="fa-brands fa-linkedin" />
             </Link>
             <Link
               href="https://www.instagram.com/ktpunc/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-400 hover:text-white transition-colors"
+              target="_blank" rel="noopener noreferrer"
+              className={`transition-colors duration-200 text-lg ${scrolled ? "text-slate-500 hover:text-navy" : "text-white/70 hover:text-white"}`}
             >
-              <i className="fa-brands fa-instagram text-lg" />
+              <i className="fa-brands fa-instagram" />
             </Link>
-            <Link
-              href="/recruitment"
-              className="btn-primary text-sm px-5 py-2"
-            >
+            <Link href="/recruitment" className="btn-navy text-sm px-4 py-2">
               Apply Now
             </Link>
           </div>
 
           {/* Hamburger */}
           <button
-            className="lg:hidden flex flex-col gap-1.5 p-2"
+            className="lg:hidden p-2 flex flex-col gap-1.5"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
-            <span
-              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
-                menuOpen ? "rotate-45 translate-y-2" : ""
-              }`}
-            />
-            <span
-              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
-                menuOpen ? "opacity-0" : ""
-              }`}
-            />
-            <span
-              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
-                menuOpen ? "-rotate-45 -translate-y-2" : ""
-              }`}
-            />
+            <span className={`block w-6 h-0.5 transition-all duration-250 ${menuOpen ? "rotate-45 translate-y-2" : ""} ${scrolled ? "bg-navy" : "bg-white"}`} />
+            <span className={`block w-6 h-0.5 transition-all duration-250 ${menuOpen ? "opacity-0" : ""} ${scrolled ? "bg-navy" : "bg-white"}`} />
+            <span className={`block w-6 h-0.5 transition-all duration-250 ${menuOpen ? "-rotate-45 -translate-y-2" : ""} ${scrolled ? "bg-navy" : "bg-white"}`} />
           </button>
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile menu */}
       <div
-        className={`fixed inset-0 z-40 bg-slate-950/95 backdrop-blur-xl transition-all duration-350 lg:hidden flex flex-col ${
+        className={`fixed inset-0 z-40 bg-white transition-all duration-300 lg:hidden flex flex-col ${
           menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
-        <div className="flex flex-col items-center justify-center flex-1 gap-6 px-8">
+        <div className="flex flex-col items-center justify-center flex-1 gap-7">
           {links.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
               className={`text-2xl font-semibold transition-colors ${
-                pathname === href ? "text-blue-400" : "text-white hover:text-blue-400"
+                pathname === href ? "text-blue" : "text-navy hover:text-blue"
               }`}
             >
               {label}
             </Link>
           ))}
-          <div className="mt-4 flex gap-6">
-            <Link href="https://www.linkedin.com/company/ktp-unc/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors text-2xl">
-              <i className="fa-brands fa-linkedin" />
-            </Link>
-            <Link href="https://www.instagram.com/ktpunc/" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors text-2xl">
-              <i className="fa-brands fa-instagram" />
-            </Link>
-            <Link href="mailto:uncktp@gmail.com" className="text-slate-400 hover:text-white transition-colors text-2xl">
-              <i className="fa-solid fa-envelope" />
-            </Link>
+          <div className="flex gap-6 mt-2">
+            <Link href="https://www.linkedin.com/company/ktp-unc/" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-navy text-2xl"><i className="fa-brands fa-linkedin" /></Link>
+            <Link href="https://www.instagram.com/ktpunc/" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-navy text-2xl"><i className="fa-brands fa-instagram" /></Link>
+            <Link href="mailto:uncktp@gmail.com" className="text-slate-500 hover:text-navy text-2xl"><i className="fa-solid fa-envelope" /></Link>
           </div>
-          <Link href="/recruitment" className="btn-primary mt-2">
-            Apply Now
-          </Link>
+          <Link href="/recruitment" className="btn-navy mt-2">Apply Now</Link>
         </div>
       </div>
     </>

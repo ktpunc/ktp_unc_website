@@ -15,32 +15,28 @@ export default function MembersPage() {
   return (
     <>
       <Navbar />
+
       {/* Hero */}
-      <div className="relative pt-28 pb-12 bg-slate-950 mesh-bg text-center overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-[500px] h-[500px] rounded-full bg-blue-600/10 blur-3xl" />
-        </div>
-        <div className="relative z-10 max-w-3xl mx-auto px-6">
-          <div className="section-label">Our Chapter</div>
-          <h1 className="text-5xl md:text-7xl font-black text-white tracking-tight mb-4">
-            Meet the <span className="gradient-text">Members</span>
-          </h1>
-          <p className="text-slate-400 text-lg">50+ driven individuals shaping the future of tech at UNC.</p>
+      <div className="relative pt-28 pb-14 overflow-hidden" style={{ background: "linear-gradient(135deg, #13294B 0%, #1e3f70 100%)" }}>
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <span className="eyebrow" style={{ color: '#7BBDE4' }}>Our Chapter</span>
+          <h1 className="text-4xl md:text-6xl font-black text-white mb-3">Meet the Members</h1>
+          <p className="text-white/60 text-lg">50+ driven individuals shaping the future of tech at UNC.</p>
         </div>
       </div>
 
-      {/* Tabs */}
-      <div className="sticky top-16 z-30 bg-slate-950/90 backdrop-blur-xl border-b border-white/6">
+      {/* Sticky tabs */}
+      <div className="sticky top-16 z-30 bg-white border-b border-slate-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-6">
-          <nav className="flex overflow-x-auto gap-1 py-3 scrollbar-none">
+          <nav className="flex overflow-x-auto gap-0">
             {tabs.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActive(tab)}
-                className={`flex-shrink-0 px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                className={`flex-shrink-0 px-5 py-4 text-sm font-medium border-b-2 transition-all duration-200 ${
                   active === tab
-                    ? "bg-blue-500 text-white"
-                    : "text-slate-400 hover:text-white hover:bg-white/8"
+                    ? "border-blue text-blue"
+                    : "border-transparent text-slate-500 hover:text-navy"
                 }`}
               >
                 {tab}
@@ -50,7 +46,7 @@ export default function MembersPage() {
         </div>
       </div>
 
-      <div className="bg-slate-950 min-h-screen">
+      <div className="bg-slate-50 min-h-screen">
         <div className="max-w-7xl mx-auto px-6 py-12">
           {active === "Executive Board" && <ExecutiveBoard />}
           {active === "Class of 2026" && <Class_2026 />}

@@ -14,34 +14,29 @@ export default function Carousel() {
   const { ref, inView } = useInView(0.1);
 
   return (
-    <section className="py-20 bg-slate-950 overflow-hidden">
-      <div
-        ref={ref}
-        className={`max-w-7xl mx-auto px-6 mb-10 text-center ${
-          inView ? "animate-on-scroll in-view" : "animate-on-scroll"
-        }`}
-      >
-        <div className="section-label">Life at KTP</div>
-        <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight">Our Memories</h2>
+    <section className="bg-white py-16 overflow-hidden">
+      <div ref={ref} className={`max-w-6xl mx-auto px-6 mb-10 text-center reveal ${inView ? "visible" : ""}`}>
+        <span className="eyebrow">Life at KTP</span>
+        <h2 className="text-3xl md:text-4xl font-black text-navy">Our Memories</h2>
+        <div className="section-divider-center" />
       </div>
 
       <Swiper
         modules={[Autoplay]}
-        autoplay={{ delay: 2500, disableOnInteraction: false }}
+        autoplay={{ delay: 2800, disableOnInteraction: false }}
         loop
         slidesPerView={1.2}
-        spaceBetween={16}
+        spaceBetween={12}
         centeredSlides
         breakpoints={{
-          640: { slidesPerView: 2.2 },
+          640:  { slidesPerView: 2.2 },
           1024: { slidesPerView: 3.2 },
           1280: { slidesPerView: 4.2 },
         }}
-        className="w-full"
       >
         {images.map((src, i) => (
           <SwiperSlide key={i}>
-            <div className="rounded-2xl overflow-hidden h-64 md:h-80 group">
+            <div className="rounded-lg overflow-hidden h-56 md:h-72 group shadow-card">
               <img
                 src={src}
                 alt={`KTP memory ${i + 1}`}

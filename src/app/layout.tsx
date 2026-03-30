@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <head>
         {/* Favicon */}
         <link rel="shortcut icon" href="/image/ktp_logo.ico" type="image/x-icon" />

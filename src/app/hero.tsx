@@ -1,61 +1,41 @@
 "use client";
-
 import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
-      {/* Background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/image/well2.jpg')" }}
-      />
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/60 to-slate-950/90" />
-      {/* Blue glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-blue-600/10 blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 left-1/4 w-[300px] h-[300px] rounded-full bg-violet-600/8 blur-3xl pointer-events-none" />
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/image/well2.jpg')" }} />
+      <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(19,41,75,0.72) 0%, rgba(19,41,75,0.55) 60%, rgba(19,41,75,0.82) 100%)" }} />
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-        <div className="section-label inline-flex mb-6">
-          <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
-          Eta Chapter · UNC-Chapel Hill
-        </div>
+      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+        <span className="eyebrow" style={{ color: '#7BBDE4' }}>Eta Chapter · UNC-Chapel Hill</span>
 
         <h1
-          className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight text-white leading-none mb-6 animate-fade-up"
-          style={{ animationFillMode: 'both' }}
+          className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight mb-6 animate-fade-up"
+          style={{ animationFillMode: "both" }}
         >
-          Where Tech{" "}
-          <span className="gradient-text">Meets</span>
-          <br />
-          Brotherhood.
+          Where Technology<br />
+          <span style={{ color: "#7BBDE4" }}>Meets Brotherhood.</span>
         </h1>
 
         <p
-          className="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed mb-10 animate-fade-up"
-          style={{ animationDelay: '150ms', animationFillMode: 'both', opacity: 0 }}
+          className="text-lg text-white/75 max-w-xl mx-auto leading-relaxed mb-10 animate-fade-up"
+          style={{ animationDelay: "120ms", animationFillMode: "both", opacity: 0 }}
         >
-          Kappa Theta Pi is UNC's first co-ed professional technology organization — building the next generation of leaders, engineers, and innovators.
+          UNC's first co-ed professional technology organization — building the next generation of leaders at the intersection of tech and community.
         </p>
 
         <div
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up"
-          style={{ animationDelay: '300ms', animationFillMode: 'both', opacity: 0 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 animate-fade-up"
+          style={{ animationDelay: "240ms", animationFillMode: "both", opacity: 0 }}
         >
-          <Link href="/recruitment" className="btn-primary">
-            Apply Now
-          </Link>
-          <Link href="/about-us" className="btn-outline">
-            Learn More
-          </Link>
+          <Link href="/recruitment" className="btn-blue px-7 py-3">Apply for Fall 2026</Link>
+          <Link href="/about-us" className="btn-outline-white px-7 py-3">Learn More</Link>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-60">
-        <span className="text-xs text-slate-400 tracking-widest uppercase">Scroll</span>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2.5 opacity-50">
+        <span className="text-white text-[10px] tracking-[0.15em] uppercase">Scroll</span>
         <div className="scroll-indicator" />
       </div>
     </div>

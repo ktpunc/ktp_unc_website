@@ -1,12 +1,10 @@
 import { Navbar, Footer } from "@/components";
-import Hero from "./hero";
 import FAQ from "./faq";
 
-export default function Campaign() {
+export default function FAQPage() {
   return (
     <>
       <Navbar />
-     {/* <Hero /> */}
       <FAQ />
       <Footer />
     </>

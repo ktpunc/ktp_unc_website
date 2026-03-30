@@ -1,28 +1,40 @@
+"use client";
 import Image from "next/image";
+import { useInView } from "@/hooks/useInView";
 
-export default function Home() {
+export default function Companies() {
+  const { ref, inView } = useInView();
+
   return (
-    <div className="py-8 bg-white px-4 md:px-12 flex items-center justify-center relative">
-      <div className="flex flex-col items-center max-w-7xl w-full">
-        <h1 className="text-4xl font-bold text-center text-black mb-8">
-          Our Network
-        </h1>
-        <div className="py-12 bg-white px-4 md:px-12 flex items-center justify-center relative">
-          <div className="w-full max-w-6xl mx-auto p-6 rounded-lg shadow-lg bg-white border border-gray-800">
-            {/* Image Section */}
-            <div className="rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-              <Image
-                src="/image/companies.png"
-                alt="Companies"
-                layout="intrinsic"
-                width={2000}
-                height={800}
-                className="w-full h-auto object-cover border-black border-4 rounded-lg"
-              />
-            </div>
-          </div>
+    <section className="py-24 bg-slate-900">
+      <div className="max-w-6xl mx-auto px-6">
+        <div
+          ref={ref}
+          className={`text-center mb-12 ${inView ? "animate-on-scroll in-view" : "animate-on-scroll"}`}
+        >
+          <div className="section-label">Alumni Network</div>
+          <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight mb-4">
+            Where Our Alumni Work
+          </h2>
+          <p className="text-slate-400 text-lg max-w-xl mx-auto">
+            KTP members land at the world's most influential companies.
+          </p>
+        </div>
+
+        <div
+          className={`glass rounded-3xl p-8 md:p-12 ${inView ? "animate-on-scroll in-view" : "animate-on-scroll"}`}
+          style={{ transitionDelay: '150ms' }}
+        >
+          <Image
+            src="/image/companies.png"
+            alt="Companies where KTP alumni work"
+            width={1600}
+            height={600}
+            className="w-full h-auto rounded-xl"
+            style={{ filter: 'brightness(0.9) contrast(1.1)' }}
+          />
         </div>
       </div>
-    </div>
+    </section>
   );
 }

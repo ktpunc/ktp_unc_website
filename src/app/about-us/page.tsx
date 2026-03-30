@@ -1,17 +1,15 @@
 import { Navbar, Footer } from "@/components";
-import Hero from "./hero";
 import About from "./about";
 import Pillars from "./pillars";
 import Testimonials from "./testimonials";
 import Companies from "./companies";
 
-export default function Campaign() {
+export default function AboutPage() {
   return (
     <>
       <Navbar />
-      {/* <Hero /> */}
       <About />
-      <Pillars/>
+      <Pillars />
       <Testimonials />
       <Companies />
       <Footer />

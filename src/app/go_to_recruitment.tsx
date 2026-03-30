@@ -1,53 +1,40 @@
 "use client";
-
-import { useRouter } from 'next/navigation';
-import Image from 'next/image';
+import Link from "next/link";
+import { useInView } from "@/hooks/useInView";
 
 export default function RecruitmentSection() {
-  const router = useRouter();
-
-  const handleButtonClick = () => {
-    router.push('/recruitment');
-  };
+  const { ref, inView } = useInView();
 
   return (
-    <div className="bg-white min-h-screen flex items-center justify-center">
-      <div className="max-w-4xl w-full px-6 py-10 text-black flex flex-col items-center text-center">
-        
-        {/* Logo big in the middle at the top */}
-        <div>
-          <Image
-            src="/image/ktp_logo.png"
-            alt="KTP Logo"
-            width={300}
-            height={300}
-          />
-        </div>
-        
-        {/* Heading */}
-        <h1 className="text-4xl md:text-4xl font-bold mt-8">
-          Eta Chapter is back!
-        </h1>
-        
-        {/* Horizontal divider */}
-        <hr className="my-6 w-full border-black" />
-        
-        {/* Description text */}
-        <p className="text-xl md:text-2xl font-light text-gray-600 max-w-2xl mx-auto">
-          Learn how to get involved with our chapter and upcoming recruitment season!
-        </p>
-        
-        {/* Another divider */}
-        <hr className="my-6 w-full border-black" />
-        
-        {/* Button */}
-        <button
-          onClick={handleButtonClick}
-          className="border border-black px-6 py-3 rounded-md hover:bg-gray-100 text-xl font-semibold"
-        >
-          Apply Now
-        </button>
+    <section className="relative py-24 overflow-hidden bg-slate-950">
+      {/* Gradient bg */}
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(29,78,216,0.15) 0%, rgba(2,6,23,1) 50%, rgba(29,78,216,0.1) 100%)' }} />
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="w-[600px] h-[600px] rounded-full bg-blue-600/10 blur-3xl" />
       </div>
-    </div>
+
+      <div
+        ref={ref}
+        className={`relative z-10 max-w-4xl mx-auto px-6 text-center ${
+          inView ? "animate-on-scroll in-view" : "animate-on-scroll"
+        }`}
+      >
+        <div className="section-label">Spring Recruitment</div>
+        <h2 className="text-4xl md:text-6xl font-black text-white tracking-tight mb-6">
+          Ready to Join?
+        </h2>
+        <p className="text-slate-400 text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
+          Open to all UNC undergraduates with a passion for technology. No specific major required — just ambition and curiosity.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link href="/recruitment" className="btn-primary text-base px-8 py-3.5">
+            View Recruitment Schedule
+          </Link>
+          <Link href="/faq" className="btn-outline text-base px-8 py-3.5">
+            Read the FAQ
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 }

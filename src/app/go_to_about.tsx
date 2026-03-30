@@ -1,56 +1,54 @@
 "use client";
-
-import { useRouter } from 'next/navigation';
-import Image from 'next/image';
+import Link from "next/link";
+import { useInView } from "@/hooks/useInView";
 
 export default function AboutSection() {
-  const router = useRouter();
-
-  const handleButtonClick = () => {
-    router.push('/about-us');
-  };
+  const { ref, inView } = useInView();
 
   return (
-    <div className="bg-white py-8">
-      <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
-        {/* Left Side: Heading + Paragraph */}
-        <div className="md:w-2/3">
-          <h1 className="text-4xl font-bold mt-8">
-            About Kappa Theta Pi
-          </h1>
-          <hr className="my-6 w-full border-black" />
-          <p className="text-xl md:text-2xl font-light text-gray-600 leading-relaxed">
-            Kappa Theta Pi is UNC’s first co-ed professional technology organization focused
-            on the professional, social, and technical development of our members. We believe 
-            that networking is far more than just professionalism — it is a process built on 
-            friendship, trust, and memberhood. Innovation thrives at the intersection of collaboration and support. 
-            Through shared experiences, professional development, and lifelong bonds, our members grow together 
-            as leaders in the ever-evolving world of technology. 
-            Join us in creating a legacy that blends passion for technology with the power of genuine human connection.
+    <section className="relative bg-slate-900 py-24 overflow-hidden">
+      <div className="absolute right-0 top-0 w-1/2 h-full opacity-20"
+        style={{ background: 'radial-gradient(ellipse at 100% 50%, rgba(59,130,246,0.3) 0%, transparent 60%)' }} />
+
+      <div
+        ref={ref}
+        className={`max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${
+          inView ? "animate-on-scroll in-view" : "animate-on-scroll"
+        }`}
+      >
+        {/* Text */}
+        <div>
+          <div className="section-label">Our Story</div>
+          <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-tight mb-6">
+            UNC's First Co-Ed <span className="gradient-text">Tech Fraternity</span>
+          </h2>
+          <p className="text-slate-400 text-lg leading-relaxed mb-6">
+            Kappa Theta Pi is the pioneering professional technology organization in the nation — founded on the belief that the best careers are built through both technical mastery and genuine human connection.
           </p>
+          <p className="text-slate-400 text-lg leading-relaxed mb-8">
+            Our members represent every major, united by a shared passion for technology and an ambition to shape the future.
+          </p>
+          <Link href="/about-us" className="btn-primary">
+            Our Story →
+          </Link>
         </div>
 
-        {/* Right Side: Old Well Logo + Centered Button */}
-        <div className="md:w-1/3 flex flex-col items-center mt-12 md:mt-16">
-          <div className="w-full flex justify-center">
-            <Image
-              src="/image/oldwell-logo.svg"
-              alt="Old Well Logo"
-              width={200}
-              height={200}
-              className="custom-logo-size"
-            />
+        {/* Images grid */}
+        <div className="grid grid-cols-2 gap-4">
+          <div className="rounded-2xl overflow-hidden h-48 lg:h-64">
+            <img src="/about-us/group-pic.jpg" alt="KTP group" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
           </div>
-          <div className="w-full flex justify-center">
-            <button
-              onClick={handleButtonClick}
-              className="mt-6 px-8 py-3 bg-ruddyBlue text-white font-bold rounded-lg shadow-md border-2 border-ruddyBlue hover:bg-white hover:text-ruddyBlue transition duration-300"
-            >
-              Learn More
-            </button>
+          <div className="rounded-2xl overflow-hidden h-48 lg:h-64 mt-8">
+            <img src="/about-us/image4.jpg" alt="KTP members" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          </div>
+          <div className="rounded-2xl overflow-hidden h-48 lg:h-64 -mt-8">
+            <img src="/about-us/image1.JPG" alt="KTP event" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+          </div>
+          <div className="rounded-2xl overflow-hidden h-48 lg:h-64">
+            <img src="/about-us/image3.jpg" alt="KTP event" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

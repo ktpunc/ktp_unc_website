@@ -1,40 +1,36 @@
 "use client";
-
-import { useRouter } from 'next/navigation';
-import styles from './styles/MembersSection.module.css';
+import Link from "next/link";
+import { useInView } from "@/hooks/useInView";
 
 export default function MembersSection() {
-  const router = useRouter();
-
-  const handleButtonClick = () => {
-    router.push('/members');
-  };
+  const { ref, inView } = useInView();
 
   return (
-    <div className={`relative bg-cover bg-center flex items-center justify-center ${styles['members-section']}`}>
-      {/* Grey overlay for better text visibility */}
-      <div className="absolute inset-0 bg-gray-900 bg-opacity-50"></div>
+    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+      {/* Background */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/carasoul/photo1.jpg')" }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/50" />
 
-      {/* Content Overlay */}
-      <div className="relative text-center text-white px-8 py-12 max-w-4xl">
-        {/* Heading */}
-        <h1 className="text-4xl sm:text-5xl font-bold">
+      <div
+        ref={ref}
+        className={`relative z-10 text-center px-6 max-w-3xl mx-auto ${
+          inView ? "animate-on-scroll in-view" : "animate-on-scroll"
+        }`}
+      >
+        <div className="section-label">Meet the Chapter</div>
+        <h2 className="text-4xl md:text-6xl font-black text-white tracking-tight mb-6">
           Our Memberhood
-        </h1>
-
-        {/* Description Text */}
-        <p className="text-lg sm:text-xl md:text-2xl font-light text-gray-200 mt-6 leading-relaxed">
-          Our chapter is comprised of over 50 self-driven, ambitious members. Take a look at our chapter and meet the people who make Kappa Theta Pi truly special!
+        </h2>
+        <p className="text-slate-300 text-xl leading-relaxed mb-10">
+          50+ self-driven, ambitious members from every corner of UNC. Meet the people who make KTP truly special.
         </p>
-
-        {/* Button */}
-        <button
-          onClick={handleButtonClick}
-          className="mt-10 px-6 py-3 bg-transparent text-white font-semibold rounded-full border-2 border-white hover:bg-white hover:text-black transition duration-300"
-        >
+        <Link href="/members" className="btn-primary text-base px-8 py-3.5">
           Meet Our Members
-        </button>
+        </Link>
       </div>
-    </div>
+    </section>
   );
 }

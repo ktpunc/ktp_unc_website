@@ -117,37 +117,30 @@ const class_2027 = [
     },
 ];
 
-const ExecutiveBoard = () => {
-    return (
-        <div className="w-full bg-ruddyBlue py-12">
-            <div className="container mx-auto px-4">
-                <h1 className="text-4xl font-bold text-center text-white mb-8">Class of 2027</h1>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    {class_2027.map((member, index) => {
-                        let colStart = 'auto';
-                        return (
-                            <Link
-                                key={member.name}
-                                href={member.linkedin}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={`relative text-center bg-white p-6 rounded-lg shadow-lg border border-gray-300 transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl ${colStart}`}
-                            >
-                                <img
-                                    src={member.image}
-                                    alt={`Photo of ${member.name}`}
-                                    className="mx-auto rounded-full w-24 h-24 sm:w-32 sm:h-32 mb-4"
-                                />
-                                {/* Name and Class */}
-                                <h2 className="text-xl font-semibold text-black">{member.name}</h2>
-                                <p className="text-white">{member.class}</p>
-                            </Link>
-                        );
-                    })}
-                </div>
-            </div>
-        </div>
-    );
-};
 
-export default ExecutiveBoard;
+export default function Class_2027() {
+  return (
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+      {class_2027.map((member) => (
+        <a
+          key={member.name}
+          href={member.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="glass glass-hover rounded-2xl p-6 text-center group block"
+        >
+          <div className="mx-auto w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden mb-4 ring-2 ring-white/10 group-hover:ring-blue-500/40 transition-all duration-300">
+            <img src={member.image} alt={member.name} className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+          </div>
+          <h3 className="text-white font-semibold text-sm leading-tight mb-1">{member.name}</h3>
+          <p className="text-blue-400 text-xs">{member.class} class</p>
+          <div className="mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+            <span className="text-slate-500 text-xs flex items-center justify-center gap-1">
+              <i className="fa-brands fa-linkedin text-xs" /> View Profile
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+  );
+}

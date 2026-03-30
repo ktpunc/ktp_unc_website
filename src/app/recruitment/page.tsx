@@ -1,14 +1,11 @@
-// components
 import { Navbar, Footer } from "@/components";
-import Hero from "./hero";
-import No_Rush_Info from "./no_rush";
-import Rush_Info from "./rush";
+import Schedule from "./rush";
 
-export default function Campaign() {
+export default function RecruitmentPage() {
   return (
     <>
       <Navbar />
-      <Rush_Info />
+      <Schedule />
       <Footer />
     </>
   );

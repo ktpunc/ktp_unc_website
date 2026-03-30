@@ -1,73 +1,56 @@
+"use client";
 import Image from "next/image";
+import { useInView } from "@/hooks/useInView";
 
-const AboutUs = () => {
-  const images = [
-    { src: "/about-us/image1.JPG", alt: "About Us Image 1" },
-    { src: "/about-us/image3.jpg", alt: "About Us Image 3" },
-    { src: "/about-us/image4.jpg", alt: "About Us Image 4" },
-  ];
+export default function AboutUs() {
+  const { ref, inView } = useInView();
 
   return (
-    <div className="bg-white py-8">
-      <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-start justify-between">
-        {/* Image Section with Fixed Sizes */}
-        <div className="hidden md:flex flex-col gap-6 md:w-1/3">
-          {images.map((image, index) => (
-            <div
-              key={index}
-              className="relative w-full h-[250px] rounded-lg overflow-hidden border border-gray-300 shadow-lg transform transition-transform duration-300 hover:scale-105"
-              style={{ maxWidth: "300px" }} // Enforce fixed width
-            >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                style={{
-                  objectFit: "cover",
-                  borderRadius: "0.5rem",
-                }}
-              />
-            </div>
-          ))}
+    <section className="relative bg-slate-950 pt-28 pb-20 overflow-hidden mesh-bg">
+      <div
+        ref={ref}
+        className={`max-w-7xl mx-auto px-6 ${
+          inView ? "animate-on-scroll in-view" : "animate-on-scroll"
+        }`}
+      >
+        {/* Header */}
+        <div className="text-center mb-16">
+          <div className="section-label">About Us</div>
+          <h1 className="text-5xl md:text-7xl font-black text-white tracking-tight mb-6">
+            Who Are <span className="gradient-text">We?</span>
+          </h1>
+          <p className="text-slate-400 text-xl max-w-3xl mx-auto leading-relaxed">
+            The pioneering professional technology organization in the nation — and UNC's first co-ed tech org.
+          </p>
         </div>
 
-        {/* Text Section - Matches Style */}
-        <div className="md:w-2/3 mt-8 md:mt-0">
-          <h1 className="text-4xl font-bold text-black">Who Are We?</h1>
-          <hr className="my-6 w-full border-black" />
-          <p className="text-xl md:text-2xl font-light text-gray-600 leading-relaxed">
-            Kappa Theta Pi stands as the pioneering professional technology
-            organization in the nation and the first co-ed professional
-            technology organization at UNC. Our core mission is to enhance the
-            professional, social, and technical development of our members,
-            ensuring they acquire essential skills to remain at the forefront
-            of the tech industry and foster a robust foundation for future
-            career success. Our programs are designed to challenge our members
-            and push the boundaries of their capabilities, preparing them for
-            real-world challenges.
-          </p>
-          <p className="text-xl md:text-2xl font-light text-gray-600 leading-relaxed mt-6">
-            Over the past four years, our organization has blossomed into a
-            vibrant and supportive network that thrives on the unique
-            backgrounds and shared passion for technology among our members.
-            This diversity enriches our community, creating a powerful synergy
-            of talents and perspectives.
-          </p>
-          <p className="text-xl md:text-2xl font-light text-gray-600 leading-relaxed mt-6">
-            At Kappa Theta Pi, we view networking as more than professionalism;
-            it is a journey built on friendship, trust, and camaraderie. We
-            provide an environment where members can excel both academically
-            and socially, fostering long-lasting connections and personal and
-            professional growth.
-          </p>
-          <p className="text-xl md:text-2xl font-light text-gray-600 leading-relaxed mt-6">
-            Join us in shaping a legacy that blends a passion for technology
-            with the power of genuine human connection.
-          </p>
+        {/* Content grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Images */}
+          <div className="grid grid-cols-2 gap-4">
+            {[
+              { src: "/about-us/image1.JPG", alt: "KTP event", className: "h-56 lg:h-72" },
+              { src: "/about-us/image3.jpg", alt: "KTP members", className: "h-56 lg:h-72 mt-8" },
+              { src: "/about-us/group-pic.jpg", alt: "KTP group", className: "h-56 lg:h-72 -mt-8 col-span-2" },
+            ].map(({ src, alt, className }) => (
+              <div key={src} className={`rounded-2xl overflow-hidden ${className}`}>
+                <Image src={src} alt={alt} fill className="object-cover transition-transform duration-500 hover:scale-105" style={{ position: 'relative' }} width={600} height={400} />
+              </div>
+            ))}
+          </div>
+
+          {/* Text */}
+          <div className="space-y-6">
+            {[
+              "Kappa Theta Pi stands as the pioneering professional technology organization in the nation and the first co-ed professional technology organization at UNC. Our core mission is to enhance the professional, social, and technical development of our members.",
+              "Over the past four years, our organization has blossomed into a vibrant and supportive network that thrives on the unique backgrounds and shared passion for technology among our members. This diversity enriches our community, creating a powerful synergy of talents and perspectives.",
+              "At Kappa Theta Pi, we view networking as more than professionalism — it is a journey built on friendship, trust, and camaraderie. Join us in shaping a legacy that blends a passion for technology with the power of genuine human connection.",
+            ].map((text, i) => (
+              <p key={i} className="text-slate-400 text-lg leading-relaxed">{text}</p>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default AboutUs;
+}

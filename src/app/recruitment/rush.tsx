@@ -1,74 +1,92 @@
-import React from "react";
+"use client";
+import { useInView } from "@/hooks/useInView";
 
-const Schedule = () => {
-  const events = [ 
-  /* { event: "Information Session", date: "August 28th @ 7:30 PM", location: "Sitterson 014" },
-  { event: "Community Service Event", date: "September 2nd @ 7:30 PM", location: "Sitterson 014" },
-  { event: "Speed Dating", date: "September 4th @ 7:30 PM", location: "Sitterson 014" },
-  { event: "Lemonade Chats", date: "September 9th @ 11:00 AM", location: "Quad" },
-  { event: "PD Event", date: "September 11th @ 7:30 PM", location: "TBD" },*/
-  {event: "TBD", date: "TBD", location: "TBD" },
-  ];
+const events = [
+  { event: "TBD", date: "TBD", location: "TBD" },
+];
+
+export default function Schedule() {
+  const { ref, inView } = useInView();
 
   return (
-    <div className="bg-babyBlue min-h-screen flex flex-col items-center">
-      <div className="w-full max-w-6xl p-6">
-        <div className="bg-white p-6 rounded-lg shadow-lg shadow-md mb-12">
-          <h1 className="text-4xl font-bold text-center mb-4">Spring 2026 Recruitment</h1>
-          <p className="text-xl text-center">
-            Any UNC undergraduate who has at least two semesters remaining, with an interest in technology, is welcome to join Kappa Theta Pi. {/* Make sure to complete the application by [deadline date]. */}
-          </p>
-        </div>
-        
-        {/* Responsive Table View */}
-        <div className="hidden sm:block overflow-x-auto">
-          <table className="bg-white border border-gray-800 mx-auto">
-            <thead>
-              <tr>
-                <th className="py-4 px-6 border-b-2 border-r-2 bg-ruddyBlue border-gray-800 text-xl border-t-2 border-l-2">Event</th>
-                <th className="py-4 px-6 border-b-2 border-r-2 bg-ruddyBlue border-gray-800 text-xl border-t-2">Date</th>
-                <th className="py-4 px-6 border-b-2 border-r-2 bg-ruddyBlue border-gray-800 text-xl border-t-2">Location</th>
-              </tr>
-            </thead>
-            <tbody>
-              {events.map((event, index) => (
-                <tr key={index} className="text-center">
-                  <td className="py-4 px-6 border-b-2 border-r-2 bg-white border-gray-800 text-xl border-l-2">{event.event}</td>
-                  <td className="py-4 px-6 border-b-2 border-r-2 bg-white border-gray-800 text-xl">{event.date}</td>
-                  <td className="py-4 px-6 border-b-2 border-r-2 bg-white border-gray-800 text-xl">{event.location}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+    <section className="pt-28 pb-24 bg-slate-950 mesh-bg min-h-screen">
+      <div className="max-w-4xl mx-auto px-6">
+        <div
+          ref={ref}
+          className={`${inView ? "animate-on-scroll in-view" : "animate-on-scroll"}`}
+        >
+          {/* Header */}
+          <div className="text-center mb-16">
+            <div className="section-label">Join KTP</div>
+            <h1 className="text-5xl md:text-7xl font-black text-white tracking-tight mb-6">
+              Spring 2026 <span className="gradient-text">Recruitment</span>
+            </h1>
+            <p className="text-slate-400 text-xl max-w-2xl mx-auto leading-relaxed">
+              Any UNC undergraduate with an interest in technology and at least two semesters remaining is welcome to apply.
+            </p>
+          </div>
 
-        {/* Simplified Card View for Phone */}
-        <div className="sm:hidden space-y-6">
-          {events.map((event, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg shadow-lg border border-gray-800 p-4 text-center"
-            >
-              <h2 className="text-2xl font-bold mb-2">{event.event}</h2>
-              <p className="text-lg">{event.date}</p>
-              <p className="text-lg">{event.location}</p>
+          {/* Who can apply */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            {[
+              { icon: "fa-university", title: "Any Major", desc: "CS, Business, Philosophy, Bio — all welcome." },
+              { icon: "fa-star", title: "2.5+ GPA", desc: "Minimum cumulative GPA required." },
+              { icon: "fa-calendar-check", title: "2+ Semesters", desc: "Must have at least two semesters remaining." },
+            ].map(({ icon, title, desc }) => (
+              <div key={title} className="glass glass-hover rounded-2xl p-6 text-center">
+                <i className={`fa-solid ${icon} text-blue-400 text-2xl mb-3`} />
+                <h3 className="text-white font-bold mb-1">{title}</h3>
+                <p className="text-slate-400 text-sm">{desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Schedule */}
+          <div className="glass rounded-3xl p-8 mb-10">
+            <h2 className="text-2xl font-black text-white mb-6 flex items-center gap-3">
+              <i className="fa-solid fa-calendar text-blue-400" />
+              Event Schedule
+            </h2>
+
+            {/* Table */}
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-white/8">
+                    <th className="text-left text-slate-400 text-xs font-semibold tracking-widest uppercase py-3 pr-6">Event</th>
+                    <th className="text-left text-slate-400 text-xs font-semibold tracking-widest uppercase py-3 pr-6">Date & Time</th>
+                    <th className="text-left text-slate-400 text-xs font-semibold tracking-widest uppercase py-3">Location</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {events.map(({ event, date, location }, i) => (
+                    <tr key={i} className="border-b border-white/5 last:border-0">
+                      <td className="py-4 pr-6 text-white font-medium">{event}</td>
+                      <td className="py-4 pr-6 text-slate-400">{date}</td>
+                      <td className="py-4 text-slate-400">{location}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
-          ))}
-        </div>
+          </div>
 
-        <div className="mt-8 text-center">
-          <a
-            href="https://forms.gle/ZkgxRPWEvcXUJMBR7"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-2xl font-bold text-ruddyBlue hover:underline"
-          >
-            Register Here
-          </a>
+          {/* CTA */}
+          <div className="text-center glass rounded-3xl p-10"
+            style={{ background: 'linear-gradient(135deg, rgba(37,99,235,0.15), rgba(29,78,216,0.1))' }}>
+            <h3 className="text-3xl font-black text-white mb-3">Ready to Apply?</h3>
+            <p className="text-slate-400 mb-8">Register for informal recruitment to get started.</p>
+            <a
+              href="https://forms.gle/ZkgxRPWEvcXUJMBR7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary text-base px-8 py-3.5"
+            >
+              Register Now →
+            </a>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default Schedule;
+}

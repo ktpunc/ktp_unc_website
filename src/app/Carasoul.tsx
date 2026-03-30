@@ -1,88 +1,56 @@
 "use client";
-
-import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-
-// Core Swiper styles
 import "swiper/css";
-import "swiper/css/autoplay";
+import { useInView } from "@/hooks/useInView";
+
+const images = [
+  "/carasoul/photo1.jpg", "/carasoul/photo2.jpg", "/carasoul/photo3.jpg",
+  "/carasoul/photo4.jpg", "/carasoul/photo5.JPG", "/carasoul/photo6.jpg",
+  "/carasoul/photo7.jpg", "/carasoul/photo8.jpg", "/carasoul/photo9.JPG", "/carasoul/photo10.JPG",
+];
 
 export default function Carousel() {
-  const [isDesktop, setIsDesktop] = useState(false);
-
-  useEffect(() => {
-    // Check if the screen is desktop-sized
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 1024); // Adjust width threshold as needed
-    };
-
-    handleResize(); // Set initial value
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const carouselImages = [
-    "/carasoul/photo1.jpg",
-    "/carasoul/photo2.jpg",
-    "/carasoul/photo3.jpg",
-    "/carasoul/photo4.jpg",
-    "/carasoul/photo5.JPG",
-    "/carasoul/photo6.jpg",
-    "/carasoul/photo7.jpg",
-    "/carasoul/photo8.jpg",
-    "/carasoul/photo9.JPG",
-    "/carasoul/photo10.JPG",
-  ];
-
-  if (!isDesktop) return null; // Do not render the carousel on non-desktop screens
+  const { ref, inView } = useInView(0.1);
 
   return (
-    <div className="relative w-screen h-[30vh] overflow-hidden bg-white border-t-4">
-      {/* Semi-Transparent Overlay */}
-      <div className="absolute inset-0 bg-black/40 z-10" />
-
-      {/* Overlay Text */}
-      <div className="absolute inset-0 z-20 flex items-center justify-center">
-        <h2 className="text-white text-4xl sm:text-5xl md:text-6xl font-bold">
-          Our Memories
-        </h2>
+    <section className="py-20 bg-slate-950 overflow-hidden">
+      <div
+        ref={ref}
+        className={`max-w-7xl mx-auto px-6 mb-10 text-center ${
+          inView ? "animate-on-scroll in-view" : "animate-on-scroll"
+        }`}
+      >
+        <div className="section-label">Life at KTP</div>
+        <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight">Our Memories</h2>
       </div>
 
-      {/* Swiper Carousel */}
       <Swiper
         modules={[Autoplay]}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
-        loop={true}
-        slidesPerView={3}
-        spaceBetween={5}
+        autoplay={{ delay: 2500, disableOnInteraction: false }}
+        loop
+        slidesPerView={1.2}
+        spaceBetween={16}
+        centeredSlides
         breakpoints={{
-          640: {
-            slidesPerView: 1,
-          },
-          768: {
-            slidesPerView: 2,
-          },
-          1024: {
-            slidesPerView: 3,
-          },
+          640: { slidesPerView: 2.2 },
+          1024: { slidesPerView: 3.2 },
+          1280: { slidesPerView: 4.2 },
         }}
-        className="absolute inset-0 w-full h-full z-0"
+        className="w-full"
       >
-        {carouselImages.map((image, index) => (
-          <SwiperSlide key={index}>
-            <img
-              src={image}
-              alt={`Carousel Image ${index + 1}`}
-              className="w-full h-full object-cover border-4 border-gray-100"
-            />
+        {images.map((src, i) => (
+          <SwiperSlide key={i}>
+            <div className="rounded-2xl overflow-hidden h-64 md:h-80 group">
+              <img
+                src={src}
+                alt={`KTP memory ${i + 1}`}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </section>
   );
 }

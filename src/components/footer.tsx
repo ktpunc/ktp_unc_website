@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ktpIcon from "../ASSETS/KTP New Logo.svg";
 import Link from "next/link";
 import { Heart } from "lucide-react";
 
@@ -37,8 +38,8 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-10 border-b border-slate-200/80 pb-10 md:grid-cols-[1.15fr_0.75fr_0.85fr]">
           <div>
             <div className="group mb-5 flex w-fit items-center gap-3 rounded-2xl px-1 py-1 transition-all duration-200 hover:-translate-y-0.5">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-pale ring-1 ring-blue/10 transition-all duration-200 group-hover:scale-[1.04] group-hover:bg-white group-hover:shadow-[0_10px_24px_rgba(75,156,211,0.14)]">
-                <Image src="/image/ktp_logo.png" alt="KTP" width={30} height={30} className="h-7 w-7 object-contain" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-pale ring-1 ring-blue/10 transition-all duration-200 group-hover:scale-[1.04] group-hover:bg-white group-hover:shadow-[0_10px_24px_rgba(75,156,211,0.14)]">
+                <Image src={ktpIcon} alt="KTP" width={32} height={32} className="h-8 w-8 object-contain" />
               </div>
               <div>
                 <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-blue/70 transition-colors duration-200 group-hover:text-blue">UNC Eta Chapter</p>

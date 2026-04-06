@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import ktpIcon from "../ASSETS/KTP New Logo.svg";
 import { usePathname } from "next/navigation";
 import { Mail } from "lucide-react";
 
@@ -35,25 +36,19 @@ export function Navbar() {
       <nav className="fixed left-0 right-0 top-0 z-50 pt-3">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="flex h-[4.8rem] items-center justify-between gap-3 rounded-[1.6rem] border border-slate-200 bg-white px-3 shadow-[0_12px_30px_rgba(15,23,42,0.08)]">
-            <div className="flex items-center gap-2 rounded-full px-1 py-1">
-              <Link
-                href="/"
-                aria-label="Go to homepage"
-                className="group flex min-w-0 items-center gap-2.5 rounded-full px-2 py-1 transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue/50"
-              >
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-50 shadow-sm ring-1 ring-slate-200 transition-all duration-200 group-hover:scale-[1.05] group-hover:shadow-[0_10px_20px_rgba(75,156,211,0.14)] group-hover:ring-blue/20">
-                  <Image src="/image/ktp_logo.png" alt="KTP Logo" width={28} height={28} className="h-7 w-7 object-contain" priority />
-                </div>
-                <div className="min-w-0">
-                  <p className="truncate text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-blue transition-colors duration-200 group-hover:text-navy-light">
-                    UNC Eta Chapter
-                  </p>
-                  <span className="block truncate text-[0.96rem] font-black tracking-tight text-navy transition-colors duration-200 group-hover:text-blue sm:text-[1rem]">
-                    Kappa Theta Pi
-                  </span>
-                </div>
-              </Link>
-            </div>
+            <Link
+              href="/"
+              aria-label="Go to homepage"
+              className="group flex items-center gap-3 rounded-full px-2 py-1.5 transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue/50"
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-pale ring-1 ring-blue/10 transition-all duration-200 group-hover:scale-105 group-hover:bg-white group-hover:shadow-[0_8px_20px_rgba(75,156,211,0.15)]">
+                <Image src={ktpIcon} alt="KTP" width={32} height={32} className="h-8 w-8 object-contain" priority />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-blue/70 transition-colors duration-200 group-hover:text-blue">UNC ETA CHAPTER</span>
+                <span className="text-base font-black tracking-tight text-navy transition-colors duration-200 group-hover:text-blue">Kappa Theta Pi</span>
+              </div>
+            </Link>
 
             <div className="hidden items-center gap-1.5 rounded-full bg-slate-50 p-1 ring-1 ring-slate-200 lg:flex">
               {links.map(({ href, label }) => {

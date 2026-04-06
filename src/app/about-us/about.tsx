@@ -32,7 +32,7 @@ export default function AboutUs() {
 
             <div className="space-y-5">
             {[
-              "KTP was founded in 2022 as the first professional technology fraternity in the country, with UNC's Eta Chapter established in 2020. We're a co-ed organization at UNC, and since then we've grown into a tight-knit community built around a shared passion for technology.",
+              "KTP was founded in 2012 as the first professional technology fraternity in the country. We're a co-ed organization, and since then we've grown into a tight-knit community built around a shared passion for technology.",
               "Our members come from all over campus, spanning Computer Science, Business, Journalism, Psychology, Biology, Studio Art, Hispanic Studies, Economics, and more. The variety of backgrounds and perspectives is a big part of what makes the community strong.",
               "Our alumni are spread across the country, at companies like Microsoft, Amazon, and Google as well as all kinds of startups. A lot of them stay in touch and are happy to help current members however they can.",
             ].map((text, i) => (

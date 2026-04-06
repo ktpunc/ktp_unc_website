@@ -20,7 +20,7 @@ export default function AboutSection() {
           </h2>
           <div className="section-divider" />
           <p className="text-slate-500 text-lg leading-relaxed mb-8">
-            Founded in 2022, with UNC's Eta Chapter established in 2020, KTP is a co-ed professional technology fraternity. Our members come from all over campus spanning Computer Science, Journalism, Psychology, Business, Studio Art, Sports Medicine, and more, united by a shared passion for technology and a community that genuinely looks out for each other.
+            Founded in 2012, KTP is a co-ed professional technology fraternity. Our members come from all over campus spanning Computer Science, Journalism, Psychology, Business, Studio Art, Sports Medicine, and more, united by a shared passion for technology and a community that genuinely looks out for each other.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link href="/about-us" className="btn-navy">Our Story</Link>

@@ -1,52 +1,44 @@
 "use client";
-import Image from "next/image";
 import { useInView } from "@/hooks/useInView";
+import ImageTilesVertical from "@/components/ui/image-tiles-vertical";
 
 export default function AboutUs() {
   const { ref, inView } = useInView();
 
   return (
-    <section className="bg-white pt-28 pb-20">
+    <section className="bg-[linear-gradient(180deg,#ffffff_0%,#f8fbfe_100%)] pb-20 pt-10">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Page header */}
-        <div className="mb-16">
-          <span className="eyebrow">About Us</span>
-          <h1 className="text-4xl md:text-6xl font-black text-navy leading-tight">
-            Who Are We?
-          </h1>
-          <div className="section-divider" />
-          <p className="text-slate-500 text-xl max-w-2xl leading-relaxed">
-            The pioneering professional technology organization in the nation — and UNC's first co-ed tech org.
-          </p>
-        </div>
-
-        {/* Content */}
         <div
           ref={ref}
-          className={`grid grid-cols-1 lg:grid-cols-2 gap-14 items-start reveal ${inView ? "visible" : ""}`}
+          className={`grid grid-cols-1 gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start reveal ${inView ? "visible" : ""}`}
         >
-          {/* Images */}
-          <div className="grid grid-cols-2 gap-3">
-            <div className="relative rounded-lg overflow-hidden h-52 md:h-64">
-              <Image src="/about-us/image1.JPG" alt="KTP event" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover hover:scale-105 transition-transform duration-500" />
-            </div>
-            <div className="relative rounded-lg overflow-hidden h-52 md:h-64 mt-8">
-              <Image src="/about-us/image3.jpg" alt="KTP members" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover hover:scale-105 transition-transform duration-500" />
-            </div>
-            <div className="relative rounded-lg overflow-hidden h-52 md:h-64 -mt-8 col-span-2">
-              <Image src="/about-us/group-pic.jpg" alt="KTP group" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover hover:scale-105 transition-transform duration-500" />
-            </div>
+          <div className="relative mx-auto w-full max-w-[33rem]">
+            <div className="absolute -left-5 top-8 hidden h-24 w-24 rounded-full bg-blue/10 blur-3xl lg:block" />
+            <div className="absolute -right-4 bottom-0 hidden h-32 w-32 rounded-full bg-blue-light/10 blur-3xl lg:block" />
+            <ImageTilesVertical
+              topLeftImage="/about-us/image1.JPG"
+              topRightImage="/about-us/image3.jpg"
+              bottomLeftImage="/about-us/image4.jpg"
+              bottomRightImage="/about-us/group-pic.jpg"
+            />
           </div>
 
-          {/* Text */}
-          <div className="space-y-5">
+          <div className="surface-hover-sheen rounded-2xl border border-slate-200 bg-white p-7 shadow-[0_18px_44px_rgba(15,23,42,0.06)] md:p-8">
+            <span className="eyebrow">Who We Are</span>
+            <h2 className="text-3xl font-black tracking-tight text-navy md:text-4xl">
+              UNC&apos;s first co-ed professional technology fraternity.
+            </h2>
+            <div className="section-divider" />
+
+            <div className="space-y-5">
             {[
-              "Kappa Theta Pi stands as the pioneering professional technology organization in the nation and the first co-ed professional technology organization at UNC. Our core mission is to enhance the professional, social, and technical development of our members.",
-              "Over the past four years, our organization has blossomed into a vibrant and supportive network that thrives on the unique backgrounds and shared passion for technology among our members. This diversity enriches our community, creating a powerful synergy of talents and perspectives.",
-              "At Kappa Theta Pi, we view networking as more than professionalism — it is a journey built on friendship, trust, and camaraderie. Join us in shaping a legacy that blends a passion for technology with the power of genuine human connection.",
+              "KTP was founded in 2012 as the first professional technology fraternity in the country. We're a co-ed organization at UNC, and since then we've grown into a tight-knit community built around a shared passion for technology.",
+              "Our members come from all over campus, spanning Computer Science, Business, Journalism, Psychology, Biology, Studio Art, Hispanic Studies, Economics, and more. The variety of backgrounds and perspectives is a big part of what makes the community strong.",
+              "Our alumni are spread across the country, at companies like Microsoft, Amazon, and Google as well as all kinds of startups. A lot of them stay in touch and are happy to help current members however they can.",
             ].map((text, i) => (
               <p key={i} className="text-slate-500 text-lg leading-relaxed">{text}</p>
             ))}
+            </div>
           </div>
         </div>
       </div>

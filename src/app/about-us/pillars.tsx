@@ -1,47 +1,86 @@
 "use client";
+
 import { useInView } from "@/hooks/useInView";
+import {
+  BriefcaseBusiness,
+  GraduationCap,
+  Martini,
+  LaptopMinimal,
+  BookOpenText,
+} from "lucide-react";
 
 const pillars = [
-  { icon: "fa-briefcase",       title: "Professional Development", desc: "Interview training, resume building, mentorship, and private company recruiting — preparing members for careers at the forefront of tech." },
-  { icon: "fa-user-graduate",   title: "Alumni Connections",       desc: "Our alumni are at Microsoft, Amazon, Apple, Google, Meta, and top startups worldwide — your network before you even graduate." },
-  { icon: "fa-champagne-glasses",title: "Social Growth",            desc: "Formals, tailgates, retreats, and countless shared memories. The people you meet here become lifelong friends." },
-  { icon: "fa-laptop-code",     title: "Technical Advancement",    desc: "Project teams, hackathons, and technical workshops to sharpen skills and build real-world experience." },
-  { icon: "fa-book-open",       title: "Academic Support",         desc: "A network of brilliant minds always ready to help — from coursework to extracurriculars and beyond." },
+  {
+    icon: BriefcaseBusiness,
+    title: "Professional Development",
+    desc: "Through interview training, resume help, one-on-one mentorship, and private company recruiting, KTP helps members feel ready for whatever direction they want to take in tech.",
+    iconBg: "bg-pink-100",
+    iconColor: "text-pink-500",
+  },
+  {
+    icon: GraduationCap,
+    title: "Alumni Connections",
+    desc: "Our alumni are all over the world working on cutting-edge technology at places like Microsoft, Amazon, Apple, Google, and Meta, along with startups, consulting firms, and more.",
+    iconBg: "bg-orange-100",
+    iconColor: "text-orange-500",
+  },
+  {
+    icon: Martini,
+    title: "Social Growth",
+    desc: "The people you meet in Kappa Theta Pi can easily become some of your closest friends. We host socials throughout the semester, from formals and tailgates to retreat, where people actually get to know each other.",
+    iconBg: "bg-emerald-100",
+    iconColor: "text-emerald-500",
+  },
+  {
+    icon: LaptopMinimal,
+    title: "Technical Advancement",
+    desc: "Kappa Theta Pi gives members a lot of chances to grow their technical skills. Whether it's through a project team or a workshop, we make it easier to build things that matter.",
+    iconBg: "bg-blue-pale",
+    iconColor: "text-blue",
+  },
+  {
+    icon: BookOpenText,
+    title: "Academic Support",
+    desc: "KTP brothers look out for each other academically too. Members have a strong support system full of smart, helpful people who are down to help with classes and everything else piling up during the semester.",
+    iconBg: "bg-violet-100",
+    iconColor: "text-violet-500",
+  },
 ];
 
 export default function Pillars() {
   const { ref, inView } = useInView();
 
   return (
-    <section className="bg-blue-pale py-20 border-y border-blue-mid">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="mb-14">
+    <section className="border-y border-slate-200 bg-slate-50 py-20">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="mb-14 max-w-3xl">
           <span className="eyebrow">Our Pillars</span>
-          <h2 className="text-3xl md:text-4xl font-black text-navy">What makes us who we are.</h2>
+          <h2 className="text-3xl font-black text-navy md:text-4xl">
+            What we stand for.
+          </h2>
           <div className="section-divider" />
+          <p className="max-w-2xl text-lg leading-relaxed text-slate-600">
+            Kappa Theta Pi gives brothers real support during their time at UNC, centered around five core pillars.
+          </p>
         </div>
 
-        <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {pillars.map(({ icon, title, desc }, i) => (
-            <div key={title} className={`card card-accent p-7 reveal reveal-delay-${(i % 4) + 1} ${inView ? "visible" : ""}`}>
-              <div className="w-10 h-10 rounded-md bg-blue-pale border border-blue/20 flex items-center justify-center mb-4">
-                <i className={`fa-solid ${icon} text-blue`} />
+        <div ref={ref} className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-6">
+          {pillars.map(({ icon: Icon, title, desc, iconBg, iconColor }, i) => (
+            <article
+              key={title}
+              className={`surface-hover-sheen rounded-2xl border border-slate-200 bg-white p-7 text-center shadow-[0_2px_12px_rgba(15,23,42,0.06)] ${i < 3 ? "xl:col-span-2" : "xl:col-span-3"} ${i === pillars.length - 1 ? "md:col-span-2" : ""} reveal reveal-delay-${(i % 4) + 1} ${inView ? "visible" : ""}`}
+            >
+              <div className={`mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full ${iconBg} ${iconColor}`}>
+                <Icon className="h-6 w-6" />
               </div>
-              <h3 className="text-navy font-bold text-lg mb-2">{title}</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">{desc}</p>
-            </div>
-          ))}
-
-          {/* Quote card */}
-          <div className={`rounded-lg p-7 flex items-center justify-center reveal reveal-delay-3 ${inView ? "visible" : ""}`}
-            style={{ background: '#13294B' }}>
-            <blockquote className="text-center">
-              <p className="text-xl font-serif text-white/90 italic leading-snug mb-3">
-                "Innovation thrives at the intersection of collaboration and ambition."
+              <h3 className="text-xl font-bold leading-tight text-navy">
+                {title}
+              </h3>
+              <p className="mt-3 text-[0.95rem] leading-7 text-slate-500">
+                {desc}
               </p>
-              <cite className="text-white/40 text-xs not-italic tracking-widest uppercase">KTP Eta Chapter</cite>
-            </blockquote>
-          </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>

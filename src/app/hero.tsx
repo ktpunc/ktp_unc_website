@@ -1,42 +1,241 @@
-"use client";
 import Link from "next/link";
+import Image from "next/image";
+
+const heroLines = [
+  { text: "UNC's Premier", accent: false },
+  { text: "Professional Tech Fraternity", accent: true },
+];
+
+function FlowLine({
+  text,
+  accent,
+  startIndex,
+}: {
+  text: string;
+  accent: boolean;
+  startIndex: number;
+}) {
+  const words = text.split(" ");
+  let letterIndex = startIndex;
+
+  return (
+    <span className={`hero-flow-line ${accent ? "text-blue" : "text-navy"}`}>
+      {words.map((word) => {
+        const currentStart = letterIndex;
+        letterIndex += word.length;
+
+        return (
+          <span key={`${word}-${currentStart}`} className="hero-flow-word">
+            {word.split("").map((letter, index) => (
+              <span
+                key={`${word}-${index}`}
+                className="hero-flow-letter"
+                style={{ animationDelay: `${(currentStart + index) * 38}ms` }}
+              >
+                {letter}
+              </span>
+            ))}
+          </span>
+        );
+      })}
+    </span>
+  );
+}
+
+type CardDef = {
+  src: string;
+  aspect: string;
+  w: number;       // px width for Image + inline style
+  rotate: string;  // inline deg string e.g. "12deg"
+  float: string;
+  delay: string;
+  // absolute position within the column container
+  top: string;
+  left?: string;
+  right?: string;
+};
+
+const leftCards: CardDef[] = [
+  {
+    src: "/carasoul/photo1.jpg",
+    aspect: "aspect-[3/4]",
+    w: 200,
+    rotate: "12deg",
+    float: "hero-photo-card-float",
+    delay: "600ms",
+    top: "2%",
+    left: "18%",
+  },
+  {
+    src: "/carasoul/photo7.jpg",
+    aspect: "aspect-[3/4]",
+    w: 180,
+    rotate: "-8deg",
+    float: "hero-photo-card-float-b",
+    delay: "760ms",
+    top: "38%",
+    left: "4%",
+  },
+];
+
+const rightCards: CardDef[] = [
+  {
+    src: "/carasoul/photo5.JPG",
+    aspect: "aspect-[3/4]",
+    w: 170,
+    rotate: "-10deg",
+    float: "hero-photo-card-float-b",
+    delay: "680ms",
+    top: "0%",
+    right: "6%",
+  },
+  {
+    src: "/carasoul/photo9.JPG",
+    aspect: "aspect-[4/3]",
+    w: 210,
+    rotate: "5deg",
+    float: "hero-photo-card-float",
+    delay: "840ms",
+    top: "30%",
+    right: "16%",
+  },
+  {
+    src: "/carasoul/photo8.jpg",
+    aspect: "aspect-[3/4]",
+    w: 175,
+    rotate: "-4deg",
+    float: "hero-photo-card-float-c",
+    delay: "1000ms",
+    top: "56%",
+    right: "2%",
+  },
+];
+
+function PhotoCard({ card }: { card: CardDef }) {
+  return (
+    <div
+      className="hero-photo-card absolute"
+      style={{
+        top: card.top,
+        left: card.left,
+        right: card.right,
+        width: card.w,
+        animationDelay: card.delay,
+        animationFillMode: "both",
+      }}
+    >
+      {/* rotation wrapper — permanent tilt */}
+      <div style={{ transform: `rotate(${card.rotate})` }}>
+        {/* float animation wrapper — translateY oscillation */}
+        <div className={card.float}>
+          <div className="overflow-hidden rounded-2xl shadow-[0_10px_36px_rgba(15,23,42,0.15)] ring-1 ring-black/5 transition-transform duration-500 hover:scale-[1.04]">
+            <Image
+              src={card.src}
+              alt="KTP members"
+              width={card.w * 2}
+              height={card.w * 2}
+              sizes="(max-width: 1024px) 0px, 220px"
+              quality={90}
+              className={`${card.aspect} w-full object-cover`}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Hero() {
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/image/well2.jpg')" }} />
-      <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(19,41,75,0.72) 0%, rgba(19,41,75,0.55) 60%, rgba(19,41,75,0.82) 100%)" }} />
+    <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-[#eaf4fc] via-white to-white">
+      {/* Subtle dot grid */}
+      <div
+        className="absolute inset-0 opacity-40"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 1px 1px, rgba(19,41,75,0.07) 1px, transparent 0)",
+          backgroundSize: "28px 28px",
+          maskImage: "linear-gradient(to bottom, rgba(0,0,0,0.6), transparent 70%)",
+        }}
+      />
 
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <span className="eyebrow" style={{ color: '#7BBDE4' }}>Eta Chapter · UNC-Chapel Hill</span>
+      {/* Soft glow blobs */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-[5%] top-[20%] h-64 w-64 rounded-full bg-blue/15 blur-3xl" />
+        <div className="absolute right-[5%] top-[15%] h-72 w-72 rounded-full bg-blue-light/20 blur-3xl" />
+      </div>
 
-        <h1
-          className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight mb-6 animate-fade-up"
-          style={{ animationFillMode: "both" }}
-        >
-          Where Technology<br />
-          <span style={{ color: "#7BBDE4" }}>Meets Brotherhood.</span>
-        </h1>
+      <div className="relative z-10 flex min-h-screen items-center">
+        <div className="mx-auto w-full max-w-[90rem] px-6 py-28">
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1fr_520px_1fr]">
 
-        <p
-          className="text-lg text-white/75 max-w-xl mx-auto leading-relaxed mb-10 animate-fade-up"
-          style={{ animationDelay: "120ms", animationFillMode: "both", opacity: 0 }}
-        >
-          UNC's first co-ed professional technology organization — building the next generation of leaders at the intersection of tech and community.
-        </p>
+            {/* Left photos */}
+            <div className="relative hidden lg:block" style={{ height: 520 }}>
+              {leftCards.map((card) => <PhotoCard key={card.src} card={card} />)}
+            </div>
 
-        <div
-          className="flex flex-col sm:flex-row items-center justify-center gap-3 animate-fade-up"
-          style={{ animationDelay: "240ms", animationFillMode: "both", opacity: 0 }}
-        >
-          <Link href="/recruitment" className="btn-blue px-7 py-3">Apply for Fall 2026</Link>
-          <Link href="/about-us" className="btn-outline-white px-7 py-3">Learn More</Link>
+            {/* Center content */}
+            <div className="mx-auto w-full max-w-[44rem] text-center">
+              <span
+                className="hero-panel-in eyebrow"
+                style={{ animationDelay: "120ms", animationFillMode: "both" }}
+              >
+                Eta Chapter · UNC-Chapel Hill
+              </span>
+
+              <h1 className="mb-6 mt-3 text-[3.6rem] font-black leading-[0.98] tracking-tight sm:text-[4.6rem] lg:text-7xl">
+                <span className="sr-only">UNC&apos;s Premier Professional Tech Frat</span>
+                {heroLines.map((line, index) => (
+                  <FlowLine
+                    key={line.text}
+                    text={line.text}
+                    accent={line.accent}
+                    startIndex={index === 0 ? 0 : heroLines[0].text.replaceAll(" ", "").length}
+                  />
+                ))}
+              </h1>
+
+              <p
+                className="hero-panel-in mx-auto mb-10 max-w-xl text-lg leading-relaxed text-slate-600"
+                style={{ animationDelay: "920ms", animationFillMode: "both" }}
+              >
+                UNC&apos;s first co-ed professional technology fraternity, dedicated to the professional, social, and technical development of students with a passion for technology.
+              </p>
+
+              <div
+                className="hero-panel-in flex flex-col items-center justify-center gap-3 sm:flex-row"
+                style={{ animationDelay: "1060ms", animationFillMode: "both" }}
+              >
+                <button
+                  type="button"
+                  disabled
+                  aria-disabled="true"
+                  className="btn-navy opacity-70 cursor-not-allowed"
+                  style={{ transform: "none", boxShadow: "none" }}
+                >
+                  Applications Open Soon
+                </button>
+                <Link href="/about-us" className="btn-outline-navy">
+                  Learn More
+                </Link>
+              </div>
+            </div>
+
+            {/* Right photos */}
+            <div className="relative hidden lg:block" style={{ height: 520 }}>
+              {rightCards.map((card) => <PhotoCard key={card.src} card={card} />)}
+            </div>
+
+          </div>
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2.5 opacity-50">
-        <span className="text-white text-[10px] tracking-[0.15em] uppercase">Scroll</span>
-        <div className="scroll-indicator" />
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2.5 opacity-60">
+        <span className="text-[10px] uppercase tracking-[0.15em] text-slate-500">Scroll</span>
+        <div className="h-9 w-6 rounded-full border border-slate-300/90">
+          <div className="mx-auto mt-1.5 h-2 w-1 rounded-full bg-slate-400 animate-bounce" />
+        </div>
       </div>
     </div>
   );

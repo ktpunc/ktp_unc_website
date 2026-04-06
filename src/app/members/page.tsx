@@ -1,5 +1,5 @@
 "use client";
-import { Navbar, Footer } from "@/components";
+import { Navbar, Footer, PageHero } from "@/components";
 import ExecutiveBoard from "./executive_board";
 import Class_2026 from "./gen_body_2026";
 import Class_2027 from "./gen_body_2027";
@@ -15,44 +15,49 @@ export default function MembersPage() {
   return (
     <>
       <Navbar />
+      <PageHero
+        eyebrow="Our Chapter"
+        title="Meet the Chapter"
+        description="Our members come from all kinds of majors and backgrounds, brought together by a shared interest in technology and a community that genuinely supports each other."
+        image="/image/building2.jpg"
+      />
 
-      {/* Hero */}
-      <div className="relative pt-28 pb-14 overflow-hidden" style={{ background: "linear-gradient(135deg, #13294B 0%, #1e3f70 100%)" }}>
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <span className="eyebrow" style={{ color: '#7BBDE4' }}>Our Chapter</span>
-          <h1 className="text-4xl md:text-6xl font-black text-white mb-3">Meet the Members</h1>
-          <p className="text-white/60 text-lg">50+ driven individuals shaping the future of tech at UNC.</p>
+      <div className="bg-[linear-gradient(180deg,#ffffff_0%,#f7fbff_100%)] py-8">
+        <div className="mx-auto max-w-[96rem] px-6">
+          <div className="surface-hover-glow mx-auto max-w-fit rounded-[1.75rem] border border-slate-200 bg-white px-3 py-3 shadow-[0_18px_44px_rgba(15,23,42,0.06)]">
+            <p className="mb-3 text-center text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-slate-400">
+              Browse By Class
+            </p>
+            <nav className="mx-auto flex max-w-fit overflow-x-auto rounded-full bg-slate-50 p-1.5 ring-1 ring-slate-200/80">
+            <div className="flex min-w-max items-center gap-1.5">
+              {tabs.map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActive(tab)}
+                  className={`flex-shrink-0 rounded-full px-4 py-2.5 text-sm font-semibold transition-all duration-200 md:px-5 ${
+                    active === tab
+                      ? "bg-navy text-white shadow-[0_8px_20px_rgba(19,41,75,0.18)]"
+                      : "text-slate-500 hover:bg-white hover:text-navy"
+                  }`}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
+            </nav>
+          </div>
         </div>
       </div>
 
-      {/* Sticky tabs */}
-      <div className="sticky top-16 z-30 bg-white border-b border-slate-200 shadow-sm">
-        <div className="max-w-7xl mx-auto px-6">
-          <nav className="flex overflow-x-auto gap-0">
-            {tabs.map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActive(tab)}
-                className={`flex-shrink-0 px-5 py-4 text-sm font-medium border-b-2 transition-all duration-200 ${
-                  active === tab
-                    ? "border-blue text-blue"
-                    : "border-transparent text-slate-500 hover:text-navy"
-                }`}
-              >
-                {tab}
-              </button>
-            ))}
-          </nav>
-        </div>
-      </div>
-
-      <div className="bg-slate-50 min-h-screen">
-        <div className="max-w-7xl mx-auto px-6 py-12">
+      <div className="min-h-screen bg-[linear-gradient(180deg,#f7fbff_0%,#eff6fc_100%)]">
+        <div className="mx-auto max-w-[96rem] px-6 py-12">
+          <div className="surface-hover-float rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_18px_44px_rgba(15,23,42,0.06)] md:p-8">
           {active === "Executive Board" && <ExecutiveBoard />}
           {active === "Class of 2026" && <Class_2026 />}
           {active === "Class of 2027" && <Class_2027 />}
           {active === "Class of 2028" && <Class_2028 />}
           {active === "Alumni" && <Alumni />}
+          </div>
         </div>
       </div>
 

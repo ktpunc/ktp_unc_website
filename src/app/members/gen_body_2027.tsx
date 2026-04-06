@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { MemberGrid } from "@/components";
 
 const class_2027 = [
     {
@@ -119,37 +119,11 @@ const class_2027 = [
 
 
 export default function Class_2027() {
-  return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-      {class_2027.map((member) => (
-        <a
-          key={member.name}
-          href={member.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group block"
-        >
-          {/* Photo */}
-          <div className="relative overflow-hidden rounded-xl aspect-[3/4] mb-3 shadow-card">
-            <img
-              src={member.image}
-              alt={member.name}
-              className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-            />
-            {/* Hover overlay */}
-            <div className="absolute inset-0 bg-navy/80 flex flex-col items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <span className="text-white text-xs font-semibold tracking-widest uppercase border border-white/30 rounded-full px-3 py-1">
-                Class of {member.class}
-              </span>
-              <span className="flex items-center gap-1.5 text-white/80 text-sm font-medium">
-                <i className="fa-brands fa-linkedin text-base" /> LinkedIn
-              </span>
-            </div>
-          </div>
-          <p className="text-navy font-semibold text-sm leading-snug group-hover:text-blue transition-colors duration-200">{member.name}</p>
-          <p className="text-slate-400 text-xs mt-0.5">Class of {member.class}</p>
-        </a>
-      ))}
-    </div>
-  );
+  const members = class_2027.map((member) => ({
+    ...member,
+    subtitle: "",
+    tag: member.class,
+  }));
+
+  return <MemberGrid members={members} />;
 }

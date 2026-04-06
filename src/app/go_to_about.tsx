@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useInView } from "@/hooks/useInView";
 
 export default function AboutSection() {
@@ -18,28 +19,28 @@ export default function AboutSection() {
             UNC's First Co-Ed<br />Tech Fraternity
           </h2>
           <div className="section-divider" />
-          <p className="text-slate-500 text-lg leading-relaxed mb-4">
-            Kappa Theta Pi is the pioneering professional technology organization in the nation — founded on the belief that the best careers are built through both technical mastery and genuine human connection.
-          </p>
           <p className="text-slate-500 text-lg leading-relaxed mb-8">
-            Our members come from every major, united by a shared passion for technology and an ambition to shape what's next.
+            Founded in 2012, KTP is a co-ed professional technology fraternity at UNC. Our members come from all over campus spanning Computer Science, Journalism, Psychology, Business, Studio Art, Sports Medicine, and more, united by a shared passion for technology and a community that genuinely looks out for each other.
           </p>
-          <Link href="/about-us" className="btn-navy">Our Story</Link>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Link href="/about-us" className="btn-navy">Our Story</Link>
+            <Link href="/members" className="btn-outline-navy">Meet Our Members</Link>
+          </div>
         </div>
 
         {/* Photo grid */}
         <div className="grid grid-cols-2 gap-3">
-          <div className="rounded-lg overflow-hidden h-44 md:h-56">
-            <img src="/about-us/group-pic.jpg" alt="KTP group" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+          <div className="relative h-44 overflow-hidden rounded-lg md:h-56">
+            <Image src="/about-us/group-pic.jpg" alt="KTP group" fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover transition-transform duration-500 hover:scale-105" />
           </div>
-          <div className="rounded-lg overflow-hidden h-44 md:h-56 mt-6">
-            <img src="/about-us/image4.jpg" alt="KTP members" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+          <div className="relative mt-6 h-44 overflow-hidden rounded-lg md:h-56">
+            <Image src="/about-us/image4.jpg" alt="KTP members" fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover transition-transform duration-500 hover:scale-105" />
           </div>
-          <div className="rounded-lg overflow-hidden h-44 md:h-56 -mt-6">
-            <img src="/about-us/image1.JPG" alt="KTP event" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+          <div className="relative -mt-6 h-44 overflow-hidden rounded-lg md:h-56">
+            <Image src="/about-us/image1.JPG" alt="KTP event" fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover transition-transform duration-500 hover:scale-105" />
           </div>
-          <div className="rounded-lg overflow-hidden h-44 md:h-56">
-            <img src="/about-us/image3.jpg" alt="KTP event" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+          <div className="relative h-44 overflow-hidden rounded-lg md:h-56">
+            <Image src="/about-us/image3.jpg" alt="KTP event" fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover transition-transform duration-500 hover:scale-105" />
           </div>
         </div>
       </div>

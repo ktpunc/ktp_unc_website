@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import { Layout } from "@/components";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -37,9 +38,11 @@ export default function RootLayout({
       </head>
       
       <body className={roboto.className}>
-        <Layout>
-          {children}
-        </Layout>
+        <TooltipProvider>
+          <Layout>
+            {children}
+          </Layout>
+        </TooltipProvider>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"

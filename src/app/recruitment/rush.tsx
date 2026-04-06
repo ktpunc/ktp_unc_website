@@ -1,69 +1,143 @@
 "use client";
+
 import { useInView } from "@/hooks/useInView";
+
+const eligibility = [
+  {
+    icon: "fa-graduation-cap",
+    title: "Any Major",
+    desc: "Students from any major are welcome — Computer Science, Journalism, Biology, Business, Peace War and Defense, Studio Art, and everything in between.",
+    iconBg: "bg-blue-pale",
+    iconColor: "text-blue",
+  },
+  {
+    icon: "fa-star",
+    title: "2.5+ GPA",
+    desc: "A minimum cumulative GPA of 2.5 is required for eligibility.",
+    iconBg: "bg-orange-100",
+    iconColor: "text-orange-500",
+  },
+  {
+    icon: "fa-calendar-check",
+    title: "2+ Semesters Left",
+    desc: "Applicants should have at least two semesters remaining at UNC.",
+    iconBg: "bg-emerald-100",
+    iconColor: "text-emerald-500",
+  },
+];
 
 export default function Schedule() {
   const { ref, inView } = useInView();
 
   return (
-    <section className="bg-white pt-28 pb-20 min-h-screen">
-      <div className="max-w-3xl mx-auto px-6">
+    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#f7fbff_0%,#eef6fc_100%)] pb-24 pt-10">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        <div className="absolute left-[-4rem] top-16 h-40 w-40 rounded-full bg-blue/12 blur-3xl" />
+        <div className="absolute right-[-3rem] top-24 h-56 w-56 rounded-full bg-blue-light/14 blur-3xl" />
+        <div className="absolute bottom-10 left-[18%] h-40 w-40 rounded-full bg-white blur-3xl" />
+      </div>
+
+      <div className="relative mx-auto max-w-6xl px-6">
         <div ref={ref} className={`reveal ${inView ? "visible" : ""}`}>
+          <div className="surface-hover-float rounded-2xl border border-slate-200 bg-white p-7 shadow-[0_18px_44px_rgba(15,23,42,0.06)] md:p-8">
+            <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+              <div>
+              <span className="eyebrow">Status Update</span>
+              <h2 className="text-3xl font-black tracking-tight text-navy md:text-4xl">
+                Spring 2026 recruitment has closed.
+              </h2>
+              <div className="section-divider" />
+              <p className="max-w-2xl text-base leading-8 text-slate-600 md:text-lg">
+                Thank you to everyone who participated this semester. The next recruitment cycle will be
+                in Fall 2026, and we&apos;ll post updates once dates and details are confirmed.
+              </p>
 
-          {/* Header */}
-          <span className="eyebrow">Recruitment</span>
-          <h1 className="text-4xl md:text-5xl font-black text-navy mb-3">
-            Spring 2026 Recruitment Has Closed
-          </h1>
-          <div className="section-divider" />
-          <p className="text-slate-500 text-lg leading-relaxed mb-10 max-w-xl">
-            Thank you to everyone who rushed this semester — we're so excited to welcome our newest members. Stay tuned for Fall 2026!
-          </p>
+              <div className="surface-hover-rail mt-8 rounded-2xl border border-slate-200 bg-[linear-gradient(180deg,#ffffff_0%,#f8fbfe_100%)] p-6 shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
+                <div className="flex items-start gap-4">
+                  <div className="mt-0.5 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl bg-blue-pale text-blue ring-1 ring-blue/10">
+                    <i className="fa-solid fa-clock text-sm" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue">Next Update</p>
+                    <p className="mt-2 text-lg font-bold text-navy">Fall 2026 recruitment information</p>
+                    <p className="mt-2 text-sm leading-7 text-slate-600">
+                      Follow{" "}
+                      <a
+                        href="https://www.instagram.com/ktpunc/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-semibold text-blue transition-colors hover:text-navy"
+                      >
+                        @ktpunc
+                      </a>{" "}
+                      for updates on applications, events, and deadlines.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              </div>
 
-          {/* Status card */}
-          <div className="card border-l-4 border-l-blue p-6 mb-10 flex items-start gap-4">
-            <div className="w-9 h-9 rounded-md bg-blue-pale flex items-center justify-center flex-shrink-0 mt-0.5">
-              <i className="fa-solid fa-clock text-blue text-sm" />
+              <div className="surface-hover-glow rounded-2xl border border-slate-200 bg-[linear-gradient(180deg,#f8fbfe_0%,#f2f8fd_100%)] p-6 shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
+                <span className="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-blue">
+                  Stay Updated
+                </span>
+                <h3 className="mt-3 text-2xl font-black leading-tight text-navy">
+                  Where to check for updates
+                </h3>
+                <p className="mt-4 text-sm leading-7 text-slate-600 md:text-base">
+                  Instagram is where we post recruitment updates first, and email is the best way to reach
+                  us if you have questions about eligibility, scheduling, or the process.
+                </p>
+
+                <div className="mt-8 flex flex-col gap-3">
+                  <a
+                    href="https://www.instagram.com/ktpunc/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center justify-center gap-3 rounded-full bg-navy px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-navy-light"
+                  >
+                    <i className="fa-brands fa-instagram text-base" />
+                    <span>Follow @ktpunc</span>
+                  </a>
+                  <a
+                    href="mailto:uncktp@gmail.com"
+                    className="group inline-flex items-center justify-center gap-3 rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-navy transition-all duration-300 hover:-translate-y-1 hover:border-blue/25 hover:bg-blue-pale"
+                  >
+                    <i className="fa-solid fa-envelope text-sm" />
+                    <span>Email KTP</span>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div>
-              <p className="text-navy font-semibold mb-1">Next recruitment: Fall 2026</p>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                Follow{" "}
-                <a href="https://www.instagram.com/ktpunc/" target="_blank" rel="noopener noreferrer" className="text-blue hover:underline font-medium">@ktpunc on Instagram</a>
-                {" "}to be the first to know when applications open.
+          </div>
+
+          <div className="surface-hover-sheen mt-8 rounded-2xl border border-slate-200 bg-white p-7 shadow-[0_18px_44px_rgba(15,23,42,0.06)] md:p-8">
+            <div className="mb-8 max-w-2xl">
+              <span className="eyebrow">Eligibility</span>
+              <h3 className="text-2xl font-black tracking-tight text-navy md:text-3xl">
+                Who can apply when recruitment opens?
+              </h3>
+              <p className="mt-3 text-base leading-7 text-slate-600">
+                The basics are simple. KTP is open to students from across UNC who are excited about
+                technology, community, and growth.
               </p>
             </div>
-          </div>
 
-          {/* Requirements */}
-          <h2 className="text-xl font-bold text-navy mb-5">Who Can Apply?</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-            {[
-              { icon: "fa-graduation-cap", title: "Any Major",       desc: "CS, Business, Philosophy, Bio — all welcome." },
-              { icon: "fa-star",           title: "2.5+ GPA",        desc: "Minimum cumulative GPA required." },
-              { icon: "fa-calendar-check", title: "2+ Semesters",    desc: "Must have at least two semesters remaining." },
-            ].map(({ icon, title, desc }) => (
-              <div key={title} className="card card-accent p-5 text-center">
-                <i className={`fa-solid ${icon} text-blue text-xl mb-2`} />
-                <h3 className="text-navy font-semibold text-sm mb-1">{title}</h3>
-                <p className="text-slate-500 text-xs leading-relaxed">{desc}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA */}
-          <div className="rounded-lg p-8 text-center" style={{ background: '#13294B' }}>
-            <h3 className="text-2xl font-black text-white mb-2">Stay in the Loop</h3>
-            <p className="text-white/60 text-sm mb-6 max-w-sm mx-auto">
-              Recruitment announcements go out on Instagram first. Follow us and reach out with any questions.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a href="https://www.instagram.com/ktpunc/" target="_blank" rel="noopener noreferrer" className="btn-blue">
-                <i className="fa-brands fa-instagram mr-2" />Follow @ktpunc
-              </a>
-              <a href="mailto:uncktp@gmail.com" className="btn-outline-white">Contact Us</a>
+            <div className="grid gap-4 md:grid-cols-3">
+              {eligibility.map(({ icon, title, desc, iconBg, iconColor }) => (
+                <div
+                  key={title}
+                  className="surface-hover-tilt rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-[0_2px_12px_rgba(15,23,42,0.06)]"
+                >
+                  <div className={`mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full ${iconBg} ${iconColor}`}>
+                    <i className={`fa-solid ${icon} text-lg`} />
+                  </div>
+                  <h4 className="text-lg font-bold text-navy">{title}</h4>
+                  <p className="mt-2 text-sm leading-7 text-slate-500">{desc}</p>
+                </div>
+              ))}
             </div>
           </div>
-
         </div>
       </div>
     </section>

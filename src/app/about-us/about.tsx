@@ -6,7 +6,7 @@ export default function AboutUs() {
   const { ref, inView } = useInView();
 
   return (
-    <section className="bg-[linear-gradient(180deg,#ffffff_0%,#f8fbfe_100%)] pb-20 pt-10">
+    <section className="overflow-x-hidden bg-[linear-gradient(180deg,#ffffff_0%,#f8fbfe_100%)] pb-20 pt-10">
       <div className="max-w-6xl mx-auto px-6">
         <div
           ref={ref}

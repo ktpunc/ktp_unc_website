@@ -8,7 +8,7 @@ export default function MembersSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section className="bg-[linear-gradient(180deg,#ffffff_0%,#f7fbff_100%)] py-20">
+    <section className="overflow-x-hidden bg-[linear-gradient(180deg,#ffffff_0%,#f7fbff_100%)] py-20">
       <div
         ref={ref}
         className={`mx-auto max-w-6xl px-6 reveal ${inView ? "visible" : ""}`}
@@ -40,7 +40,7 @@ export default function MembersSection() {
             </div>
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex justify-center overflow-hidden">
             <ImageReveal
               leftImage="/carasoul/photo2.jpg"
               middleImage="/carasoul/photo5.JPG"

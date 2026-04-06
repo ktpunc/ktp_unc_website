@@ -183,7 +183,7 @@ export default function Hero() {
                 Eta Chapter · UNC-Chapel Hill
               </span>
 
-              <h1 className="mb-6 mt-3 text-[3.6rem] font-black leading-[0.98] tracking-tight sm:text-[4.6rem] lg:text-7xl">
+              <h1 className="mb-6 mt-3 text-[2.4rem] font-black leading-[0.98] tracking-tight xs:text-[3rem] sm:text-[4rem] md:text-[4.6rem] lg:text-7xl">
                 <span className="sr-only">UNC&apos;s Premier Professional Tech Frat</span>
                 {heroLines.map((line, index) => (
                   <FlowLine

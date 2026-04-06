@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 
 interface ImageRevealProps {
@@ -113,10 +114,13 @@ export default function ImageReveal({
         animate="animate"
         style={{ zIndex: 10 }}
       >
-        <img
+        <Image
           src={leftImage}
-          alt="Left image"
+          alt="KTP members"
+          width={192}
+          height={192}
           className="h-full w-full rounded-xl object-cover"
+          sizes="(max-width: 768px) 10rem, 12rem"
         />
       </motion.div>
 
@@ -127,10 +131,13 @@ export default function ImageReveal({
         animate="animate"
         style={{ zIndex: 20 }}
       >
-        <img
+        <Image
           src={middleImage}
-          alt="Middle image"
+          alt="KTP members"
+          width={192}
+          height={192}
           className="h-full w-full rounded-2xl object-cover"
+          sizes="(max-width: 768px) 10rem, 12rem"
         />
       </motion.div>
 
@@ -141,10 +148,13 @@ export default function ImageReveal({
         animate="animate"
         style={{ zIndex: 30 }}
       >
-        <img
+        <Image
           src={rightImage}
-          alt="Right image"
+          alt="KTP members"
+          width={192}
+          height={192}
           className="h-full w-full rounded-2xl object-cover"
+          sizes="(max-width: 768px) 10rem, 12rem"
         />
       </motion.div>
     </motion.div>

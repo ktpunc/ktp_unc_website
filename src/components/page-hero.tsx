@@ -20,7 +20,7 @@ export function PageHero({ eyebrow, title, description }: PageHeroProps) {
         }} />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-5xl px-6 pb-20 pt-32 text-center md:pb-24 md:pt-36">
+      <div className="relative z-10 mx-auto max-w-5xl px-6 pb-16 pt-28 text-center sm:pb-20 sm:pt-32 md:pb-24 md:pt-36">
         <span
           className="hero-panel-in eyebrow"
           style={{ animationDelay: "100ms", animationFillMode: "both" }}
@@ -29,7 +29,7 @@ export function PageHero({ eyebrow, title, description }: PageHeroProps) {
         </span>
 
         <h1
-          className="hero-panel-in mx-auto max-w-4xl text-5xl font-black leading-[1] tracking-tight text-navy sm:text-6xl lg:text-[5.15rem]"
+          className="hero-panel-in mx-auto max-w-4xl text-[2.2rem] font-black leading-[1.05] tracking-tight text-navy sm:text-5xl md:text-6xl lg:text-[5.15rem]"
           style={{ animationDelay: "180ms", animationFillMode: "both" }}
         >
           {title}

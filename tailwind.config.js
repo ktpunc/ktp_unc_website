@@ -6,10 +6,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        navy:    '#13294B',
-        'navy-light': '#1e3f70',
-        blue:    '#4B9CD3',
-        'blue-light': '#7BBDE4',
+        navy:    '#2F6493',
+        'navy-light': '#3a7ab5',
+        blue:    '#69c1ed',
+        'blue-light': '#B5E5F7',
         'blue-pale': '#EBF4FB',
         'blue-mid': '#D0E9F7',
       },

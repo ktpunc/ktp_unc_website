@@ -30,17 +30,17 @@ export default function AboutSection() {
 
         {/* Photo grid */}
         <div className="grid grid-cols-2 gap-3">
-          <div className="relative h-44 overflow-hidden rounded-lg md:h-56">
-            <Image src="/about-us/group-pic.jpg" alt="KTP group" fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover transition-transform duration-500 hover:scale-105" />
+          <div className="relative aspect-[3/4] overflow-hidden rounded-lg">
+            <Image src="/about-us/group-pic.jpg" alt="KTP group" fill sizes="(max-width: 640px) 45vw, (max-width: 1024px) 40vw, 22vw" className="object-cover transition-transform duration-500 hover:scale-105" />
           </div>
-          <div className="relative mt-6 h-44 overflow-hidden rounded-lg md:h-56">
-            <Image src="/about-us/image4.jpg" alt="KTP members" fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover transition-transform duration-500 hover:scale-105" />
+          <div className="relative mt-6 aspect-[3/4] overflow-hidden rounded-lg">
+            <Image src="/about-us/image4.jpg" alt="KTP members" fill sizes="(max-width: 640px) 45vw, (max-width: 1024px) 40vw, 22vw" className="object-cover transition-transform duration-500 hover:scale-105" />
           </div>
-          <div className="relative -mt-6 h-44 overflow-hidden rounded-lg md:h-56">
-            <Image src="/about-us/image1.JPG" alt="KTP event" fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover transition-transform duration-500 hover:scale-105" />
+          <div className="relative -mt-6 aspect-[3/4] overflow-hidden rounded-lg">
+            <Image src="/about-us/image1.JPG" alt="KTP event" fill sizes="(max-width: 640px) 45vw, (max-width: 1024px) 40vw, 22vw" className="object-cover transition-transform duration-500 hover:scale-105" />
           </div>
-          <div className="relative h-44 overflow-hidden rounded-lg md:h-56">
-            <Image src="/about-us/image3.jpg" alt="KTP event" fill sizes="(max-width: 1024px) 50vw, 25vw" className="object-cover transition-transform duration-500 hover:scale-105" />
+          <div className="relative aspect-[3/4] overflow-hidden rounded-lg">
+            <Image src="/about-us/image3.jpg" alt="KTP event" fill sizes="(max-width: 640px) 45vw, (max-width: 1024px) 40vw, 22vw" className="object-cover transition-transform duration-500 hover:scale-105" />
           </div>
         </div>
       </div>

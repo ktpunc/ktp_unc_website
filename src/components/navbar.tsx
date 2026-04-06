@@ -34,8 +34,8 @@ export function Navbar() {
   return (
     <>
       <nav className="fixed left-0 right-0 top-0 z-50 pt-3">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="flex h-[4.8rem] items-center justify-between gap-3 rounded-[1.6rem] border border-slate-200 bg-white px-3 shadow-[0_12px_30px_rgba(15,23,42,0.08)]">
+        <div className="mx-auto max-w-7xl px-3 sm:px-6">
+          <div className="flex h-[4.2rem] items-center justify-between gap-3 rounded-[1.6rem] border border-slate-200 bg-white px-3 shadow-[0_12px_30px_rgba(15,23,42,0.08)] sm:h-[4.8rem]">
             <Link
               href="/"
               aria-label="Go to homepage"
@@ -110,7 +110,7 @@ export function Navbar() {
 
       <div
         id="mobile-navigation"
-        className={`fixed left-4 right-4 top-[5.9rem] z-50 rounded-[1.35rem] border border-slate-200 bg-white p-4 shadow-[0_18px_40px_rgba(15,23,42,0.12)] transition-all duration-200 lg:hidden ${
+        className={`fixed left-3 right-3 top-[5.35rem] z-50 rounded-[1.35rem] border border-slate-200 bg-white p-4 shadow-[0_18px_40px_rgba(15,23,42,0.12)] transition-all duration-200 sm:left-4 sm:right-4 sm:top-[5.9rem] lg:hidden ${
           menuOpen ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none -translate-y-3 opacity-0"
         }`}
       >

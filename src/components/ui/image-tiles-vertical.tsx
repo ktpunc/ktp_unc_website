@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 
 type ImageTilesVerticalProps = {
@@ -105,7 +106,15 @@ function Tile({
       animate="animate"
       style={{ zIndex }}
     >
-      <img src={src} alt={alt} className="h-full w-full rounded-[1.1rem] object-cover" />
+      <div className="relative h-full w-full overflow-hidden rounded-[1.1rem]">
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          className="object-cover"
+          sizes="(max-width: 640px) 44vw, (max-width: 1024px) 12rem, 13rem"
+        />
+      </div>
     </motion.div>
   );
 }

@@ -8,6 +8,12 @@ body {
   background-color: #ffffff;
   color: #1e293b;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
 }
 
 /* ── Scroll animation ── */
@@ -19,6 +25,14 @@ body {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 .reveal-delay-1 { transition-delay: 80ms; }
 .reveal-delay-2 { transition-delay: 160ms; }
@@ -51,38 +65,38 @@ body {
 }
 
 .btn-navy {
-  background-color: #13294B;
+  background-color: #2F6493;
   color: #ffffff;
-  border-color: #13294B;
+  border-color: #2F6493;
 }
 .btn-navy:hover {
-  background-color: #1e3f70;
-  border-color: #1e3f70;
+  background-color: #3a7ab5;
+  border-color: #3a7ab5;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(19,41,75,0.22);
+  box-shadow: 0 4px 12px rgba(47,100,147,0.28);
 }
 
 .btn-outline-navy {
   background-color: transparent;
-  color: #13294B;
-  border-color: #13294B;
+  color: #2F6493;
+  border-color: #2F6493;
 }
 .btn-outline-navy:hover {
-  background-color: #13294B;
+  background-color: #2F6493;
   color: #ffffff;
   transform: translateY(-1px);
 }
 
 .btn-blue {
-  background-color: #4B9CD3;
+  background-color: #69c1ed;
   color: #ffffff;
-  border-color: #4B9CD3;
+  border-color: #69c1ed;
 }
 .btn-blue:hover {
-  background-color: #3a87be;
-  border-color: #3a87be;
+  background-color: #4aaedd;
+  border-color: #4aaedd;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(75,156,211,0.35);
+  box-shadow: 0 4px 12px rgba(105,193,237,0.35);
 }
 
 .btn-outline-white {
@@ -231,25 +245,25 @@ body {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #4B9CD3;
+  color: #69c1ed;
   margin-bottom: 0.75rem;
 }
 
 /* ── Blue accent bar on card top ── */
-.card-accent { border-top: 3px solid #4B9CD3; }
+.card-accent { border-top: 3px solid #69c1ed; }
 
 /* ── Divider ── */
 .section-divider {
   width: 48px;
   height: 3px;
-  background-color: #4B9CD3;
+  background-color: #69c1ed;
   border-radius: 2px;
   margin: 0.75rem 0 1.5rem;
 }
 .section-divider-center {
   width: 48px;
   height: 3px;
-  background-color: #4B9CD3;
+  background-color: #69c1ed;
   border-radius: 2px;
   margin: 0.75rem auto 1.5rem;
 }

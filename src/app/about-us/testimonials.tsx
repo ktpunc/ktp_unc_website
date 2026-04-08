@@ -70,7 +70,7 @@ export default function Testimonials() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0.15, scale: 0.99 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="h-full w-full"
+                className="relative h-full w-full"
               >
                 <Image
                   src={currentTestimonial.imageUrl}
@@ -122,7 +122,7 @@ export default function Testimonials() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.28, ease: "easeInOut" }}
-                  className="h-full w-full"
+                  className="relative h-full w-full"
                 >
                   <Image
                     src={currentTestimonial.imageUrl}

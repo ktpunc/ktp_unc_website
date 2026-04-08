@@ -1,24 +1,26 @@
 "use client";
 
+import { CalendarCheck, Clock, GraduationCap, Mail, Star } from "lucide-react";
+import { BrandInstagram } from "@/components/brand-icons";
 import { useInView } from "@/hooks/useInView";
 
 const eligibility = [
   {
-    icon: "fa-graduation-cap",
+    icon: GraduationCap,
     title: "Any Major",
     desc: "Students from any major are welcome — Computer Science, Journalism, Biology, Business, Peace War and Defense, Studio Art, and everything in between.",
     iconBg: "bg-blue-pale",
     iconColor: "text-blue",
   },
   {
-    icon: "fa-star",
+    icon: Star,
     title: "2.5+ GPA",
     desc: "A minimum cumulative GPA of 2.5 is required for eligibility.",
     iconBg: "bg-orange-100",
     iconColor: "text-orange-500",
   },
   {
-    icon: "fa-calendar-check",
+    icon: CalendarCheck,
     title: "2+ Semesters Left",
     desc: "Applicants should have at least two semesters remaining at UNC.",
     iconBg: "bg-emerald-100",
@@ -55,7 +57,7 @@ export default function Schedule() {
               <div className="surface-hover-rail mt-8 rounded-2xl border border-slate-200 bg-[linear-gradient(180deg,#ffffff_0%,#f8fbfe_100%)] p-6 shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
                 <div className="flex items-start gap-4">
                   <div className="mt-0.5 flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-2xl bg-blue-pale text-blue ring-1 ring-blue/10">
-                    <i className="fa-solid fa-clock text-sm" />
+                    <Clock className="h-4 w-4" aria-hidden />
                   </div>
                   <div>
                     <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue">Next Update</p>
@@ -96,14 +98,14 @@ export default function Schedule() {
                     rel="noopener noreferrer"
                     className="group inline-flex items-center justify-center gap-3 rounded-full bg-navy px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-navy-light"
                   >
-                    <i className="fa-brands fa-instagram text-base" />
+                    <BrandInstagram className="h-4 w-4" />
                     <span>Follow @ktpunc</span>
                   </a>
                   <a
                     href="mailto:uncktp@gmail.com"
                     className="group inline-flex items-center justify-center gap-3 rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-navy transition-all duration-300 hover:-translate-y-1 hover:border-blue/25 hover:bg-blue-pale"
                   >
-                    <i className="fa-solid fa-envelope text-sm" />
+                    <Mail className="h-4 w-4" aria-hidden />
                     <span>Email KTP</span>
                   </a>
                 </div>
@@ -124,13 +126,13 @@ export default function Schedule() {
             </div>
 
             <div className="grid gap-4 md:grid-cols-3">
-              {eligibility.map(({ icon, title, desc, iconBg, iconColor }) => (
+              {eligibility.map(({ icon: EligIcon, title, desc, iconBg, iconColor }) => (
                 <div
                   key={title}
                   className="surface-hover-tilt rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-[0_2px_12px_rgba(15,23,42,0.06)]"
                 >
                   <div className={`mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full ${iconBg} ${iconColor}`}>
-                    <i className={`fa-solid ${icon} text-lg`} />
+                    <EligIcon className="h-[1.125rem] w-[1.125rem]" aria-hidden />
                   </div>
                   <h4 className="text-lg font-bold text-navy">{title}</h4>
                   <p className="mt-2 text-sm leading-7 text-slate-500">{desc}</p>

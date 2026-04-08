@@ -7,7 +7,7 @@ export default function AboutSection() {
   const { ref, inView } = useInView();
 
   return (
-    <section className="bg-white py-20">
+    <section className="content-below-fold bg-white py-20">
       <div
         ref={ref}
         className={`max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center reveal ${inView ? "visible" : ""}`}

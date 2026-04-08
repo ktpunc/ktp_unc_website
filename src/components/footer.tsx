@@ -1,7 +1,8 @@
 import Image from "next/image";
 import ktpIcon from "../ASSETS/KTP New Logo.svg";
 import Link from "next/link";
-import { Heart } from "lucide-react";
+import { Heart, Mail } from "lucide-react";
+import { BrandInstagram, BrandLinkedin } from "@/components/brand-icons";
 
 const CURRENT_YEAR = new Date().getFullYear();
 
@@ -16,20 +17,20 @@ const navigationLinks = [
 const socialLinks = [
   {
     href: "https://www.linkedin.com/company/ktp-unc/",
-    icon: "fa-linkedin",
+    Icon: BrandLinkedin,
     label: "LinkedIn",
   },
   {
     href: "https://www.instagram.com/ktpunc/",
-    icon: "fa-instagram",
+    Icon: BrandInstagram,
     label: "Instagram",
   },
   {
     href: "mailto:uncktp@gmail.com",
-    icon: "fa-envelope",
+    Icon: Mail,
     label: "Email",
   },
-];
+] as const;
 
 export function Footer() {
   return (
@@ -52,9 +53,8 @@ export function Footer() {
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              {socialLinks.map(({ href, icon, label }) => {
+              {socialLinks.map(({ href, Icon, label }) => {
                 const isExternal = href.startsWith("http");
-                const iconClass = icon === "fa-envelope" ? "fa-solid" : "fa-brands";
 
                 return (
                   <Link
@@ -65,7 +65,7 @@ export function Footer() {
                     aria-label={label}
                     className="group flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-500 transition-all duration-200 hover:-translate-y-1 hover:rotate-[-4deg] hover:border-blue/30 hover:bg-blue-pale hover:text-navy"
                   >
-                    <i className={`${iconClass} ${icon} text-sm`} />
+                    <Icon className="h-4 w-4" aria-hidden />
                   </Link>
                 );
               })}

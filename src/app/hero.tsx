@@ -49,6 +49,8 @@ type CardDef = {
   rotate: string;  // inline deg string e.g. "12deg"
   float: string;
   delay: string;
+  /** Preload for LCP — use sparingly (hero collage only). */
+  priority?: boolean;
   // absolute position within the column container
   top: string;
   left?: string;
@@ -63,6 +65,7 @@ const leftCards: CardDef[] = [
     rotate: "12deg",
     float: "hero-photo-card-float",
     delay: "600ms",
+    priority: true,
     top: "2%",
     left: "18%",
   },
@@ -86,6 +89,7 @@ const rightCards: CardDef[] = [
     rotate: "-10deg",
     float: "hero-photo-card-float-b",
     delay: "680ms",
+    priority: true,
     top: "0%",
     right: "6%",
   },
@@ -136,6 +140,7 @@ function PhotoCard({ card }: { card: CardDef }) {
               height={card.w * 2}
               sizes="(max-width: 1024px) 0px, 220px"
               quality={90}
+              priority={card.priority}
               className={`${card.aspect} w-full object-cover`}
             />
           </div>

@@ -6,6 +6,7 @@ import Image from "next/image";
 import ktpIcon from "../ASSETS/KTP New Logo.svg";
 import { usePathname } from "next/navigation";
 import { Mail } from "lucide-react";
+import { BrandInstagram, BrandLinkedin } from "@/components/brand-icons";
 
 const links = [
   { href: "/", label: "Home" },
@@ -145,7 +146,7 @@ export function Navbar() {
               aria-label="KTP UNC LinkedIn"
               className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-500 transition-colors hover:text-navy"
             >
-              <i className="fa-brands fa-linkedin text-base" />
+              <BrandLinkedin className="h-[1.125rem] w-[1.125rem]" />
             </Link>
             <Link
               href="https://www.instagram.com/ktpunc/"
@@ -154,7 +155,7 @@ export function Navbar() {
               aria-label="KTP UNC Instagram"
               className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-500 transition-colors hover:text-navy"
             >
-              <i className="fa-brands fa-instagram text-base" />
+              <BrandInstagram className="h-[1.125rem] w-[1.125rem]" />
             </Link>
             <Link
               href="mailto:uncktp@gmail.com"

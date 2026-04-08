@@ -1,6 +1,6 @@
 "use client";
 
-import { Building2, Network, UsersRound } from "lucide-react";
+import { Briefcase, Building2, Laptop, Network, UsersRound } from "lucide-react";
 import { useInView } from "@/hooks/useInView";
 
 const stats = [
@@ -26,21 +26,21 @@ const stats = [
 
 const pillars = [
   {
-    icon: "fa-briefcase",
+    icon: Briefcase,
     title: "Professional Development",
     desc: "Through interview training, resume building, one-on-one mentorship, and private company recruiting, KTP prepares members for success in any technology-related career.",
     iconBg: "bg-pink-100",
     iconColor: "text-pink-500",
   },
   {
-    icon: "fa-laptop-code",
+    icon: Laptop,
     title: "Technical Advancement",
     desc: "Whether it's building with a hackathon team, showing up to technical workshops, or learning from other members, KTP gives people real ways to grow their skills.",
     iconBg: "bg-blue-pale",
     iconColor: "text-blue",
   },
   {
-    icon: "fa-people-group",
+    icon: UsersRound,
     title: "Social Growth",
     desc: "The people you meet in KTP will go on to be some of your closest friends. From formal to tailgates to retreat, we bring our members together throughout the year.",
     iconBg: "bg-emerald-100",
@@ -53,7 +53,8 @@ export default function WelcomeSection() {
   const { ref: pillarsRef, inView: pillarsInView } = useInView();
 
   return (
-    <>
+    <div className="content-below-fold">
+      {/* Stats */}
       <section className="relative overflow-hidden bg-[linear-gradient(180deg,#f8fbfe_0%,#edf6fc_48%,#f8fbfe_100%)] py-20">
         <div aria-hidden="true" className="pointer-events-none absolute inset-0">
           <div className="absolute left-[-5rem] top-6 h-40 w-40 rounded-full bg-blue/16 blur-3xl" />
@@ -111,13 +112,13 @@ export default function WelcomeSection() {
             ref={pillarsRef}
             className="grid grid-cols-1 gap-5 md:grid-cols-3"
           >
-            {pillars.map(({ icon, title, desc, iconBg, iconColor }, i) => (
+            {pillars.map(({ icon: PillarIcon, title, desc, iconBg, iconColor }, i) => (
               <div
                 key={title}
                 className={`surface-hover-sheen reveal reveal-delay-${i + 1} rounded-2xl border border-slate-200 bg-white p-7 text-center shadow-[0_2px_12px_rgba(15,23,42,0.06)] ${pillarsInView ? "visible" : ""}`}
               >
                 <div className={`mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full ${iconBg} ${iconColor}`}>
-                  <i className={`fa-solid ${icon} text-lg`} />
+                  <PillarIcon className="h-[1.125rem] w-[1.125rem]" aria-hidden />
                 </div>
                 <h3 className="text-navy font-bold text-xl leading-tight mb-3">{title}</h3>
                 <p className="text-slate-500 text-[0.95rem] leading-7">{desc}</p>
@@ -126,6 +127,7 @@ export default function WelcomeSection() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
+

@@ -1,16 +1,18 @@
 "use client";
 import { Navbar, Footer, PageHero } from "@/components";
-import ExecutiveBoard from "./executive_board";
-import Class_2026 from "./gen_body_2026";
-import Class_2027 from "./gen_body_2027";
-import Class_2028 from "./gen_body_2028";
-import Alumni from "./past_alumni";
+import { MembersTabPanels, type MembersTabId } from "./members-tab-panels";
 import { useState } from "react";
 
-const tabs = ["Executive Board", "Class of 2026", "Class of 2027", "Class of 2028", "Alumni"];
+const tabs: MembersTabId[] = [
+  "Executive Board",
+  "Class of 2026",
+  "Class of 2027",
+  "Class of 2028",
+  "Alumni",
+];
 
 export default function MembersPage() {
-  const [active, setActive] = useState("Executive Board");
+  const [active, setActive] = useState<MembersTabId>("Executive Board");
 
   return (
     <>
@@ -52,11 +54,7 @@ export default function MembersPage() {
       <div className="min-h-screen bg-[linear-gradient(180deg,#f7fbff_0%,#eff6fc_100%)]">
         <div className="mx-auto max-w-[96rem] px-6 py-12">
           <div className="surface-hover-float rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_18px_44px_rgba(15,23,42,0.06)] md:p-8">
-          {active === "Executive Board" && <ExecutiveBoard />}
-          {active === "Class of 2026" && <Class_2026 />}
-          {active === "Class of 2027" && <Class_2027 />}
-          {active === "Class of 2028" && <Class_2028 />}
-          {active === "Alumni" && <Alumni />}
+          <MembersTabPanels active={active} />
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { Navbar, Footer, PageHero } from "@/components";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import About from "./about";
 import Pillars from "./pillars";
 import Testimonials from "./testimonials";
@@ -6,7 +7,7 @@ import Companies from "./companies";
 
 export default function AboutPage() {
   return (
-    <>
+    <TooltipProvider delayDuration={200}>
       <Navbar />
       <PageHero
         eyebrow="About KTP"
@@ -19,6 +20,6 @@ export default function AboutPage() {
       <Testimonials />
       <Companies />
       <Footer />
-    </>
+    </TooltipProvider>
   );
 }

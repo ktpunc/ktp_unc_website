@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { Check, ChevronDown, Search } from "lucide-react";
 import { useInView } from "@/hooks/useInView";
 
 type Category = "All" | "Eligibility" | "Recruitment" | "Membership" | "Fit";
@@ -147,7 +148,7 @@ export default function FAQ() {
               <label className="mt-5 block">
                 <span className="sr-only">Search the FAQ</span>
                 <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3">
-                  <i className="fa-solid fa-magnifying-glass text-sm text-slate-400" />
+                  <Search className="h-4 w-4 shrink-0 text-slate-400" aria-hidden />
                   <input
                     type="text"
                     value={query}
@@ -175,7 +176,7 @@ export default function FAQ() {
                     }`}
                   >
                     <span>{category}</span>
-                    {activeCategory === category && <i className="fa-solid fa-check text-xs" />}
+                    {activeCategory === category && <Check className="h-3.5 w-3.5 shrink-0" aria-hidden />}
                   </button>
                 ))}
               </div>
@@ -274,7 +275,10 @@ export default function FAQ() {
                                       : "border-slate-300 bg-white text-slate-400"
                                   }`}
                                 >
-                                  <i className={`fa-solid fa-chevron-down text-xs transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+                                  <ChevronDown
+                                    className={`h-4 w-4 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                                    aria-hidden
+                                  />
                                 </span>
                               </button>
 

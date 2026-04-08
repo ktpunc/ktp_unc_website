@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { motion, type Variants } from "framer-motion";
+import { BrandLinkedin } from "@/components/brand-icons";
+import { useInView } from "@/hooks/useInView";
 
 const greekLetterMap: Record<string, string> = {
   Alpha: "α",
@@ -41,44 +42,25 @@ type MemberGridProps = {
   members: Member[];
 };
 
-const gridVariants: Variants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.05,
-      delayChildren: 0.06,
-    },
-  },
-};
-
-const cardVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    y: 20,
-    scale: 0.97,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.45,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
+const STAGGER_MS = 42;
+const STAGGER_CAP = 28;
 
 export default function MemberGrid({ members }: MemberGridProps) {
+  const { ref, inView } = useInView(0.12);
+
   return (
-    <motion.div
+    <div
+      ref={ref}
       className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6"
-      variants={gridVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.12 }}
     >
-      {members.map((member) => (
-        <motion.div key={member.name} variants={cardVariants}>
+      {members.map((member, i) => (
+        <div
+          key={member.name}
+          className={`reveal min-w-0 ${inView ? "visible" : ""}`}
+          style={{
+            transitionDelay: inView ? `${Math.min(i, STAGGER_CAP) * STAGGER_MS}ms` : undefined,
+          }}
+        >
           <Link
             href={member.linkedin}
             target="_blank"
@@ -99,7 +81,7 @@ export default function MemberGrid({ members }: MemberGridProps) {
 
                 <div className="absolute inset-x-3 bottom-3 flex translate-y-3 items-center justify-between rounded-xl border border-white/10 bg-navy/78 px-3 py-2.5 text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                   <span className="flex items-center text-white/80">
-                    <i className="fa-brands fa-linkedin text-sm" />
+                    <BrandLinkedin className="h-3.5 w-3.5" />
                   </span>
                   {member.tag && (
                     <span
@@ -124,8 +106,8 @@ export default function MemberGrid({ members }: MemberGridProps) {
               </div>
             </div>
           </Link>
-        </motion.div>
+        </div>
       ))}
-    </motion.div>
+    </div>
   );
 }

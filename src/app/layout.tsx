@@ -1,5 +1,5 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Roboto } from "next/font/google";
 import { Layout } from "@/components";
 
@@ -13,6 +13,12 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: "Kappa Theta Pi - Eta Chapter",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({

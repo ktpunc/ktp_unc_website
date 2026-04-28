@@ -164,10 +164,10 @@ export default function Hero() {
         }}
       />
 
-      {/* Soft glow blobs */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-[5%] top-[20%] h-64 w-64 rounded-full bg-blue/15 blur-3xl" />
-        <div className="absolute right-[5%] top-[15%] h-72 w-72 rounded-full bg-blue-light/20 blur-3xl" />
+      {/* Soft glow blobs — hidden on mobile to avoid expensive GPU blur */}
+      <div className="pointer-events-none absolute inset-0 hidden sm:block">
+        <div className="absolute left-[5%] top-[20%] h-64 w-64 rounded-full bg-blue/15 blur-2xl" />
+        <div className="absolute right-[5%] top-[15%] h-72 w-72 rounded-full bg-blue-light/20 blur-2xl" />
       </div>
 
       <div className="relative z-10 flex min-h-screen items-center">

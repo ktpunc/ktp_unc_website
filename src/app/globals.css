@@ -316,6 +316,7 @@ img, video {
   transform: translate3d(0, 28px, 0) scale(0.92) rotate(4deg);
   filter: blur(4px);
   animation: hero-letter-flow 0.9s cubic-bezier(0.2, 0.9, 0.18, 1) forwards;
+  will-change: transform, opacity, filter;
 }
 
 .hero-panel-in {
@@ -323,6 +324,7 @@ img, video {
   transform: translate3d(0, 24px, 0);
   filter: blur(4px);
   animation: hero-panel-rise 0.9s cubic-bezier(0.2, 0.9, 0.18, 1) forwards;
+  will-change: transform, opacity;
 }
 
 .hero-glow-drift {
@@ -378,17 +380,21 @@ img, video {
 .hero-photo-card {
   opacity: 0;
   animation: hero-card-rise 0.8s cubic-bezier(0.2, 0.9, 0.18, 1) forwards;
+  will-change: transform, opacity;
 }
 
 .hero-photo-card-float {
   animation: hero-card-float 6s ease-in-out infinite;
+  will-change: transform;
 }
 .hero-photo-card-float-b {
   animation: hero-card-float 7.5s ease-in-out infinite reverse;
+  will-change: transform;
 }
 .hero-photo-card-float-c {
   animation: hero-card-float 5.5s ease-in-out infinite;
   animation-delay: 1s;
+  will-change: transform;
 }
 
 @keyframes hero-card-rise {
@@ -405,6 +411,66 @@ img, video {
 @keyframes hero-card-float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
+}
+
+/* ── Mobile: simplify hero animations (no blur, cheaper transforms) ── */
+@media (max-width: 1023px) {
+  .hero-flow-letter {
+    transform: translate3d(0, 16px, 0);
+    filter: none;
+    animation: hero-letter-flow-mobile 0.6s ease-out forwards;
+    will-change: transform, opacity;
+  }
+
+  .hero-panel-in {
+    filter: none;
+    animation: hero-panel-rise-mobile 0.55s ease-out forwards;
+  }
+
+  @keyframes hero-letter-flow-mobile {
+    0%   { opacity: 0; transform: translate3d(0, 16px, 0); }
+    100% { opacity: 1; transform: translate3d(0, 0, 0); }
+  }
+
+  @keyframes hero-panel-rise-mobile {
+    0%   { opacity: 0; transform: translate3d(0, 16px, 0); }
+    100% { opacity: 1; transform: translate3d(0, 0, 0); }
+  }
+}
+
+/* ── Disable hover lift/shadow effects on touch devices ── */
+@media (hover: none) {
+  .surface-hover-lift:hover,
+  .surface-hover-lift:focus-within,
+  .surface-hover-sheen:hover,
+  .surface-hover-sheen:focus-within,
+  .surface-hover-tilt:hover,
+  .surface-hover-tilt:focus-within,
+  .surface-hover-rail:hover,
+  .surface-hover-rail:focus-within,
+  .surface-hover-glow:hover,
+  .surface-hover-glow:focus-within,
+  .surface-hover-float:hover,
+  .surface-hover-float:focus-within,
+  .surface-hover-quote:hover,
+  .surface-hover-quote:focus-within,
+  .surface-hover-chip:hover,
+  .surface-hover-chip:focus-within,
+  .member-card-hover:hover,
+  .member-card-hover:focus-within,
+  .card:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: inherit;
+    background-color: inherit;
+  }
+
+  .btn-navy:hover,
+  .btn-outline-navy:hover,
+  .btn-blue:hover,
+  .btn-outline-white:hover {
+    transform: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

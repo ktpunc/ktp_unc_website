@@ -14,6 +14,7 @@ const greekLetterMap: Record<string, string> = {
   Zeta: "ζ",
   Eta: "η",
   Theta: "θ",
+  Iota: "ι",
 };
 
 function formatGreekLabel(text: string) {
@@ -30,6 +31,7 @@ function getGreekLetter(text: string) {
 type Member = {
   name: string;
   image: string;
+  imagePosition?: string;
   linkedin: string;
   subtitle?: string;
   badge?: string;
@@ -55,7 +57,7 @@ export default function MemberGrid({ members }: MemberGridProps) {
     >
       {members.map((member, i) => (
         <div
-          key={member.name}
+          key={`${member.name}-${member.subtitle ?? ""}`}
           className={`reveal min-w-0 ${inView ? "visible" : ""}`}
           style={{
             transitionDelay: inView ? `${Math.min(i, STAGGER_CAP) * STAGGER_MS}ms` : undefined,
@@ -74,7 +76,8 @@ export default function MemberGrid({ members }: MemberGridProps) {
                   alt={member.name}
                   fill
                   sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, (max-width: 1536px) 20vw, 16vw"
-                  className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                  style={{ objectPosition: member.imagePosition ?? "center top" }}
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/82 to-navy/28 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />

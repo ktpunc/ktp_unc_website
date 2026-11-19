@@ -14,9 +14,9 @@ const executiveMembers = [
   { name: "Andrew Wang",               title: "Director of Professional Dev.",  chapterClass: "Theta",   linkedin: "https://www.linkedin.com/in/anzwang/",                      image: "/image/andrewwang.jpg", imagePosition: "center" },
   { name: "Sriraam Kumar",             title: "Director of Technical Enrichment",chapterClass: "Iota",    linkedin: "https://www.linkedin.com/in/sskumar6/",                     image: "/image/srikumar.jpg", imagePosition: "center 40%" },
   { name: "Ally Organo",               title: "Director of Community Service",  chapterClass: "Theta",   linkedin: "https://www.linkedin.com/in/miralyssaorgano/",             image: "/image/ally.jpg", imagePosition: "center 40%" },
-  { name: "Annalyn Crumpton",          title: "Director of Community Service",  chapterClass: "Iota",    linkedin: "https://www.linkedin.com/in/annalyn-crumpton/",             image: "/image/annalyncrumpton.jpg", imagePosition: "center 30%" },
+  { name: "Annalyn Crumpton",          title: "Director of Community Service",  chapterClass: "Iota",    linkedin: "https://www.linkedin.com/in/annalyn-crumpton/",             image: "/image/annalyncrumpton.jpg", imagePosition: "center 40%", imageScale: 1.35 },
   { name: "Anika Moolan",              title: "Director of Marketing",          chapterClass: "Iota",    linkedin: "https://www.linkedin.com/in/anika-noby-moolan-13b715320/",  image: "/image/anikamoolan.jpg", imagePosition: "center 35%" },
-  { name: "Annalyn Crumpton",          title: "Director of Membership",         chapterClass: "Iota",    linkedin: "https://www.linkedin.com/in/annalyn-crumpton/",             image: "/image/annalyncrumpton.jpg", imagePosition: "center 30%" },
+  { name: "Annalyn Crumpton",          title: "Director of Membership",         chapterClass: "Iota",    linkedin: "https://www.linkedin.com/in/annalyn-crumpton/",             image: "/image/annalyncrumpton.jpg", imagePosition: "center 40%", imageScale: 1.35 },
   { name: "Sonal Mahapatra",           title: "Director of Chapter Standards",  chapterClass: "Iota",    linkedin: "https://www.linkedin.com/in/sonal-m-a73b8628b/",             image: "/image/sonalmahapatra.jpg", imagePosition: "center 35%" },
 ];
 

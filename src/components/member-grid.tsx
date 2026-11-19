@@ -33,6 +33,7 @@ type Member = {
   name: string;
   image: string;
   imagePosition?: string;
+  imageScale?: number;
   linkedin?: string;
   subtitle?: string;
   badge?: string;
@@ -86,7 +87,7 @@ export default function MemberGrid({ members }: MemberGridProps) {
                   fill
                   sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, (max-width: 1536px) 20vw, 16vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                  style={{ objectPosition: member.imagePosition ?? "center top" }}
+                  style={{ objectPosition: member.imagePosition ?? "center top", scale: member.imageScale }}
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/82 to-navy/28 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />

@@ -5,7 +5,6 @@ import { useState } from "react";
 
 const tabs: MembersTabId[] = [
   "Executive Board",
-  "Class of 2026",
   "Class of 2027",
   "Class of 2028",
   "Alumni",

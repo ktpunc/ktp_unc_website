@@ -1,10 +1,12 @@
 const alumniData: Record<string, string[]> = {
-  Founders: ["Ella Jeungst", "Hannah Chisholm", "Josh Redman", "Manas Takalpati", "Manivannan Senthil", "Maya Agnihotri", "Rhea Bhagia", "Rohitha Madduluri"],
-  Alpha: ["Beliz Yilmaz", "Ben Woodman", "Brendan O'Malley", "Cole Hoffman", "John Poltorak", "Kavish Gandhi", "Mia Uitz", "Olivia Wen", "Raahil Madhiwala", "Savitra Kulkarni", "Simon Low", "Yulim Kim"],
-  Beta: ["Alan Chen", "Andi Carnell", "Aryaman Agrawal", "Cole Henry", "David Lu", "Ethan Rayala", "Kyle Sorensen", "Manisha Nallakatla", "Mikaela Sherry", "Naman Kejriwal", "Neha Patel", "Raghuvara Padma", "Raheel Qamar", "Ronit Ray", "Sarika Kasuganti"],
-  Gamma: ["Alison Polito", "Andrew Knotts", "Arya Rao", "Ashwin Senthil", "Davis Atwell", "Jackson Reed", "Kirsten Allen", "Lam Ngo", "Milen Patel", "Sarayu Yenumula", "Srinidhi Ekkurthi", "Tanvi Pulipaka", "Tara Ghorpadkar"],
-  Delta: ["Ananya Garg", "Ahmadou Bamba Diouf", "Alec Pugh", "Haley Brosnahan", "Justin Rivera", "Katherine Katsoudas", "Mark Maio", "Mateo Correa Risso", "Nikhil Abraham", "Sai Kaza", "Sana Goyal", "Tyler Roth"],
-  Epsilon: ["Jake Rogers", "Ryan Lutz"],
+  Founders: ["Ella Jeungst","Hannah Chisholm","Josh Redman","Manas Takalpati","Manivannan Senthil","Maya Agnihotri","Rhea Bhagia","Rohitha Madduluri"],
+  Alpha: ["Beliz Yilmaz","Ben Woodman","Brendan O'Malley","Cole Hoffman","John Poltorak","Kavish Gandhi","Mia Uitz","Olivia Wen","Raahil Madhiwala","Savitra Kulkarni","Simon Low","Yulim Kim"],
+  Beta: ["Alan Chen","Andi Carnell","Aryaman Agrawal","Cole Henry","David Lu","Ethan Rayala","Kyle Sorensen","Manisha Nallakatla","Mikaela Sherry","Naman Kejriwal","Neha Patel","Raghuvara Padma","Raheel Qamar","Ronit Ray","Sarika Kasuganti"],
+  Gamma: ["Alison Polito","Andrew Knotts","Arya Rao","Ashwin Senthil","Davis Atwell","Jackson Reed","Kirsten Allen","Lam Ngo","Milen Patel","Sarayu Yenumula","Srinidhi Ekkurthi","Tanvi Pulipaka","Tara Ghorpadkar"],
+  Delta: ["Ahmadou Bamba Diouf","Alec Pugh","Ananya Garg","Diya Joshi","Ellie Kim","Haley Brosnahan","Justin Rivera","Katherine Katsoudas","Lily Moore","Mark Maio","Mason Drabik","Mateo Correa Risso","Nicholas Sanaie","Nikhil Abraham","Sai Kaza","Sana Goyal","Shriya Manchikatla","Sruthy Mammen","Tyler Roth","Upasana Lamsal"],
+  Epsilon: ["Akhil Motiramani","Alex Gonzales","Colby Eagan","Dylan Nicks","Jake Rogers","Jordan Weinstein","Lauren Lascano","Natalie Ammerman","Ryan Lutz","Tanner Macpherson","Tanveer Thethi","Will Wang"],
+  Zeta: ["Angelina León","Benny Rakower","Carmine Anderson-Falconi","Harper Cunningham","Jules Kim","Kibby Hyacinth Pangilinan","Neha Madhavapeddi","Ross Guinan","Srikar Sannidhi"],
+  Eta: ["Arame Thiam","Francesca Fabiano-Grossi"],
 };
 
 const greekLetterMap: Record<string, string> = {
@@ -13,6 +15,8 @@ const greekLetterMap: Record<string, string> = {
   Gamma: "γ",
   Delta: "δ",
   Epsilon: "ε",
+  Zeta: "ζ",
+  Eta: "η",
 };
 
 export default function AlumniList() {
@@ -36,7 +40,7 @@ export default function AlumniList() {
               <div className="flex items-center gap-3">
                 <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-navy text-white shadow-sm">
                   <span className="text-lg font-semibold leading-none">
-                    {greekLetterMap[group] ?? "κ"}
+                    {group === "Founders" ? "ΚΘΠ" : greekLetterMap[group] ?? group}
                   </span>
                 </div>
                 <div>

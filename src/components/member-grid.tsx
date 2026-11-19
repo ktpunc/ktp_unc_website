@@ -16,6 +16,7 @@ const greekLetterMap: Record<string, string> = {
   Eta: "η",
   Theta: "θ",
   Iota: "ι",
+  Kappa: "κ",
 };
 
 function formatGreekLabel(text: string) {

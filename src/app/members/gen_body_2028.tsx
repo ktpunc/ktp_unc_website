@@ -9,6 +9,11 @@ const class_2028 = [
     "class": "Theta"
   },
   {
+    "name": "Aditi Rai",
+    "image": "/image/member-placeholder.svg",
+    "class": "Kappa"
+  },
+  {
     "name": "Ally Organo",
     "linkedin": "https://www.linkedin.com/in/miralyssaorgano/",
     "image": "/image/ally.jpg",
@@ -96,6 +101,16 @@ const class_2028 = [
     "class": "Eta"
   },
   {
+    "name": "Gabriel Great",
+    "image": "/image/member-placeholder.svg",
+    "class": "Kappa"
+  },
+  {
+    "name": "Hye-Rynn Jeong",
+    "image": "/image/member-placeholder.svg",
+    "class": "Kappa"
+  },
+  {
     "name": "Jack Panning",
     "linkedin": "https://www.linkedin.com/in/jack-panning/",
     "image": "/image/jackpanning.jpg",
@@ -114,6 +129,16 @@ const class_2028 = [
     "linkedin": "https://www.linkedin.com/in/john-harmon-8709025jwh/",
     "image": "/image/john.jpeg",
     "class": "Eta"
+  },
+  {
+    "name": "Luke Kelly",
+    "image": "/image/member-placeholder.svg",
+    "class": "Kappa"
+  },
+  {
+    "name": "Muhammad Zain Zeeshan Malik",
+    "image": "/image/member-placeholder.svg",
+    "class": "Kappa"
   },
   {
     "name": "Neelasha Panda",
@@ -143,11 +168,21 @@ const class_2028 = [
     "class": "Theta"
   },
   {
+    "name": "Suhani Tailor",
+    "image": "/image/member-placeholder.svg",
+    "class": "Kappa"
+  },
+  {
     "name": "Vihan Patil",
     "linkedin": "https://www.linkedin.com/vihanp",
     "image": "/image/vihanpatil.jpg",
     "imagePosition": "center 30%",
     "class": "Iota"
+  },
+  {
+    "name": "Vohn Jacquez",
+    "image": "/image/member-placeholder.svg",
+    "class": "Kappa"
   },
   {
     "name": "Yewon Song",

@@ -7,6 +7,7 @@ const tabs: MembersTabId[] = [
   "Executive Board",
   "Class of 2027",
   "Class of 2028",
+  "Class of 2029",
   "Alumni",
 ];
 

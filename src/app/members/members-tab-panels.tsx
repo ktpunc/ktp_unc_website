@@ -18,6 +18,10 @@ const Alumni = dynamic(() => import("./past_alumni"), {
   loading: () => <MembersPanelFallback />,
 });
 
+const Class2029 = dynamic(() => import("./gen_body_2029"), {
+  loading: () => <MembersPanelFallback />,
+});
+
 function MembersPanelFallback() {
   return (
     <div
@@ -33,6 +37,7 @@ export type MembersTabId =
   | "Executive Board"
   | "Class of 2027"
   | "Class of 2028"
+  | "Class of 2029"
   | "Alumni";
 
 export function MembersTabPanels({ active }: { active: MembersTabId }) {
@@ -41,6 +46,7 @@ export function MembersTabPanels({ active }: { active: MembersTabId }) {
       {active === "Executive Board" && <ExecutiveBoard />}
       {active === "Class of 2027" && <Class2027 />}
       {active === "Class of 2028" && <Class2028 />}
+      {active === "Class of 2029" && <Class2029 />}
       {active === "Alumni" && <Alumni />}
     </>
   );

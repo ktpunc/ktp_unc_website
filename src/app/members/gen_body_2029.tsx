@@ -13,8 +13,9 @@ const class_2029: ClassMember[] = [
   {
     "name": "Agastya Maheshwari",
     "linkedin": "https://www.linkedin.com/in/agastyamaheshwari22",
-    "image": "/image/member-placeholder.svg",
-    "class": ""
+    "image": "/image/agastyamaheshwari.jpg",
+    "imagePosition": "center 35%",
+    "class": "Iota"
   },
   {
     "name": "Anika Moolan",
@@ -26,8 +27,9 @@ const class_2029: ClassMember[] = [
   {
     "name": "Avneesh Tamhankar",
     "linkedin": "https://www.linkedin.com/in/avneesh-tamhankar/",
-    "image": "/image/member-placeholder.svg",
-    "class": ""
+    "image": "/image/avneeshtamhankar.jpg",
+    "imagePosition": "center 35%",
+    "class": "Iota"
   },
   {
     "name": "Harsha Thayyil",
@@ -46,14 +48,16 @@ const class_2029: ClassMember[] = [
   {
     "name": "Rithanya Venkatesh",
     "linkedin": "https://www.linkedin.com/in/rithanya-venkatesh",
-    "image": "/image/member-placeholder.svg",
-    "class": ""
+    "image": "/image/rithanyavenkatesh.jpg",
+    "imagePosition": "center 30%",
+    "class": "Iota"
   },
   {
     "name": "Samuel Jiang",
     "linkedin": "https://www.linkedin.com/in/samj45/",
-    "image": "/image/member-placeholder.svg",
-    "class": ""
+    "image": "/image/samueljiang.jpg",
+    "imagePosition": "center 35%",
+    "class": "Iota"
   },
   {
     "name": "Sonal Mahapatra",
@@ -79,8 +83,9 @@ const class_2029: ClassMember[] = [
   {
     "name": "Vivek Indlamuri",
     "linkedin": "https://www.linkedin.com/in/vivek-indlamuri/",
-    "image": "/image/member-placeholder.svg",
-    "class": ""
+    "image": "/image/vivekindlamuri.jpg",
+    "imagePosition": "center 30%",
+    "class": "Iota"
   },
   {
     "name": "Zoe Ray",

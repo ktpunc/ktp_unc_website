@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import type { ReactNode } from "react";
 import { BrandLinkedin } from "@/components/brand-icons";
 import { useInView } from "@/hooks/useInView";
 
@@ -32,7 +33,7 @@ type Member = {
   name: string;
   image: string;
   imagePosition?: string;
-  linkedin: string;
+  linkedin?: string;
   subtitle?: string;
   badge?: string;
   tag?: string;
@@ -46,6 +47,17 @@ type MemberGridProps = {
 
 const STAGGER_MS = 42;
 const STAGGER_CAP = 28;
+
+function MemberLink({ href, children }: { href?: string; children: ReactNode }) {
+  const className = "group mx-auto flex w-full max-w-[240px] flex-col";
+  return href ? (
+    <Link href={href} target="_blank" rel="noopener noreferrer" className={className}>
+      {children}
+    </Link>
+  ) : (
+    <div className={className}>{children}</div>
+  );
+}
 
 export default function MemberGrid({ members }: MemberGridProps) {
   const { ref, inView } = useInView(0.12);
@@ -63,11 +75,8 @@ export default function MemberGrid({ members }: MemberGridProps) {
             transitionDelay: inView ? `${Math.min(i, STAGGER_CAP) * STAGGER_MS}ms` : undefined,
           }}
         >
-          <Link
+          <MemberLink
             href={member.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group mx-auto flex w-full max-w-[240px] flex-col"
           >
             <div className="member-card-hover overflow-hidden rounded-[1.6rem] border border-white/80 bg-[linear-gradient(180deg,#ffffff_0%,#f8fbfe_100%)] shadow-[0_16px_40px_rgba(15,23,42,0.08)] ring-1 ring-slate-200/70">
               <div className="relative mx-4 mt-4 aspect-[4/4.2] overflow-hidden rounded-[1.25rem]">
@@ -83,9 +92,9 @@ export default function MemberGrid({ members }: MemberGridProps) {
                 <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/82 to-navy/28 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
                 <div className="absolute inset-x-3 bottom-3 flex translate-y-3 items-center justify-between rounded-xl border border-white/10 bg-navy/78 px-3 py-2.5 text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                  <span className="flex items-center text-white/80">
+                  {member.linkedin && <span className="flex items-center text-white/80">
                     <BrandLinkedin className="h-3.5 w-3.5" />
-                  </span>
+                  </span>}
                   {member.tag && (
                     <span
                       className="text-[1.65rem] font-medium leading-none tracking-tight text-white/95"
@@ -108,7 +117,7 @@ export default function MemberGrid({ members }: MemberGridProps) {
                 )}
               </div>
             </div>
-          </Link>
+          </MemberLink>
         </div>
       ))}
     </div>

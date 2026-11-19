@@ -2,10 +2,52 @@ import { MemberGrid } from "@/components";
 
 const class_2027 = [
     {
+        name: 'Akshara Kolipaka',
+        linkedin: 'https://www.linkedin.com/in/aksharakolipaka/',
+        image: '/image/aksharakolipaka.jpg',
+        imagePosition: 'center 45%',
+        class: 'Theta'
+    },
+    {
+        name: 'Bettina George',
+        linkedin: 'https://www.linkedin.com/in/bettina-george/',
+        image: '/image/bettinageorge.jpg',
+        imagePosition: 'center 35%',
+        class: 'Theta'
+    },
+    {
+        name: 'Brandon Henderson',
+        linkedin: 'https://www.linkedin.com/in/brandon-henderson-5739872b1/',
+        image: '/image/brandonhenderson.jpg',
+        imagePosition: 'center 35%',
+        class: 'Theta'
+    },
+    {
+        name: 'Jordan Jemsek',
+        linkedin: 'https://www.linkedin.com/in/jordan-jemsek-576b352ba/',
+        image: '/image/jordanjemsek.jpg',
+        imagePosition: 'center 35%',
+        class: 'Theta'
+    },
+    {
+        name: 'Vibhas Nair',
+        linkedin: 'https://www.linkedin.com/in/vibhasn/',
+        image: '/image/vibhasnair.jpg',
+        imagePosition: 'center 35%',
+        class: 'Theta'
+    },
+    {
         name: 'Abhiraam Aremanda',
         linkedin: 'https://www.linkedin.com/in/abhiraam-aremanda-0a93aa239/',
         image: '/image/abhi.jpeg',
         class: 'Zeta'
+    },
+    {
+        name: 'Andrew Wang',
+        linkedin: 'https://www.linkedin.com/in/anzwang/',
+        image: '/image/andrewwang.jpg',
+        imagePosition: 'center',
+        class: 'Theta'
     },
     {
         name: 'Andy Huoy',
@@ -30,6 +72,13 @@ const class_2027 = [
         linkedin: 'https://www.linkedin.com/in/arsh-m/',
         image: '/image/arsh.jpeg',
         class: 'Eta'
+    },
+    {
+        name: 'Austin Xu',
+        linkedin: 'https://www.linkedin.com/in/austinxxu/',
+        image: '/image/austinxu.jpg',
+        imagePosition: 'center 40%',
+        class: 'Theta'
     },
     {
         name: 'Caroline Bryan',
@@ -58,7 +107,7 @@ const class_2027 = [
     {
         name: 'Kabir Grewal',
         linkedin: 'https://www.linkedin.com/in/kabir-grewal12/',
-        image: '/image/anton.jpeg',
+        image: '/image/kabirgrewal.png',
         class: 'Eta'
     },
     {
@@ -119,7 +168,7 @@ const class_2027 = [
 
 
 export default function Class_2027() {
-  const members = class_2027.map((member) => ({
+  const members = [...class_2027].sort((a, b) => a.name.localeCompare(b.name)).map((member) => ({
     ...member,
     subtitle: "",
     tag: member.class,

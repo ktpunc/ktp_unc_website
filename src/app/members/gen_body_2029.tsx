@@ -31,7 +31,7 @@ const class_2029: ClassMember[] = [
     "name": "Anika Moolan",
     "linkedin": "https://www.linkedin.com/in/anika-noby-moolan-13b715320/",
     "image": "/image/anikamoolan.jpg",
-    "imagePosition": "center 35%",
+    "imagePosition": "center 70%",
     "class": "Iota"
   },
   {
@@ -118,7 +118,7 @@ const class_2029: ClassMember[] = [
     "name": "Sonal Mahapatra",
     "linkedin": "https://www.linkedin.com/in/sonal-m-a73b8628b/",
     "image": "/image/sonalmahapatra.jpg",
-    "imagePosition": "center 35%",
+    "imagePosition": "center 70%",
     "class": "Iota"
   },
   {

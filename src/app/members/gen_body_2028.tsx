@@ -16,8 +16,8 @@ const class_2028 = [
   {
     "name": "Ally Organo",
     "linkedin": "https://www.linkedin.com/in/miralyssaorgano/",
-    "image": "/image/ally.jpg",
-    "imagePosition": "center 40%",
+    "image": "/image/allyorgano.jpg",
+    "imagePosition": "center 80%",
     "class": "Theta"
   },
   {

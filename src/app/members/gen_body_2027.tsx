@@ -10,8 +10,8 @@ const class_2027 = [
   {
     "name": "Akshara Kolipaka",
     "linkedin": "https://www.linkedin.com/in/aksharakolipaka/",
-    "image": "/image/aksharakolipaka.jpg",
-    "imagePosition": "center 45%",
+    "image": "/image/aksharakolipaka-updated.jpg",
+    "imagePosition": "center 60%",
     "class": "Theta"
   },
   {
@@ -100,7 +100,7 @@ const class_2027 = [
     "name": "Jordan Jemsek",
     "linkedin": "https://www.linkedin.com/in/jordan-jemsek-576b352ba/",
     "image": "/image/jordanjemsek.jpg",
-    "imagePosition": "center 35%",
+    "imagePosition": "center 75%",
     "class": "Theta"
   },
   {

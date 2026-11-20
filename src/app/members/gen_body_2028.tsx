@@ -186,7 +186,7 @@ const class_2028 = [
   },
   {
     "name": "Vihan Patil",
-    "linkedin": "https://www.linkedin.com/vihanp",
+    "linkedin": "https://www.linkedin.com/in/vihanp/",
     "image": "/image/vihanpatil.jpg",
     "imagePosition": "center 30%",
     "class": "Iota"

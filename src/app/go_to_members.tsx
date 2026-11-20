@@ -50,13 +50,13 @@ export default function MembersSection() {
         </div>
 
         <div className="mx-auto mt-12 max-w-3xl text-center">
-          <span className="eyebrow">Fall 2026 Recruitment</span>
+          <span className="eyebrow">Spring 2027 Recruitment</span>
           <h2 className="mt-3 text-3xl font-black tracking-tight text-navy md:text-4xl">
             Applications Open Soon
           </h2>
           <div className="section-divider-center" />
           <p className="mx-auto max-w-2xl text-lg leading-8 text-slate-600">
-            Recruitment returns in Fall 2026. Until then, take a look around and get a feel for what life in KTP is actually like.
+            Recruitment returns in Spring 2027. Until then, take a look around and get a feel for what life in KTP is actually like.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Link href="/recruitment" className="btn-navy">

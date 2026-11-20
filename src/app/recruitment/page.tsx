@@ -7,8 +7,8 @@ export default function RecruitmentPage() {
       <Navbar />
       <PageHero
         eyebrow="Recruitment"
-        title="Recruitment will return in Fall 2026."
-        description="Applications are currently closed. You can still review the basics and stay updated for Fall 2026."
+        title="Spring 2027 Recruitment"
+        description="Applications are currently closed. Explore eligibility and stay tuned for Spring 2027 recruitment dates, events, and application details."
         image="/image/wilson.jpg"
       />
       <Schedule />

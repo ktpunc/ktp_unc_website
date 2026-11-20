@@ -46,12 +46,12 @@ export default function Schedule() {
               <div>
               <span className="eyebrow">Status Update</span>
               <h2 className="text-3xl font-black tracking-tight text-navy md:text-4xl">
-                Spring 2026 recruitment has closed.
+                Spring 2027 recruitment is coming soon.
               </h2>
               <div className="section-divider" />
               <p className="max-w-2xl text-base leading-8 text-slate-600 md:text-lg">
-                Thank you to everyone who participated this semester. The next recruitment cycle will be
-                in Fall 2026, and we&apos;ll post updates once dates and details are confirmed.
+                Join us for our next recruitment cycle in Spring 2027. Applications are currently closed,
+                and we&apos;ll share the event schedule, deadlines, and application details once confirmed.
               </p>
 
               <div className="surface-hover-rail mt-8 rounded-2xl border border-slate-200 bg-[linear-gradient(180deg,#ffffff_0%,#f8fbfe_100%)] p-6 shadow-[0_12px_30px_rgba(15,23,42,0.05)]">
@@ -61,7 +61,7 @@ export default function Schedule() {
                   </div>
                   <div>
                     <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue">Next Update</p>
-                    <p className="mt-2 text-lg font-bold text-navy">Fall 2026 recruitment information</p>
+                    <p className="mt-2 text-lg font-bold text-navy">Spring 2027 recruitment information</p>
                     <p className="mt-2 text-sm leading-7 text-slate-600">
                       Follow{" "}
                       <a

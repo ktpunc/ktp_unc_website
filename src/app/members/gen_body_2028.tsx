@@ -144,7 +144,7 @@ const class_2028 = [
     "name": "Neelasha Panda",
     "linkedin": "https://www.linkedin.com/in/neelasha-panda/",
     "image": "/image/neelashapanda.jpg",
-    "imagePosition": "center 30%",
+    "imagePosition": "center 70%",
     "class": "Theta"
   },
   {

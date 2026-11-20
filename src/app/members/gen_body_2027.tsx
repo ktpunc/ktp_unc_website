@@ -17,7 +17,7 @@ const class_2027 = [
   {
     "name": "Andrew Wang",
     "linkedin": "https://www.linkedin.com/in/anzwang/",
-    "image": "/image/andrewwang.jpg",
+    "image": "/image/andrewwang2.jpg",
     "imagePosition": "center",
     "class": "Theta"
   },

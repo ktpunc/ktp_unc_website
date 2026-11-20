@@ -85,12 +85,6 @@ const class_2027 = [
     "class": "Zeta"
   },
   {
-    "name": "Donn Rhys Mondano",
-    "linkedin": "https://www.linkedin.com/in/donn-rhys-mondano-15abb0248/",
-    "image": "/image/rhys.jpg",
-    "class": "Zeta"
-  },
-  {
     "name": "Duncan Moore",
     "linkedin": "https://www.linkedin.com/in/duncan-moore-425602287/",
     "image": "/image/duncan.jpeg",

@@ -12,7 +12,9 @@ type ClassMember = {
 const class_2029: ClassMember[] = [
   {
     "name": "Aarna Upadhyaya",
-    "image": "/image/member-placeholder.svg",
+    "linkedin": "https://www.linkedin.com/in/aarnaupadhyaya/",
+    "image": "/image/aarnaupadhyaya.jpg",
+    "imagePosition": "center 85%",
     "class": "Kappa"
   },
   {
@@ -24,7 +26,9 @@ const class_2029: ClassMember[] = [
   },
   {
     "name": "Amogh Belur",
-    "image": "/image/member-placeholder.svg",
+    "linkedin": "https://www.linkedin.com/in/amoghbelur/",
+    "image": "/image/amoghbelur.jpg",
+    "imagePosition": "center 75%",
     "class": "Kappa"
   },
   {
@@ -36,7 +40,9 @@ const class_2029: ClassMember[] = [
   },
   {
     "name": "Arjun Bhonsle",
-    "image": "/image/member-placeholder.svg",
+    "linkedin": "https://www.linkedin.com/in/arjun-bhonsle/",
+    "image": "/image/arjunbhonsle.jpg",
+    "imagePosition": "center 85%",
     "class": "Kappa"
   },
   {
@@ -48,22 +54,30 @@ const class_2029: ClassMember[] = [
   },
   {
     "name": "Ayush Sagar",
-    "image": "/image/member-placeholder.svg",
+    "linkedin": "https://www.linkedin.com/in/ayush-sagar/",
+    "image": "/image/ayushsagar.jpg",
+    "imagePosition": "center 80%",
     "class": "Kappa"
   },
   {
     "name": "Dao Bui",
-    "image": "/image/member-placeholder.svg",
+    "linkedin": "https://www.linkedin.com/in/daotbui/",
+    "image": "/image/daobui.jpg",
+    "imagePosition": "center 85%",
     "class": "Kappa"
   },
   {
     "name": "Eshaan Raj",
-    "image": "/image/member-placeholder.svg",
+    "linkedin": "https://www.linkedin.com/in/eshaan-raj-0ab402256/",
+    "image": "/image/eshaanraj.jpg",
+    "imagePosition": "center 85%",
     "class": "Kappa"
   },
   {
     "name": "Fernando Sanchez",
-    "image": "/image/member-placeholder.svg",
+    "linkedin": "https://www.linkedin.com/in/fernando-sanchez-1b899232a/",
+    "image": "/image/fernandosanchez.jpg",
+    "imagePosition": "center 75%",
     "class": "Kappa"
   },
   {
@@ -75,17 +89,23 @@ const class_2029: ClassMember[] = [
   },
   {
     "name": "Hriday Muthukrishnan",
-    "image": "/image/member-placeholder.svg",
+    "linkedin": "https://www.linkedin.com/in/hriday-m/",
+    "image": "/image/hridaymuthukrishnan.jpg",
+    "imagePosition": "center 75%",
     "class": "Kappa"
   },
   {
     "name": "Katie Shang",
-    "image": "/image/member-placeholder.svg",
+    "linkedin": "https://www.linkedin.com/in/katieshang/",
+    "image": "/image/katieshang.png",
+    "imagePosition": "center top",
     "class": "Kappa"
   },
   {
     "name": "Milena Chiavegatto",
-    "image": "/image/member-placeholder.svg",
+    "linkedin": "https://www.linkedin.com/in/milena-chiavegatto/",
+    "image": "/image/milenachiavegatto.jpg",
+    "imagePosition": "center 70%",
     "class": "Kappa"
   },
   {
@@ -97,7 +117,9 @@ const class_2029: ClassMember[] = [
   },
   {
     "name": "Rhythanyaa Nagaraja",
-    "image": "/image/member-placeholder.svg",
+    "linkedin": "https://www.linkedin.com/in/rhythanyaa-nagaraja/",
+    "image": "/image/rhythanyaanagaraja.jpg",
+    "imagePosition": "center 80%",
     "class": "Kappa"
   },
   {
@@ -123,7 +145,9 @@ const class_2029: ClassMember[] = [
   },
   {
     "name": "Sravya Chebrolu",
-    "image": "/image/member-placeholder.svg",
+    "linkedin": "https://www.linkedin.com/in/sravya-chebrolu/",
+    "image": "/image/sravyachebrolu.jpg",
+    "imagePosition": "center 85%",
     "class": "Kappa"
   },
   {
@@ -135,7 +159,9 @@ const class_2029: ClassMember[] = [
   },
   {
     "name": "Tanish Dongre",
-    "image": "/image/member-placeholder.svg",
+    "linkedin": "https://www.linkedin.com/in/tanish-dongre/",
+    "image": "/image/tanishdongre.jpg",
+    "imagePosition": "center 80%",
     "class": "Kappa"
   },
   {
@@ -154,7 +180,9 @@ const class_2029: ClassMember[] = [
   },
   {
     "name": "Yuxuan Li",
-    "image": "/image/member-placeholder.svg",
+    "linkedin": "https://www.linkedin.com/in/yuxuan-li-math/",
+    "image": "/image/yuxuanli.jpg",
+    "imagePosition": "center 75%",
     "class": "Kappa"
   },
   {

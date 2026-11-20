@@ -10,7 +10,9 @@ const class_2028 = [
   },
   {
     "name": "Aditi Rai",
-    "image": "/image/member-placeholder.svg",
+    "linkedin": "https://www.linkedin.com/in/aditirai9/",
+    "image": "/image/aditirai.jpg",
+    "imagePosition": "center 75%",
     "class": "Kappa"
   },
   {
@@ -102,12 +104,16 @@ const class_2028 = [
   },
   {
     "name": "Gabriel Great",
-    "image": "/image/member-placeholder.svg",
+    "linkedin": "https://www.linkedin.com/in/gabrielgreat/",
+    "image": "/image/gabrielgreat.jpg",
+    "imagePosition": "center 75%",
     "class": "Kappa"
   },
   {
     "name": "Hye-Rynn Jeong",
-    "image": "/image/member-placeholder.svg",
+    "linkedin": "https://www.linkedin.com/in/hye-rynn-jeong-579590325/",
+    "image": "/image/hyerynnjeong.jpg",
+    "imagePosition": "center 85%",
     "class": "Kappa"
   },
   {
@@ -132,12 +138,16 @@ const class_2028 = [
   },
   {
     "name": "Luke Kelly",
-    "image": "/image/member-placeholder.svg",
+    "linkedin": "https://www.linkedin.com/in/lukehkelly/",
+    "image": "/image/lukekelly.jpg",
+    "imagePosition": "center 85%",
     "class": "Kappa"
   },
   {
-    "name": "Muhammad Zain Zeeshan Malik",
-    "image": "/image/member-placeholder.svg",
+    "name": "Zain Malik",
+    "linkedin": "https://www.linkedin.com/in/mzzmalik/",
+    "image": "/image/zainmalik.jpg",
+    "imagePosition": "center top",
     "class": "Kappa"
   },
   {
@@ -169,7 +179,9 @@ const class_2028 = [
   },
   {
     "name": "Suhani Tailor",
-    "image": "/image/member-placeholder.svg",
+    "linkedin": "https://www.linkedin.com/in/suhani-tailor/",
+    "image": "/image/suhanitailor.jpg",
+    "imagePosition": "center 80%",
     "class": "Kappa"
   },
   {
@@ -181,7 +193,9 @@ const class_2028 = [
   },
   {
     "name": "Vohn Jacquez",
-    "image": "/image/member-placeholder.svg",
+    "linkedin": "https://www.linkedin.com/in/vohnzj/",
+    "image": "/image/vohnjacquez.jpg",
+    "imagePosition": "center 80%",
     "class": "Kappa"
   },
   {
